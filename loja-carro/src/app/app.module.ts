@@ -9,11 +9,11 @@ import { FormsModule } from '@angular/forms';
 
 import CheckLogged from './checkLogged.canActivate';
 
-/* import {
+import {
   SocialLoginModule,
   AuthServiceConfig,
   GoogleLoginProvider,
-} from "angular-6-social-login"; */
+} from "angular-6-social-login";
 import { ProdutoComponent } from './produto/produto.component';
 
 const routes: Routes = [
@@ -23,7 +23,7 @@ const routes: Routes = [
 ];
 
 
-/* export function getAuthServiceConfigs() {
+export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
       [
         {
@@ -33,7 +33,7 @@ const routes: Routes = [
       ]
   );
   return config;
-} */
+}
 
 @NgModule({
   declarations: [
@@ -46,13 +46,13 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
-    /* SocialLoginModule, */
+    SocialLoginModule
   ],
   providers: [
-    /* {
+    {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs
-    }, */
+    },
     CheckLogged
   ],
   bootstrap: [AppComponent]

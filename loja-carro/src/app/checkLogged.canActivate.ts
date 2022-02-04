@@ -19,7 +19,6 @@ class CheckLogged implements CanActivate{
         ): Observable<boolean> | Promise<boolean> | boolean {
             console.log("Dentro")
 
-
             let user = localStorage.getItem("USER")
             let password = localStorage.getItem('PASSWORD')
 
@@ -36,8 +35,6 @@ class CheckLogged implements CanActivate{
                 this.router.navigate(['/login'])
                 return false;
             }
-
-
     }
 }
 

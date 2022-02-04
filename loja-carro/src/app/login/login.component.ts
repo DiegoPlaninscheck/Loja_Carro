@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
-/* import {
+import {
   AuthService,
   GoogleLoginProvider
-} from 'angular-6-social-login'; */
+} from 'angular-6-social-login';
 
 @Component({
   selector: 'app-login',
@@ -20,11 +20,11 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private route:  ActivatedRoute,
-    /* private socialAuthService: AuthService */
+    private socialAuthService: AuthService
     ) { }
 
 
-    /* public socialSignIn(socialPlatform : string) {
+    public socialSignIn(socialPlatform : string) {
       let socialPlatformProvider;
        if(socialPlatform == "google"){
         socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
@@ -35,10 +35,10 @@ export class LoginComponent implements OnInit {
           console.log(socialPlatform + " sign in data : " , userData);
           // Now sign-in with userData
           // ...
-          this.router.navigate(['/loja'])
+          this.router.navigate([''])
         }
       );
-    } */
+    }
     
   ngOnInit() {
   }
