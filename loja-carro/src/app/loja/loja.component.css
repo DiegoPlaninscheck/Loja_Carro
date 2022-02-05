@@ -32,7 +32,53 @@
     padding: 5px;
 }
 
-.botao {
+.containercarro {
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(46, 181, 190);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carro {
+    width: 50%;
+    height: 50%;
+    border-radius: 35px;
+    border: solid black 1px;
+    border: none;
+    background-color: white;
+}
+
+.carro2 {
+    width: 50%;
+    height: 50%;
+    border: solid black 1px;
+    border: none;
+    border-radius: 35px;
+    background-color: white;
+}
+
+.carro3 {
+    width: 50%;
+    height: 50%;
+    border: solid black 1px;
+    border: none;
+    border-radius: 35px;
+    background-color: white;
+}
+
+.carro4 {
+    width: 50%;
+    height: 50%;
+    border: solid black 1px;
+    border: none;
+    border-radius: 35px;
+    background-color: white;
+}
+
+
+/* .botao {
     width: 100%;
     height: 100vh;
 }
@@ -43,7 +89,7 @@
     background-color: #00ff00;
     background: linear-gradient(lightCyan, skyblue, deepskyblue);
     border: none;
-}
+} */
 
 
 /* .volta button:hover{
