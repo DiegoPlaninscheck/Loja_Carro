@@ -17,7 +17,7 @@ import {
 import { ProdutoComponent } from './produto/produto.component';
 
 const routes: Routes = [
-  {path: '', component: LojaComponent, canActivate: [CheckLogged]},
+  {path: '', component: LojaComponent, /* canActivate: [CheckLogged] */},
   {path: 'login', component: LoginComponent, canActivate: []},
   {path: 'produto', component: ProdutoComponent, canActivate: [CheckLogged]}
 ];

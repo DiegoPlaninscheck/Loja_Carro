@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: chartreuse;
+    background-color: palegreen;
 }
 
 
@@ -24,7 +24,7 @@
     align-items: center;
     width: 20%;
     padding: 20px;
-    background-color: gray;
+    background-color: white;
     border-radius: 25px;
 }
 
