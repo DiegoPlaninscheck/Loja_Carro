@@ -17,13 +17,7 @@ import { ProdutoComponent } from './loja/produto/produto.component';
 import { GerenciarLojaComponent } from './loja/gerenciar-loja/gerenciar-loja.component';
 
 const routes: Routes = [
-  {path: '', component: GerenciarLojaComponent, /* canActivate: [CheckLogged] */},
-  {
-    path: '',
-    children: [
-      {path: ':id', component: ProdutoComponent}
-    ]
-  },
+  {path: '', component: GerenciarLojaComponent,  canActivate: [] },
   {path: 'login', component: LoginComponent, canActivate: []},
 ];
 
