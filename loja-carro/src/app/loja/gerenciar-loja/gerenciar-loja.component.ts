@@ -23,7 +23,7 @@ export class GerenciarLojaComponent implements OnInit {
   }
 
   detalhes(){
-    this.router.navigate(['/id'])
+    this.router.navigate(['/produto'])
   }
 
   carrinho(){

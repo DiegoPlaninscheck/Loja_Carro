@@ -15,10 +15,19 @@ import {
 } from "angular-6-social-login";
 import { ProdutoComponent } from './loja/produto/produto.component';
 import { GerenciarLojaComponent } from './loja/gerenciar-loja/gerenciar-loja.component';
+import { VerCarrinhoComponent } from './carrinho/ver-carrinho/ver-carrinho.component';
+import { CarrinhoModule } from './carrinho/carrinho.module';
 
 const routes: Routes = [
   {path: '', component: GerenciarLojaComponent,  canActivate: [] },
+  {
+    path: 'produto',
+    children: [
+      {path: 'produto', component: ProdutoComponent, canActivate: []}
+    ]
+  },
   {path: 'login', component: LoginComponent, canActivate: []},
+  {path: 'carrinho', component: VerCarrinhoComponent, canActivate: []}
 ];
 
 
@@ -45,7 +54,8 @@ export function getAuthServiceConfigs() {
     RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
-    SocialLoginModule
+    SocialLoginModule,
+    CarrinhoModule
   ],
   providers: [
     {
