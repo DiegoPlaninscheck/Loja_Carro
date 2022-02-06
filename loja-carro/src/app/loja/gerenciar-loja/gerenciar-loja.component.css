@@ -65,7 +65,7 @@
 
 .carro {
     width: 50%;
-    height: 50%;
+    height: 80%;
     border-radius: 35px;
     border: solid black 1px;
     border: none;
@@ -74,7 +74,7 @@
 
 .carro2 {
     width: 50%;
-    height: 50%;
+    height: 80%;
     border: solid black 1px;
     border: none;
     border-radius: 35px;
@@ -83,7 +83,7 @@
 
 .carro3 {
     width: 50%;
-    height: 50%;
+    height: 80%;
     border: solid black 1px;
     border: none;
     border-radius: 35px;
@@ -92,7 +92,7 @@
 
 .carro4 {
     width: 50%;
-    height: 50%;
+    height: 80%;
     border: solid black 1px;
     border: none;
     border-radius: 35px;
