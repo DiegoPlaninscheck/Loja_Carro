@@ -4,6 +4,7 @@ import { GerenciarLojaComponent } from './gerenciar-loja/gerenciar-loja.componen
 import { ProdutoComponent } from './produto/produto.component';
 import {Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { VerCarrinhoComponent } from '../carrinho/ver-carrinho/ver-carrinho.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
     children: [
       {path: ':id', component: ProdutoComponent}
     ]
-  }
+  },
+  {path: 'carrinho', component: VerCarrinhoComponent, canActivate: []}
 ];
 
 @NgModule({

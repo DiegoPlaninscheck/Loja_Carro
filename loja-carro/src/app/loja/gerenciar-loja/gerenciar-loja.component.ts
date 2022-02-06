@@ -26,4 +26,8 @@ export class GerenciarLojaComponent implements OnInit {
     this.router.navigate(['/id'])
   }
 
+  carrinho(){
+    this.router.navigate(['/carrinho'])
+  }
+
 }
