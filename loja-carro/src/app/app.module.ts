@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { LojaComponent } from './loja/loja.component';
 import { FormsModule } from '@angular/forms';
 
 import CheckLogged from './checkLogged.canActivate';
@@ -14,12 +13,18 @@ import {
   AuthServiceConfig,
   GoogleLoginProvider,
 } from "angular-6-social-login";
-import { ProdutoComponent } from './produto/produto.component';
+import { ProdutoComponent } from './loja/produto/produto.component';
+import { GerenciarLojaComponent } from './loja/gerenciar-loja/gerenciar-loja.component';
 
 const routes: Routes = [
-  {path: '', component: LojaComponent, /* canActivate: [CheckLogged] */},
+  {path: '', component: GerenciarLojaComponent, /* canActivate: [CheckLogged] */},
+  {
+    path: '',
+    children: [
+      {path: ':id', component: ProdutoComponent}
+    ]
+  },
   {path: 'login', component: LoginComponent, canActivate: []},
-  {path: 'produto', component: ProdutoComponent, canActivate: [CheckLogged]}
 ];
 
 
@@ -39,8 +44,8 @@ export function getAuthServiceConfigs() {
   declarations: [
     AppComponent,
     LoginComponent,
-    LojaComponent,
     ProdutoComponent,
+    GerenciarLojaComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
