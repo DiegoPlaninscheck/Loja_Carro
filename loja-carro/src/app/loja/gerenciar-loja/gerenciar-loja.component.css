@@ -63,6 +63,31 @@
     align-items: center;
 }
 
+.botao {
+    padding: 5px;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao button {
+    padding: 5px;
+    width: 65%;
+    border: none;
+    outline: none;
+    background-color: aqua;
+}
+
+.botao:hover button {
+    padding: 5px;
+    width: 65%;
+    border: none;
+    outline: none;
+    background-color: aqua;
+    cursor: pointer;
+}
+
 .carro {
     width: 50%;
     height: 80%;

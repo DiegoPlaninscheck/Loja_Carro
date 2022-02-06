@@ -8,6 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class GerenciarLojaComponent implements OnInit {
 
+  id = undefined;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router
@@ -20,8 +22,8 @@ export class GerenciarLojaComponent implements OnInit {
     this.router.navigate(['/login'])
   }
 
-  volta(){
-    this.router.navigate([''])
+  detalhes(){
+    this.router.navigate(['/id'])
   }
 
 }
