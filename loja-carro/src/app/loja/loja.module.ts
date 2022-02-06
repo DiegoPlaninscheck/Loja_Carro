@@ -14,8 +14,7 @@ const routes: Routes = [
     children: [
       {path: ':id', component: ProdutoComponent}
     ]
-  },
-  {path: 'carrinho', component: VerCarrinhoComponent, canActivate: []}
+  }
 ];
 
 @NgModule({
