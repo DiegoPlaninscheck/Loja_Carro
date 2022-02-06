@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       let socialPlatformProvider;
        if(socialPlatform == "google"){
         socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
-      }       
+      }
       this.socialAuthService.signIn(socialPlatformProvider).then(
         (userData) => {
           localStorage.setItem('USER', this.user);
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         }
       );
     }
-    
+
   ngOnInit() {
   }
 
@@ -67,9 +67,3 @@ export class LoginComponent implements OnInit {
   }
 
 }
-
-
-  
-
-  
-
