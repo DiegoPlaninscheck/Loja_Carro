@@ -44,22 +44,43 @@ export class LoginComponent implements OnInit {
   }
 
   logar(){
-    localStorage.setItem('USER', this.user);
-    localStorage.setItem("PASSWORD", this.password)
-    /* const users = [
-      {login: 'Diego', password: '123'},
-      {login: 'Planinscheck', password: '123'}
-    ];
+    // localStorage.setItem('USER', this.user);
+    // localStorage.setItem("PASSWORD", this.password)
+    // const users = [
+    //   {login: 'Diego', password: '123'},
+    //   {login: 'Planinscheck', password: '123'}
+    // ];
 
-    const find = users.find(e => e.login == this.user && e.password == this.password);
+    // const find = users.find(e => e.login == this.user && e.password == this.password);
 
-    if (find) {
-    localStorage.setItem('USER', this.user);
-    this.router.navigate(['/loja']);
-    } else {
-    alert('Usuário não cadastrado!');
-    } */
-    this.router.navigate(['']);
+    // if (find) {
+    // localStorage.setItem('USER', this.user);
+    // this.router.navigate(['/loja']);
+    // } else {
+    // alert('Usuário não cadastrado!');
+    // }
+    // this.router.navigate(['']);
+
+    fetch('/api/selecionar_usuario', {
+      method: 'POST',
+      body: JSON.stringify({
+          nickname: this.user,
+          password: this.password
+      }),
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  }).then(function (result){
+      return result.json();
+  }).then(function (dados){ 
+      console.log(dados);
+      alert('login efetuado')
+  }).catch(function (erro){
+      console.log(erro)
+  });
+
+
+
   }
 
   voltar(){

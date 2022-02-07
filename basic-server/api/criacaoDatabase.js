@@ -45,3 +45,13 @@ database(`CREATE TABLE IF NOT EXISTS CLIENTE (
 }).catch(erro => {
     console.log('Tabela CLIENTE com erro de criação');
 });
+
+database(`CREATE TABLE IF NOT EXISTS USER (
+    NOME varchar(30),
+    NICKNAME varchar(30),
+    PASSWORD varchar(30)
+    )`).then(result => {
+    console.log('Tabela USER criada com sucesso');
+}).catch(erro => {
+    console.log('Tabela USER com erro de criação');
+});
