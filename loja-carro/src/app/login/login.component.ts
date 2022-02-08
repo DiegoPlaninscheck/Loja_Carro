@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
+import { UsuarioService } from '../services/usuario.service';
 
 import {
   AuthService,
@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private route:  ActivatedRoute,
-    private socialAuthService: AuthService
+    private socialAuthService: AuthService,
+    private usuarioService: UsuarioService
     ) { }
 
 
@@ -41,6 +42,12 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit() {
+    this.usuarioService.buscarUsuarios()
+    .then(resultado => {
+      console.log("RESULTADO:", resultado)
+    }).catch(erro => {
+      console.log("ERRO AO BUSCAR USUARIOS:", erro)
+    })
   }
 
   logar(){
@@ -60,11 +67,6 @@ export class LoginComponent implements OnInit {
     // alert('Usuário não cadastrado!');
     // }
     // this.router.navigate(['']);
-
-    
-
-
-
   }
 
   voltar(){
