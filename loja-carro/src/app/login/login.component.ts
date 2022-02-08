@@ -61,23 +61,7 @@ export class LoginComponent implements OnInit {
     // }
     // this.router.navigate(['']);
 
-    fetch('/api/selecionar_usuario', {
-      method: 'POST',
-      body: JSON.stringify({
-          nickname: this.user,
-          password: this.password
-      }),
-      headers: {
-          'Content-Type': 'application/json'
-      }
-  }).then(function (result){
-      return result.json();
-  }).then(function (dados){ 
-      console.log(dados);
-      alert('login efetuado')
-  }).catch(function (erro){
-      console.log(erro)
-  });
+    
 
 
 

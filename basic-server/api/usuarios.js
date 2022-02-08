@@ -1,14 +1,34 @@
 const { Database } = require("sqlite3");
 
-/* inserirRota('/buscar_usuario',
-    function(dados, resposta) {
-        console.log(dados)
-
-        resposta({ Ok: 'Resquisição efetuada com sucesso' })
+inserirRota('/buscar_usuario', (dados, resposta) => {
+    console.log(dados);
+    database('SELECT * FROM USER').then(result => {
+        resposta({ list: result });
+    }).catch(erro => {
+        resposta({ resposta: erro });
     });
-*/
+});
 
-inserirRota('/criar_usuario',
+// fetch('/api/buscar_usuario', {
+    //     method: 'POST',
+    //     body: JSON.stringify({
+    //         nome: 'sim',
+    //         nickname: 'sim'
+    //     }),
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     }
+    // }).then(function (result){
+    //     return result.json();
+    // }).then(function (dados){ 
+    //     console.log(dados);
+    // }).catch(function (erro){
+    //     console.log(erro)
+    // });
+
+
+
+inserirRota('/inserir_usuario',
     function(dados, resposta) {
         console.log(dados);
 
@@ -46,36 +66,23 @@ inserirRota('/criar_usuario',
 
     }) 
 
-
-// inserirRota('/inserir_usuario',
-//     function(dados, resposta) {
-//         console.log(dados);
-
-//         /* if (!dados.nome) {
-//             return resposta({ erro: 'E necesarrio preencher o nome' })
-//         }
-
-//         if (!dados.nickname) {
-//             return resposta({ erro: 'E necesarrio preencher o nome' })
-//         } */
-
-//         database(`INSERT INTO CARRO VALUES
-//         (
-//          "${dados.id}",
-//          "${dados.nome}",
-//          "${dados.placa}",
-//          "${dados.marca}",
-//          "${dados.modelo}"
-//         )`)
-//             .then(result => {
-//                 console.log('Carro inserido');
-//                 resposta({ message: 'Carro inserido com sucesso!' })
-//             }).catch(erro => {
-//                 console.log('Erro ao inserir o carro');
-//                 resposta({ erro: 'Erro ao inserir o carro!' })
-//             });
-
-//     })
+    // fetch('/api/inserir_usuario', {
+//     method: 'POST',
+//     body: JSON.stringify({
+//           nome: 'Diego',
+//         nickname: 'frst157',
+//         password: '123'
+//     }),
+//     headers: {
+//         'Content-Type': 'application/json'
+//     }
+// }).then(function (result){
+//     return result.json();
+// }).then(function (dados){ 
+//     console.log(dados);
+// }).catch(function (erro){
+//     console.log(erro)
+// });
 
 
 inserirRota('/login',
@@ -92,23 +99,6 @@ inserirRota('/login',
             });
 
     })
-
-// fetch('/api/selecionar_usuario', {
-//     method: 'POST',
-//     body: JSON.stringify({
-//         nickname: 'Diego',
-//         password: '123'
-//     }),
-//     headers: {
-//         'Content-Type': 'application/json'
-//     }
-// }).then(function (result){
-//     return result.json();
-// }).then(function (dados){ 
-//     console.log(dados);
-// }).catch(function (erro){
-//     console.log(erro)
-// });
 
 
 //  fetch('/api/inserir_usuario', {
