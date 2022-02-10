@@ -100,6 +100,28 @@ inserirRota('/login',
 
     })
 
+    inserirRota('/checar', function(dados, resposta){
+        database(`SELECT * FROM PESSOA`)
+        .then(result => {
+            const list = [];
+            for(let i; i < list.length; i++){
+                let nome = result[i].NOME;
+                let senha = result[i].SENHA;
+
+                newList = {
+                    name: nome,
+                    password: senha
+                }
+                list.push(newList);
+            }
+            console.log(list)
+            resposta(list)
+        }).catch(erro => {
+            console.log('DEU RUIM', erro)
+            resposta({erro})
+        })
+    })
+
 
 //  fetch('/api/inserir_usuario', {
 //     method: 'POST',
