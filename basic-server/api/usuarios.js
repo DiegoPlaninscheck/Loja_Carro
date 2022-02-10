@@ -10,21 +10,21 @@ inserirRota('/buscar_usuario', (dados, resposta) => {
 });
 
 // fetch('/api/buscar_usuario', {
-    //     method: 'POST',
-    //     body: JSON.stringify({
-    //         nome: 'sim',
-    //         nickname: 'sim'
-    //     }),
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     }
-    // }).then(function (result){
-    //     return result.json();
-    // }).then(function (dados){ 
-    //     console.log(dados);
-    // }).catch(function (erro){
-    //     console.log(erro)
-    // });
+//     method: 'POST',
+//     body: JSON.stringify({
+//         nome: 'sim',
+//         nickname: 'sim'
+//     }),
+//     headers: {
+//         'Content-Type': 'application/json'
+//     }
+// }).then(function (result){
+//     return result.json();
+// }).then(function (dados){ 
+//     console.log(dados);
+// }).catch(function (erro){
+//     console.log(erro)
+// });
 
 
 
@@ -64,9 +64,9 @@ inserirRota('/inserir_usuario',
                 resposta({ erro: 'Erro ao inserir o usuario!' })
             });
 
-    }) 
+    })
 
-    // fetch('/api/inserir_usuario', {
+// fetch('/api/inserir_usuario', {
 //     method: 'POST',
 //     body: JSON.stringify({
 //           nome: 'Diego',
@@ -100,30 +100,30 @@ inserirRota('/login',
 
     })
 
-    inserirRota('/checar', function(dados, resposta){
-        database(`SELECT * FROM PESSOA`)
+inserirRota('/checar', function(dados, resposta) {
+    database(`SELECT * FROM PESSOA`)
         .then(result => {
-            const list = [];
-            for(let i; i < list.length; i++){
+            let list = [];
+            for (let i; i < list.length; i++) {
                 let nome = result[i].NOME;
                 let senha = result[i].SENHA;
 
                 newList = {
-                    name: nome,
-                    password: senha
+                    nome: nome,
+                    senha: senha
                 }
                 list.push(newList);
             }
             console.log(list)
-            resposta(list)
+            resposta({ list })
         }).catch(erro => {
             console.log('DEU RUIM', erro)
-            resposta({erro})
+            resposta({ erro })
         })
-    })
+})
 
 
-//  fetch('/api/inserir_usuario', {
+// fetch('/api/inserir_usuario', {
 //     method: 'POST',
 //     body: JSON.stringify({
 //         id: 1,

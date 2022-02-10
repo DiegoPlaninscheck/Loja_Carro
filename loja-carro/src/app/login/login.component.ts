@@ -45,8 +45,10 @@ export class LoginComponent implements OnInit {
     this.usuarioService.buscarUsuarios()
     .then(resultado => {
       console.log("RESULTADO:", resultado)
+      this.user = resultado.user;
+      this.password = resultado.password;
     }).catch(erro => {
-      console.log("ERRO AO BUSCAR USUARIOS:", erro)
+      console.log("ERRO AO BUSCAR USUÁRIO:", erro)
     })
   }
 

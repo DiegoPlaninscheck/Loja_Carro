@@ -26,7 +26,7 @@ database(`CREATE TABLE IF NOT EXISTS PESSOA (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
     NOME varchar(30) not null UNIQUE,
     SENHA varchar(10) not null UNIQUE,
-    SOBRENOME varchar(30) not null UNIQUE, 
+    SOBRENOME varchar(30) not null, 
     NASCIMENTO date,
     EMAIL varchar(50)
     )`).then(result => {
@@ -49,18 +49,18 @@ database(`CREATE TABLE IF NOT EXISTS CLIENTE (
 database(`INSERT INTO PESSOA VALUES 
 (null, 'Diego', '123', 'Planinscheck', null, 'dieguinhodobarulho@hotmail.com'),
 (null, 'João', '321', 'Meireles', null, 'joaozinhogameplays@gmail.com.br')`)
-.then(result => {
-    console.log('Dados cadastrados');
-}).catch(erro => {
-    console.log('Dados não cadastrados');
-});
+    .then(result => {
+        console.log('Dados cadastrados');
+    }).catch(erro => {
+        console.log('Dados não cadastrados');
+    });
 
-// database(`CREATE TABLE IF NOT EXISTS USER (
-//     NOME varchar(30),
-//     NICKNAME varchar(30),
-//     PASSWORD varchar(30)
-//     )`).then(result => {
-//     console.log('Tabela USER criada com sucesso');
-// }).catch(erro => {
-//     console.log('Tabela USER com erro de criação');
-// });
+database(`CREATE TABLE IF NOT EXISTS USER (
+    NOME varchar(30),
+    NICKNAME varchar(30),
+    PASSWORD varchar(30)
+    )`).then(result => {
+    console.log('Tabela USER criada com sucesso');
+}).catch(erro => {
+    console.log('Tabela USER com erro de criação');
+});
