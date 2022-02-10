@@ -104,7 +104,7 @@ inserirRota('/checar', function(dados, resposta) {
     database(`SELECT * FROM PESSOA`)
         .then(result => {
             let list = [];
-            for (let i; i < list.length; i++) {
+            for (i = 0; i < result.length; i++) {
                 let nome = result[i].NOME;
                 let senha = result[i].SENHA;
 

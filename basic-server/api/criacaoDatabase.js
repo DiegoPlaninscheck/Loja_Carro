@@ -46,14 +46,14 @@ database(`CREATE TABLE IF NOT EXISTS CLIENTE (
     console.log('Tabela CLIENTE com erro de criação');
 });
 
-database(`INSERT INTO PESSOA VALUES 
-(null, 'Diego', '123', 'Planinscheck', null, 'dieguinhodobarulho@hotmail.com'),
-(null, 'João', '321', 'Meireles', null, 'joaozinhogameplays@gmail.com.br')`)
-    .then(result => {
-        console.log('Dados cadastrados');
-    }).catch(erro => {
-        console.log('Dados não cadastrados');
-    });
+// database(`INSERT INTO PESSOA VALUES 
+// (null, 'Diego', '123', 'Planinscheck', null, 'dieguinhodobarulho@hotmail.com'),
+// (null, 'João', '321', 'Meireles', null, 'joaozinhogameplays@gmail.com.br')`)
+//     .then(result => {
+//         console.log('Dados cadastrados');
+//     }).catch(erro => {
+//         console.log('Dados não cadastrados');
+//     });
 
 database(`CREATE TABLE IF NOT EXISTS USER (
     NOME varchar(30),
