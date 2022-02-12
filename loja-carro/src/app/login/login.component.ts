@@ -45,7 +45,6 @@ export class LoginComponent implements OnInit {
     this.usuarioService.checarPessoa()
     .then((resultado: (Object: (String))  => [])=> {
       console.log("RESULTADO:", resultado)
-      
       // this.user = resultado.user;
       // this.password = resultado.password;
     }).catch(erro => {
