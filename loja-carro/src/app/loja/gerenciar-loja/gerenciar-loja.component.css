@@ -21,41 +21,40 @@
 }
 
 .campo-pesquisa input {
-    padding: 5px;
+    padding: 10px;
     width: 100%;
     border: none;
     outline: none;
+    font-size: 16px;
     background-color: transparent;
 }
 
-.campo-pesquisa img {
+.campo-pesquisa i {
     padding: 5px;
+    color: #C21010;
+    font-size: 20px;
 }
 
-.login {
-    padding: 5px;
-    width: 10vw;
+.div-icones{
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.login button {
-    padding: 5px;
-    width: 100%;
-    border: none;
-    outline: none;
-    background: linear-gradient(lightCyan, skyblue, deepskyblue);
+.icone{
+    padding: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    color: #C21010;
 }
 
-.login button:hover {
+.icone i {
     padding: 5px;
-    width: 100%;
-    border: none;
-    outline: none;
-    background: linear-gradient(360deg, lightgreen, green, #001e00);
-    cursor: pointer;
-}
-
-.carrinho:hover {
-    cursor: pointer;
+    color: #C21010;
+    font-size: 20px;
 }
 
 .containercarro {

@@ -100,7 +100,7 @@ inserirRota('/login',
 
     })
 
-inserirRota('/checar', function(dados, resposta) {
+inserirRota('/checar_pessoa', function(dados, resposta) {
     database(`SELECT * FROM PESSOA`)
         .then(result => {
             let list = [];
@@ -115,7 +115,7 @@ inserirRota('/checar', function(dados, resposta) {
                 list.push(newList);
             }
             console.log(list)
-            resposta({ list })
+            resposta( list )
         }).catch(erro => {
             console.log('DEU RUIM', erro)
             resposta({ erro })

@@ -8,9 +8,9 @@ export class UsuarioService {
 
   constructor() { }
 
-  buscarUsuarios(){
+  checarPessoa(){
     return new Promise((resolve, rejeitado) => {
-      fetch('/api/buscar_usuario', {
+      fetch('/api/checar_pessoa', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -21,27 +21,7 @@ export class UsuarioService {
     })
   }
 
-  login(nickname, password){
-    return new Promise((resolve, reject) => {
-      fetch('/api/login', {
-        method: 'POST',
-        body: JSON.stringify({
-            nickname: nickname,
-            password: password
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then(function (result){
-        return result.json();
-    }).then(function (dados){ 
-        console.log(dados);
-        alert('login efetuado')
-    }).catch(function (erro){
-        console.log(erro)
-    });
-    });
-  }
+  
 
 
 }

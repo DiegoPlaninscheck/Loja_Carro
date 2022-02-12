@@ -5,6 +5,7 @@ import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import CheckLogged from './checkLogged.canActivate';
 
@@ -54,6 +55,7 @@ export function getAuthServiceConfigs() {
     RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     SocialLoginModule,
     CarrinhoModule
   ],

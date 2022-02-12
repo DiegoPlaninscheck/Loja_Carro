@@ -1,23 +1,40 @@
-<div class="navbar">
-    <div class="logo">
-        <img src="./assets/logo.png" style="width: 100px;">
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <img src="./assets/logo.png" style="width: 100px;">
+        </div>
+
+        <div class="campo-pesquisa">
+            <i class="fi fi-rr-search"></i>
+
+            <input type="text" placeholder="Pesquisar">
+        </div>
+
+        <div class="div-icones">
+            <div class="icone">
+                <i class="fi fi-rr-home"></i>
+            </div>
+
+            <div class="icone">
+                <i class="fi fi-rr-user" (click)='logar()'></i>
+            </div>
+
+            <div class="icone">
+                <i class="fi fi-rr-shopping-cart" (click)="carrinho()"></i>
+            </div>
+
+            <div class="icone">
+                <i class="fi fi-rr-headset"></i>
+            </div>
+
+            <div class="icone">
+                <i class="fi fi-rr-menu-burger"></i>
+            </div>
+        </div>
     </div>
+</header>
 
-    <div class="campo-pesquisa">
-        <img src="./assets/search.png" style="width: 20px;">
-
-        <input type="text" placeholder="Pesquisar">
-    </div>
-
-    <div class="login">
-        <button (click)='logar()'>Login</button>
-    </div>
-
-    <div class="carrinho">
-        <img src="./assets/carrinho-de-compras.png" style='width: 30px;' (click)="carrinho()">
-    </div>
-</div>
-
+<main>
 <div class="containercarro">
     <div class="carro">
         a
@@ -101,3 +118,8 @@
         </div>
     </div>
 </div>
+</main>
+
+<footer>
+    
+</footer>

@@ -42,9 +42,10 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.usuarioService.buscarUsuarios()
-    .then(resultado => {
+    this.usuarioService.checarPessoa()
+    .then((resultado: (Object: (String))  => [])=> {
       console.log("RESULTADO:", resultado)
+      
       // this.user = resultado.user;
       // this.password = resultado.password;
     }).catch(erro => {
@@ -53,22 +54,18 @@ export class LoginComponent implements OnInit {
   }
 
   logar(){
-    // localStorage.setItem('USER', this.user);
-    // localStorage.setItem("PASSWORD", this.password)
-    // const users = [
-    //   {login: 'Diego', password: '123'},
-    //   {login: 'Planinscheck', password: '123'}
-    // ];
-
-    // const find = users.find(e => e.login == this.user && e.password == this.password);
-
-    // if (find) {
-    // localStorage.setItem('USER', this.user);
-    // this.router.navigate(['/loja']);
-    // } else {
-    // alert('Usuário não cadastrado!');
-    // }
-    // this.router.navigate(['']);
+    this.usuarioService.checarPessoa()
+    .then((resultado: User[])=> {
+      for(let i = 0; i < resultado.length; i++){
+        if(this.user === resultado[i].nome && this.password === resultado[i].senha){
+          this.router.navigate([''])
+        }
+      }
+      // this.user = resultado.user;
+      // this.password = resultado.password;
+    }).catch(erro => {
+      console.log("ERRO AO BUSCAR USUÁRIO:", erro)
+    })
   }
 
   voltar(){
@@ -76,3 +73,12 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
+interface User {
+
+  nome: string;
+  senha: string;
+
+}
+
+

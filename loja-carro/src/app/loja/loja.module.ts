@@ -4,17 +4,10 @@ import { GerenciarLojaComponent } from './gerenciar-loja/gerenciar-loja.componen
 import { ProdutoComponent } from './produto/produto.component';
 import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
-import { VerCarrinhoComponent } from '../carrinho/ver-carrinho/ver-carrinho.component';
 
 
 const routes: Routes = [
   {path: '', component: GerenciarLojaComponent, /* canActivate: [CheckLogged] */},
-  {
-    path: '',
-    children: [
-      {path: ':id', component: ProdutoComponent}
-    ]
-  }
 ];
 
 @NgModule({
