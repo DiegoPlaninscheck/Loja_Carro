@@ -9,16 +9,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class GerenciarLojaComponent implements OnInit {
 
   id = undefined;
-  user;
+  user: any;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router
-  ) {
-    
-  }
+  ) {}
 
   ngOnInit() {
+    this.display();
+  }
+
+  display(){
+    this.user = localStorage.getItem('USER')
   }
 
   logar(){

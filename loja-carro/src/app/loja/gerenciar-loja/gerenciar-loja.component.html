@@ -30,23 +30,23 @@
             <div class="icone">
                 <i class="fi fi-rr-menu-burger"></i>
             </div>
-            <div>Logado: {{user}}</div>
+            <div *ngIf="this.user">{{user}}</div>
         </div>
     </div>
 </header>
 
 <main>
-    <div class="containercarro">
-        <div class="carro">
+    <div class="containercarro ">
+        <div class="carro ">
             Carro 1
-            <div class="botao">
-                <button (click)="detalhes()">Detalhes</button>
+            <div class="botao ">
+                <button (click)="detalhes() ">Detalhes</button>
             </div>
         </div>
-        <div class="carro2">
+        <div class="carro2 ">
             Carro 2
-            <div class="botao">
-                <button (click)="detalhes()">Detalhes</button>
+            <div class="botao ">
+                <button (click)="detalhes() ">Detalhes</button>
             </div>
         </div>
     </div>
