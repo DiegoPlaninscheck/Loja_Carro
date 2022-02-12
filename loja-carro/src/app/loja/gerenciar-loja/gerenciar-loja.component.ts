@@ -9,11 +9,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class GerenciarLojaComponent implements OnInit {
 
   id = undefined;
+  user;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {
+    
+  }
 
   ngOnInit() {
   }

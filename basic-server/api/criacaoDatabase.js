@@ -48,18 +48,28 @@ database(`CREATE TABLE IF NOT EXISTS CLIENTE (
 
 // database(`INSERT INTO PESSOA VALUES 
 // (null, 'Diego', '123', 'Planinscheck', null, 'dieguinhodobarulho@hotmail.com'),
-// (null, 'João', '321', 'Meireles', null, 'joaozinhogameplays@gmail.com.br')`)
+// (null, 'João', '321', 'Meireles', null, 'joaozinhogameplays@gmail.com.br'),
+// (null, 'Camilly', 'camis', 'Pessotti', null, 'camillyzada@gmail.com'),
+// (null, 'Bruna', 'brunas', 'Mafra', null, 'bruninha@gmail.com'),
+// (null, 'Henrique', 'henri', 'Cole', null, 'henricole@gmail.com'),
+// (null, 'Vinicius', 'vini12', 'Bonatti', null, 'vinibonatti@gmail.com'),
+// (null, 'Leonardo', 'leo', 'Rafaelli', null, 'leorafaelli@gmail.com'),
+// (null, 'Thiago', 'thiagao12', 'Braga', null, 'thiagobraga@gmail.com'),
+// (null, 'Romário', 'romas', 'Hornburg', null, 'romasdeus@gmail.com'),
+// (null, 'Gustavo', 'gusta', 'Rebelatto', null, 'gustarebelatto@gmail.com')`)
 //     .then(result => {
 //         console.log('Dados cadastrados');
 //     }).catch(erro => {
 //         console.log('Dados não cadastrados');
 //     });
 
-database(`CREATE TABLE IF NOT EXISTS USER (
-    NOME varchar(30),
-    NICKNAME varchar(30),
-    PASSWORD varchar(30)
-    )`).then(result => {
+database(`
+        CREATE TABLE IF NOT EXISTS USER(
+            NOME varchar(30),
+            NICKNAME varchar(30),
+            PASSWORD varchar(30)
+        )
+        `).then(result => {
     console.log('Tabela USER criada com sucesso');
 }).catch(erro => {
     console.log('Tabela USER com erro de criação');

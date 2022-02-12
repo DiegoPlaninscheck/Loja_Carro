@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     private route:  ActivatedRoute,
     private socialAuthService: AuthService,
     private usuarioService: UsuarioService
-    ) { }
+    ) {}
 
 
     public socialSignIn(socialPlatform : string) {
@@ -58,6 +58,7 @@ export class LoginComponent implements OnInit {
       for(let i = 0; i < resultado.length; i++){
         if(this.user === resultado[i].nome && this.password === resultado[i].senha){
           this.router.navigate([''])
+      console.log(this.user)
         }
       }
       // this.user = resultado.user;
