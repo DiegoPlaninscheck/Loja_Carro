@@ -23,7 +23,7 @@ export class GerenciarLojaComponent implements OnInit {
   display(){
     this.user = localStorage.getItem('USER')
   }
-
+  
   logar(){
     this.router.navigate(['/login'])
   }
