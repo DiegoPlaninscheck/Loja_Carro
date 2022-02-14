@@ -70,46 +70,11 @@
     align-items: center;
 }
 
-.botao {
-    padding: 5px;
-    width: 20vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.botao button {
-    padding: 5px;
-    width: 65%;
-    border: none;
-    outline: none;
-    background-color: #C21010;
-}
-
-.botao:hover button {
-    padding: 5px;
-    width: 65%;
-    border: none;
-    outline: none;
-    background-color: #C21010;
-    cursor: pointer;
-}
-
-
-/* .carro {
-    width: 50%;
+.carro {
+    width: 10%;
     height: 80%;
     border-radius: 35px;
     border: solid black 1px;
     border: none;
     background-color: white;
 }
-
-.carro2 {
-    width: 50%;
-    height: 80%;
-    border: solid black 1px;
-    border: none;
-    border-radius: 35px;
-    background-color: white;
-} */

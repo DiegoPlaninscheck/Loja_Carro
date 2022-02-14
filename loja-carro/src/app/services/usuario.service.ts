@@ -21,6 +21,19 @@ export class UsuarioService {
     })
   }
 
+  checarCarro(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/checar_carro', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+
   
 
 

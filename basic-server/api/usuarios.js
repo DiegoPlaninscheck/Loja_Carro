@@ -115,7 +115,34 @@ inserirRota('/checar_pessoa', function(dados, resposta) {
                 list.push(newList);
             }
             console.log(list)
-            resposta( list )
+            resposta(list)
+        }).catch(erro => {
+            console.log('DEU RUIM', erro)
+            resposta({ erro })
+        })
+})
+
+
+inserirRota('/checar_carro', function(dados, resposta) {
+    database(`SELECT * FROM CARRO`)
+        .then(result => {
+            let list = [];
+            for (i = 0; i < result.length; i++) {
+                let nome = result[i].NOME;
+                let marca = result[i].MARCA;
+                let modelo = result[i].MODELO;
+                let valor = result[i].VALOR;
+
+                newList = {
+                    nome: nome,
+                    marca: marca,
+                    modelo: modelo,
+                    valor: valor
+                }
+                list.push(newList);
+            }
+            console.log(list)
+            resposta(list)
         }).catch(erro => {
             console.log('DEU RUIM', erro)
             resposta({ erro })

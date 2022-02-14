@@ -37,17 +37,8 @@
 
 <main>
     <div class="containercarro ">
-        <div class="carro ">
-            Carro 1
-            <div class="botao ">
-                <button (click)="detalhes() ">Detalhes</button>
-            </div>
-        </div>
-        <div class="carro2 ">
-            Carro 2
-            <div class="botao ">
-                <button (click)="detalhes() ">Detalhes</button>
-            </div>
+        <div *ngFor='let a of list' class="carro">
+            Nome: {{a.nome}} Marca: {{a.marca}} Modelo: {{a.modelo}} Valor: R${{a.valor}}
         </div>
     </div>
 </main>
