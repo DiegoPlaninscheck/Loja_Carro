@@ -62,19 +62,24 @@
     cursor: pointer;
 }
 
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .containercarro {
-    width: 100%;
-    height: 50vh;
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .carro {
-    width: 10%;
-    height: 80%;
-    border-radius: 35px;
+    padding: 5px;
+    display: display;
+    justify-content: center;
+    align-items: center;
     border: solid black 1px;
-    border: none;
-    background-color: white;
+    background-color: burlywood;
 }

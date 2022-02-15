@@ -17,12 +17,7 @@ export class GerenciarLojaComponent implements OnInit {
 
   user: any;
 
-  list = [
-    {nome: this.nome},
-    {marca: this.marca},
-    {modelo: this.modelo},
-    {valor: this.valor}
-  ]
+  list = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -44,16 +39,16 @@ export class GerenciarLojaComponent implements OnInit {
           this.marca = resultado[i].marca;
           this.modelo = resultado[i].modelo;
           this.valor = resultado[i].valor;
-
-          let a = {
-            nome: resultado[i].nome,
-            marca: resultado[i].marca,
-            modelo: resultado[i].modelo,
-            valor: resultado[i].valor
-          }
-          this.list.push(a)
         }
+        let a = {
+          nome: resultado[i].nome,
+          marca: resultado[i].marca,
+          modelo: resultado[i].modelo,
+          valor: resultado[i].valor
+        }
+        this.list.push(a)
       }
+
     }).catch(erro => {
       console.log("ERRO AO BUSCAR CARRO:", erro)
     })

@@ -1,6 +1,6 @@
 inserirRota('/teste_busca_pessoa', (dados, resposta) => {
     console.log(dados);
-    database('SELECT * FROM PESSOA').then(result => {
+    database('SELECT * FROM CARRO').then(result => {
         resposta({ resposta: result });
     }).catch(erro => {
         resposta({ resposta: erro });

@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit() {
+    this.tirar();
     this.usuarioService.checarPessoa()
     .then((resultado: (Object: (String))  => [])=> {
       console.log("RESULTADO:", resultado)
@@ -67,6 +68,10 @@ export class LoginComponent implements OnInit {
     }).catch(erro => {
       console.log("ERRO AO BUSCAR USUÁRIO:", erro)
     })
+  }
+
+  tirar(){
+    localStorage.removeItem('USER')
   }
 
   voltar(){

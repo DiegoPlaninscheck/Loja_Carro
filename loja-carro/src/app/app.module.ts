@@ -28,7 +28,7 @@ const routes: Routes = [
     ]
   },
   {path: 'login', component: LoginComponent, canActivate: []},
-  {path: 'carrinho', component: VerCarrinhoComponent, canActivate: []}
+  {path: 'carrinho', component: VerCarrinhoComponent, canActivate: [CheckLogged]}
 ];
 
 
