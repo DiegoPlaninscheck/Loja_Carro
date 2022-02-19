@@ -25,9 +25,9 @@ class CheckLogged implements CanActivate{
             if(user && password){
                 localStorage.removeItem('USER');
                 localStorage.removeItem('PASSWORD')
-            }
+            }   
 
-            if(user && password){
+            if(user || password){
                 console.log(user)
                 return true;
             }else{

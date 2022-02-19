@@ -1,49 +1,48 @@
 <header>
-  <div class="navbar">
-    <div class="logo">
-      <img src="./assets/logo.png" style="width: 100px" />
+    <div class="navbar">
+        <div class="logo">
+            <img src="./assets/logo.png" style="width: 100px" />
+        </div>
+
+        <div class="campo-pesquisa">
+            <i class="fi fi-rr-search"></i>
+
+            <input type="text" placeholder="Pesquisar" />
+        </div>
+
+        <div class="div-icones">
+            <div class="icone">
+                <i class="fi fi-rr-home"></i>
+            </div>
+
+            <div>{{ user }}</div>
+
+            <div class="icone">
+                <i class="fi fi-rr-user" (click)="logar()"></i>
+            </div>
+
+            <div class="icone">
+                <i class="fi fi-rr-shopping-cart" (click)="carrinho()"></i>
+            </div>
+
+            <div class="icone">
+                <i class="fi fi-rr-headset"></i>
+            </div>
+
+            <div class="icone">
+                <i class="fi fi-rr-menu-burger"></i>
+            </div>
+        </div>
     </div>
-
-    <div class="campo-pesquisa">
-      <i class="fi fi-rr-search"></i>
-
-      <input type="text" placeholder="Pesquisar" />
-    </div>
-
-    <div class="div-icones">
-      <div class="icone">
-        <i class="fi fi-rr-home"></i>
-      </div>
-
-      <div>{{ user }}</div>
-
-      <div class="icone">
-        <i class="fi fi-rr-user" (click)="logar()"></i>
-      </div>
-
-      <div class="icone">
-        <i class="fi fi-rr-shopping-cart" (click)="carrinho()"></i>
-      </div>
-
-      <div class="icone">
-        <i class="fi fi-rr-headset"></i>
-      </div>
-
-      <div class="icone">
-        <i class="fi fi-rr-menu-burger"></i>
-      </div>
-    </div>
-  </div>
 </header>
 
 <main>
-  <div class="containercarro">
-    <div *ngFor="let a of list" class="carro">
-      Nome: {{ a.nome }} Marca: {{ a.marca }} Modelo: {{ a.modelo }} Valor: R${{
-        a.valor
-      }}
+    <div class="containercarro">
+        <div *ngFor="let a of list" class="carro">
+            Nome: {{ a.nome }} Marca: {{ a.marca }} Modelo: {{ a.modelo }} Valor: R${{ a.valor }}
+            <img width="80px" src="../../../assets/1792082_49-jr2_7338-696x464-1.jpg">
+        </div>
     </div>
-  </div>
 </main>
 
 <footer></footer>
