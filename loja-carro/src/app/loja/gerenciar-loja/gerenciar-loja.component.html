@@ -38,11 +38,14 @@
 
 <main>
     <div class="containercarro">
-        <div *ngFor="let a of list" class="carro">
-            Nome: {{ a.nome }} Marca: {{ a.marca }} Modelo: {{ a.modelo }} Valor: R${{ a.valor }}
-            <img width="80px" src="../../../assets/1792082_49-jr2_7338-696x464-1.jpg">
+        <div *ngFor="let a of list" class="carro">Nome: {{ a.nome }}
+            <div class="info">Marca: {{ a.marca }}</div>
+            <div class="info">Modelo: {{ a.modelo }}</div>
+            <div class="info">Valor: R${{ a.valor }}</div>
         </div>
+
+
     </div>
 </main>
 
-<footer></footer>
+<!-- <footer><img width="80px" src="../../../assets/1792082_49-jr2_7338-696x464-1.jpg"></footer> -->
