@@ -38,13 +38,13 @@
 
 <main>
     <div class="containercarro">
-        <div *ngFor="let a of list" class="carro">Nome: {{ a.nome }}
-            <div class="info">Marca: {{ a.marca }}</div>
-            <div class="info">Modelo: {{ a.modelo }}</div>
-            <div class="info">Valor: R${{ a.valor }}</div>
+        <div *ngFor="let a of list, let i = index" class="carro">
+            <div class="info">Nome: {{ a.nome }} Marca: {{ a.marca }} Modelo: {{ a.modelo }} Valor: R${{ a.valor }}
+                <div *ngIf="list[0].nome == nome"><img src="../../../assets/1792082_49-jr2_7338-696x464-1.jpg" width="500px"></div>
+                <!-- <div *ngIf="list[i].nome == nome"><img src="../../../assets/2020-08-06-46b4943d-32fe-4f7f-b9a5-6f83fc04920c.jpeg" width="500px"></div>
+                <div *ngIf="list[i].nome == nome"><img src="../../../assets/fa6dfa19d6fbd4d461a52623479e5a4d-thumbjpg-volkswagen-jetta-8467707-900-675-70.jpg" width="500px"></div> -->
+            </div>
         </div>
-
-
     </div>
 </main>
 

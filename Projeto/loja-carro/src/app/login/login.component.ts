@@ -63,6 +63,35 @@ export class LoginComponent implements OnInit {
         for (let i = 0; i < resultado.length; i++) {
           if (this.user === resultado[i].nome && this.password === resultado[i].senha) {
             localStorage.setItem('USER', this.user)
+            this.router.navigate([''])
+            let timerInterval
+            Swal.fire({
+              title: 'Logando...',
+              html: 'Redirecionado em <b></b> milissegundos.',
+              timer: 500,
+              timerProgressBar: true,
+              didOpen: () => {
+                Swal.showLoading()
+                const b = Swal.getHtmlContainer().querySelector('b')
+                timerInterval = setInterval(() => {
+                  b.textContent = Swal.getTimerLeft()
+                }, 100)
+              },
+              willClose: () => {
+                clearInterval(timerInterval)
+              }
+            }).then((result) => {
+
+              if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('I was closed by the timer')
+              }
+            })
+            return true;
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Login Inválido'
+            })
           }
         }
         // this.user = resultado.user;
@@ -71,28 +100,6 @@ export class LoginComponent implements OnInit {
         console.log("ERRO AO BUSCAR USUÁRIO:", erro)
       })
 
-    let timerInterval
-    Swal.fire({
-      title: 'Auto close alert!',
-      html: 'I will close in <b></b> milliseconds.',
-      timer: 1000,
-      timerProgressBar: true,
-      didOpen: () => {
-        Swal.showLoading()
-        const b = Swal.getHtmlContainer().querySelector('b')
-        timerInterval = setInterval(() => {
-          b.textContent = Swal.getTimerLeft()
-        }, 100)
-      },
-      willClose: () => {
-        clearInterval(timerInterval)
-      }
-    }).then((result) => {
-      this.router.navigate([''])
-      if (result.dismiss === Swal.DismissReason.timer) {
-        console.log('I was closed by the timer')
-      }
-    })
   }
 
   tirar() {

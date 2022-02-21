@@ -13,9 +13,9 @@ database(`CREATE TABLE IF NOT EXISTS CARRO (
 
 
 // database(`INSERT INTO CARRO VALUES
-// (null, 'UP', 'BRA2E19', 'Volkswagem', '170 tsi', 70000),
-// (null, 'TCROSS', 'BRA2E20', 'Volkswagem', '200 tsi', 180000),
-// (null, 'JETTA', 'BRA2E21', 'Volkswagem', '350 tsi', 220000),
+// (null, 'Up', 'BRA2E19', 'Volkswagem', '170 tsi', 70000),
+// (null, 'Tcross', 'BRA2E20', 'Volkswagem', '200 tsi', 180000),
+// (null, 'Jetta', 'BRA2E21', 'Volkswagem', '350 tsi', 220000),
 // (null, 'R8', 'BRA2E22', 'AUDI', 'R8', 750000),
 // (null, 'X1', 'BRA2E23', 'BMW', 'X1', 250000),
 // (null, 'Equinox', 'BRA2E24', 'Chevrolet', 'Premier', 220000),
@@ -119,14 +119,41 @@ database(`CREATE TABLE IF NOT EXISTS CLIENTE (
 //         console.log('Dados não cadastrados');
 //     });
 
-database(`
-        CREATE TABLE IF NOT EXISTS USER(
-            NOME varchar(30),
-            NICKNAME varchar(30),
-            PASSWORD varchar(30)
-        )
-        `).then(result => {
+// database(`
+//         CREATE TABLE IF NOT EXISTS USER(
+//             NOME varchar(30),
+//             NICKNAME varchar(30),
+//             PASSWORD varchar(30)
+//         )
+//         `).then(result => {
+//     console.log('Tabela USER criada com sucesso');
+// }).catch(erro => {
+//     console.log('Tabela USER com erro de criação');
+// });
+
+
+database(`CREATE TABLE IF NOT EXISTS ENDERECO(
+        CODIGO INT NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,  
+        PAIS VARCHAR(45) NOT NULL,
+        ESTADO VARCHAR(45) NOT NULL,
+        CIDADE VARCHAR (45) NOT NULL,
+        CEP VARCHAR(45) NOT NULL)`).then(result => {
     console.log('Tabela USER criada com sucesso');
 }).catch(erro => {
     console.log('Tabela USER com erro de criação');
 });
+
+
+// database(`
+//         CREATE TABLE IF NOT EXISTS FORNECEDOR(
+//             NOME varchar(45) NOT NULL,
+//             EMAIL varchar(100) NOT NULL,
+//             CODIGO_ENDERECO INT NOT NULL,
+//             FOREIGN KEY(CODIGO_ENDERECO)
+//             REFERENCES CODIGO(ENDERECO)
+//         )
+//         `).then(result => {
+//     console.log('Tabela USER criada com sucesso');
+// }).catch(erro => {
+//     console.log('Tabela USER com erro de criação');
+// });

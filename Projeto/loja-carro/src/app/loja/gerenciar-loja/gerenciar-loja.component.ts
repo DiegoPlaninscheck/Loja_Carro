@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { a } from '@angular/core/src/render3';
 import { ActivatedRoute, Router } from '@angular/router';
 import { listenerCount } from 'stream';
 import { UsuarioService } from '../../services/usuario.service';
@@ -19,45 +20,47 @@ export class GerenciarLojaComponent implements OnInit {
 
   list = [];
 
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private usuarioService: UsuarioService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.display();
 
     this.usuarioService.checarCarro()
-    .then((resultado: (Object: (String)) => []) =>{
-      console.log("RESULTADO:", resultado)
-      
-      for(let i = 0; i < resultado.length; i++){
-        if(resultado[i].nome && resultado[i].marca &&
-          resultado[i].modelo && resultado[i].valor){
-          this.nome = resultado[i].nome;
-          this.marca = resultado[i].marca;
-          this.modelo = resultado[i].modelo;
-          this.valor = resultado[i].valor;
-        }
-        let a = {
-          nome: resultado[i].nome,
-          marca: resultado[i].marca,
-          modelo: resultado[i].modelo,
-          valor: resultado[i].valor
-        }
-        this.list.push(a)
-      }
+      .then((resultado: (Object: (String)) => []) => {
+        console.log("RESULTADO:", resultado)
 
-    }).catch(erro => {
-      console.log("ERRO AO BUSCAR CARRO:", erro)
-    })
+        for (let i = 0; i < resultado.length; i++) {
+          if (resultado[i].nome && resultado[i].marca &&
+            resultado[i].modelo && resultado[i].valor) {
+            this.nome = resultado[i].nome;
+          }
+          let a = {
+            nome: resultado[i].nome,
+            marca: resultado[i].marca,
+            modelo: resultado[i].modelo,
+            valor: resultado[i].valor
+          }
+          this.list.push(a)
 
-    
+          console.log(i)
+
+        }
+
+
+      }).catch(erro => {
+        console.log("ERRO AO BUSCAR CARRO:", erro)
+      })
+
+
   }
-  
 
-  display(){
+
+  display() {
     this.user = localStorage.getItem('USER')
   }
 
@@ -77,21 +80,21 @@ export class GerenciarLojaComponent implements OnInit {
   //     console.log("ERRO AO BUSCAR CARRO:", erro)
   //   })
   // }
-  
-  logar(){
+
+  logar() {
     this.router.navigate(['/login'])
   }
 
-  detalhes(){
+  detalhes() {
     this.router.navigate(['/produto'])
   }
 
-  carrinho(){
+  carrinho() {
     this.router.navigate(['/carrinho'])
   }
 }
 
-interface Car{
+interface Car {
   nome: string,
   marca: string,
   modelo: string,
