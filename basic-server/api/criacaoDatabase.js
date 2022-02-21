@@ -133,27 +133,23 @@ database(`CREATE TABLE IF NOT EXISTS CLIENTE (
 
 
 database(`CREATE TABLE IF NOT EXISTS ENDERECO(
-        CODIGO INT NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,  
+        CODIGO INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,  
         PAIS VARCHAR(45) NOT NULL,
         ESTADO VARCHAR(45) NOT NULL,
         CIDADE VARCHAR (45) NOT NULL,
         CEP VARCHAR(45) NOT NULL)`).then(result => {
-    console.log('Tabela USER criada com sucesso');
+    console.log('Tabela ENDERECO criada com sucesso');
 }).catch(erro => {
-    console.log('Tabela USER com erro de criação');
+    console.log('Tabela ENDERECO com erro de criação');
 });
 
-
-// database(`
-//         CREATE TABLE IF NOT EXISTS FORNECEDOR(
-//             NOME varchar(45) NOT NULL,
-//             EMAIL varchar(100) NOT NULL,
-//             CODIGO_ENDERECO INT NOT NULL,
-//             FOREIGN KEY(CODIGO_ENDERECO)
-//             REFERENCES CODIGO(ENDERECO)
-//         )
-//         `).then(result => {
-//     console.log('Tabela USER criada com sucesso');
-// }).catch(erro => {
-//     console.log('Tabela USER com erro de criação');
-// });
+database(`CREATE TABLE IF NOT EXISTS FORNECEDOR(
+    CODIGO INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, 
+            NOME varchar(45) NOT NULL,
+            EMAIL varchar(100) NOT NULL,
+            CODIGO_ENDERECO INTEGER NOT NULL,
+            FOREIGN KEY(CODIGO_ENDERECO) REFERENCES CODIGO(ENDERECO))`).then(result => {
+    console.log('Tabela FORNECEDOR criada com sucesso');
+}).catch(erro => {
+    console.log('Tabela FORNECEDOR com erro de criação');
+});
