@@ -39,7 +39,6 @@ export class GerenciarLojaComponent implements OnInit {
             resultado[i].modelo && resultado[i].valor) {
             this.nome = resultado[i].nome;
           }
-          
           let a = {
             nome: resultado[i].nome,
             marca: resultado[i].marca,
