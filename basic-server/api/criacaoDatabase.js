@@ -66,7 +66,10 @@ database(`CREATE TABLE IF NOT EXISTS PESSOA (
     SENHA varchar(10) not null UNIQUE,
     SOBRENOME varchar(30) not null, 
     NASCIMENTO date,
-    EMAIL varchar(50)
+    EMAIL varchar(50),
+    ENDERECO _CODIGO INTERGER NOT NULL,
+    FOREIGN KEY (ENDERECO_CODIGO)
+    REFERENCES ENDERECO(CODIGO)
     )`).then(result => {
     console.log('Tabela PESSOA criada com sucesso');
 }).catch(erro => {
@@ -94,8 +97,14 @@ database(`CREATE TABLE IF NOT EXISTS PESSOA (
 database(`CREATE TABLE IF NOT EXISTS CLIENTE (
     NUMERO INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
     ID_PESSOA INTEGER NOT NULL,
+    PRODUTO_NUMERO INTEGER NOT NULL,
+    PRODUTO_CARRO_ID INTEGER NOT NULL,
     FOREIGN KEY(ID_PESSOA)
-    REFERENCES PESSOA(ID)
+    REFERENCES PESSOA(ID),
+    FOREIGN KEY(PRODUTO_NUMERO)
+    REFERENCES PRODUTO(NUMERO),
+    FOREIGN KEY(PRODUTO_CARRO_ID) 
+    REFERENCES PRODUTO_ID_CARRO(ID)
     )`).then(result => {
     console.log('Tabela CLIENTE criada com sucesso');
 }).catch(erro => {
@@ -147,9 +156,26 @@ database(`CREATE TABLE IF NOT EXISTS FORNECEDOR(
     CODIGO INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, 
             NOME varchar(45) NOT NULL,
             EMAIL varchar(100) NOT NULL,
-            CODIGO_ENDERECO INTEGER NOT NULL,
-            FOREIGN KEY(CODIGO_ENDERECO) REFERENCES CODIGO(ENDERECO))`).then(result => {
+            ENDERECO_CODIGO INTEGER NOT NULL,
+            PRODUTO_NUMERO INTEGER NOT NULL,
+            PRODUTO_CARRO_ID INTEGER NOT NULL,
+            FOREIGN KEY(ENDERECO_CODIGO) REFERENCES CODIGO(ENDERECO),
+            FOREIGN KEY(PRODUTO_NUMERO) REFERENCES PRODUTO(CODIGO),
+            FOREIGN KEY(PRODUTO_CARRO_ID) REFERENCES PRODUTO_CARRO_ID(ID))`).then(result => {
     console.log('Tabela FORNECEDOR criada com sucesso');
 }).catch(erro => {
     console.log('Tabela FORNECEDOR com erro de criação');
+});
+
+database(`CREATE TABLE IF NOT EXISTS ESTOQUE(
+            ID INTEGER NOT NULL PRIMARY KEY,
+            PRODUTO_NUMERO INTEGER NOT NULL,
+            PRODUTO_CARRO_ID INTEGER NOT NULL,
+            FOREIGN KEY(PRODUTO_NUMERO)
+            REFERENCES PRODUTO(NUMERO),
+            FOREIGN KEY(PRODUTO_CARRO)
+            REFERENCES PRODUTO_CARRO_ID(ID))`).then(result => {
+    console.log('Tabela ESTOQUE criada com sucesso');
+}).catch(erro => {
+    console.log('Tabela ESTOQUE com erro de criação');
 });

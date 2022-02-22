@@ -94,6 +94,7 @@ export class LoginComponent implements OnInit {
             })
           }
         }
+        
         // this.user = resultado.user;
         // this.password = resultado.password;
       }).catch(erro => {

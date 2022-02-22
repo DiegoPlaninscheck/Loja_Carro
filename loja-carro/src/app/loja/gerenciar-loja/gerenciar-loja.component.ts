@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { a } from '@angular/core/src/render3';
 import { ActivatedRoute, Router } from '@angular/router';
-import { listenerCount } from 'stream';
 import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
