@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from '../../services/usuario.service';
 
+
 @Component({
   selector: 'app-gerenciar-loja',
   templateUrl: './gerenciar-loja.component.html',
@@ -89,6 +90,10 @@ export class GerenciarLojaComponent implements OnInit {
 
   carrinho() {
     this.router.navigate(['/carrinho'])
+  }
+
+  suporte() {
+    this.router.navigate(['/suporte'])
   }
 }
 

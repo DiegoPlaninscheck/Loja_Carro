@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@angular/cli": "^6.2.9",
-    "g": "^2.0.1"
+    "angular-sidebar-menu": "^1.5.0",
+    "g": "^2.0.1",
+    "ng-sidebar": "^9.4.3"
   }
 }

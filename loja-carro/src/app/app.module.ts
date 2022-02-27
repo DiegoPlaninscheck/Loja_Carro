@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import {SidebarModule} from 'ng-sidebar';
+
 import CheckLogged from './checkLogged.canActivate';
 
 import {
@@ -18,6 +20,7 @@ import { ProdutoComponent } from './loja/produto/produto.component';
 import { GerenciarLojaComponent } from './loja/gerenciar-loja/gerenciar-loja.component';
 import { VerCarrinhoComponent } from './carrinho/ver-carrinho/ver-carrinho.component';
 import { CarrinhoModule } from './carrinho/carrinho.module';
+import { SuporteComponent } from './suporte/suporte.component';
 
 const routes: Routes = [
   {path: '', component: GerenciarLojaComponent,  canActivate: [] },
@@ -28,7 +31,8 @@ const routes: Routes = [
     ]
   },
   {path: 'login', component: LoginComponent, canActivate: []},
-  {path: 'carrinho', component: VerCarrinhoComponent, canActivate: [CheckLogged]}
+  {path: 'carrinho', component: VerCarrinhoComponent, canActivate: [CheckLogged]},
+  {path: 'suporte', component: SuporteComponent, canActivate: []}
 ];
 
 
@@ -49,7 +53,8 @@ export function getAuthServiceConfigs() {
     AppComponent,
     LoginComponent,
     ProdutoComponent,
-    GerenciarLojaComponent
+    GerenciarLojaComponent,
+    SuporteComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -57,7 +62,8 @@ export function getAuthServiceConfigs() {
     FormsModule,
     ReactiveFormsModule,
     SocialLoginModule,
-    CarrinhoModule
+    CarrinhoModule,
+    SidebarModule.forRoot()
   ],
   providers: [
     {
