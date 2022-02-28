@@ -95,6 +95,11 @@ export class GerenciarLojaComponent implements OnInit {
   suporte() {
     this.router.navigate(['/suporte'])
   }
+
+  fornecedor() {
+    this.router.navigate(['/fornecedor'])
+  }
+
 }
 
 interface Car {

@@ -21,6 +21,7 @@ import { GerenciarLojaComponent } from './loja/gerenciar-loja/gerenciar-loja.com
 import { VerCarrinhoComponent } from './carrinho/ver-carrinho/ver-carrinho.component';
 import { CarrinhoModule } from './carrinho/carrinho.module';
 import { SuporteComponent } from './suporte/suporte.component';
+import { FornecedorComponent } from './fornecedor/fornecedor.component';
 
 const routes: Routes = [
   {path: '', component: GerenciarLojaComponent,  canActivate: [] },
@@ -32,7 +33,8 @@ const routes: Routes = [
   },
   {path: 'login', component: LoginComponent, canActivate: []},
   {path: 'carrinho', component: VerCarrinhoComponent, canActivate: [CheckLogged]},
-  {path: 'suporte', component: SuporteComponent, canActivate: []}
+  {path: 'suporte', component: SuporteComponent, canActivate: []},
+  {path: 'fornecedor', component: FornecedorComponent, canActivate: []}
 ];
 
 
@@ -54,7 +56,8 @@ export function getAuthServiceConfigs() {
     LoginComponent,
     ProdutoComponent,
     GerenciarLojaComponent,
-    SuporteComponent
+    SuporteComponent,
+    FornecedorComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

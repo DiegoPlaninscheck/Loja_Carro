@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: solid 1px #C21010;
+    background-color: black;
+}
+
+.campo-pesquisa {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    border-radius: 10px;
+    background-color: #dcdcdc;
+}
+
+.campo-pesquisa input {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+.campo-pesquisa i {
+    padding: 5px;
+    color: #C21010;
+    font-size: 20px;
+}
+
+.div-icones {
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.button {
+    width: 100%;
+    height: 100%;
+    font-family: 'Nunito', sans-serif;
+    color: #313133;
+    background: #ff0000;
+    background: linear-gradient(90deg, #ff4040 0%, black 100%);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 3px 6px 24px #ff0000;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
+.container div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cadastro{
+    width: 100%;
+    height: 40%;
+    
+}
+
+.cadastro div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagamento{
+    width: 100%;
+    height: 40%;
+}
+
+.pagamento div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border: none;
+    border-radius: 35px;
+    background-color: dodgerblue;
+}
