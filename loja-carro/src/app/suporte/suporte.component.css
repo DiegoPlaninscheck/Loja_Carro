@@ -43,6 +43,26 @@
     align-items: center;
 }
 
+.icone {
+    padding: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    color: #C21010;
+}
+
+.icone i {
+    padding: 5px;
+    color: #C21010;
+    font-size: 20px;
+}
+
+.icone i:hover {
+    color: blueviolet;
+    cursor: pointer;
+}
+
 
 .button {
     width: 100%;
@@ -109,4 +129,8 @@ button{
     border: none;
     border-radius: 35px;
     background-color: dodgerblue;
+}
+
+button:hover{
+    cursor: pointer;
 }

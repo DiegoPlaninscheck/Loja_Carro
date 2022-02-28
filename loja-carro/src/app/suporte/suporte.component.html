@@ -1,35 +1,51 @@
 <header>
   <div class="navbar">
     <div class="logo">
-        <img src="./assets/logo.png" style="width: 100px" />
+      <img src="./assets/logo.png" style="width: 100px" />
     </div>
 
     <div class="campo-pesquisa">
-        <i class="fi fi-rr-search"></i>
+      <i class="fi fi-rr-search"></i>
 
-        <input type="text" placeholder="Pesquisar" />
+      <input type="text" placeholder="Pesquisar" />
     </div>
 
     <div>
       <button class="button" (click)="voltar()">Voltar</button>
     </div>
-</div>
+  </div>
 </header>
 
 
 <main class="main">
   <div class="container">
     <div class="cadastro">
-      <button (click)="cadastrar()">Cadastro</button> 
+      <button (click)="cadastrar()">
+        <div class="icone">
+          <i class="fi fi-rr-user"></i>
+        </div>
+      </button>
       <div>
-      <button (click)="comprar()">Comprar</button> 
+        <button (click)="comprar()">
+          <div class="icone">
+            <i class="fi fi-rr-home"></i>
+          </div>
+        </button>
       </div>
     </div>
-    
+
     <div class="pagamento">
-      <button (click)="pagamento()">Pagamento</button> 
+      <button (click)="pagamento()">
+        <div class="icone">
+          <i class="fi fi-rr-shopping-cart"></i>
+        </div>
+      </button>
       <div>
-        <button (click)="parceria()">Parcerias</button> 
+        <button (click)="parceria()">
+          <div class="icone">
+            <i class="fi fi-rr-phone-call"></i>
+          </div>
+        </button>
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { url } from 'inspector';
 import { UsuarioService } from '../../services/usuario.service';
 
 
@@ -18,7 +19,6 @@ export class GerenciarLojaComponent implements OnInit {
   user: any;
 
   list = [];
-
 
   constructor(
     private route: ActivatedRoute,

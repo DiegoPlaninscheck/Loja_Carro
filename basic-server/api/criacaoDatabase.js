@@ -4,7 +4,8 @@ database(`CREATE TABLE IF NOT EXISTS CARRO (
     PLACA char(7) not null UNIQUE,
     MARCA varchar(30) not null,
     MODELO varchar(30) not null UNIQUE,
-    VALOR float not null 
+    VALOR float not null,
+    IMAGEM varchar(30) not null 
     )`).then(result => {
     console.log('Tabela CARRO criada com sucesso');
 }).catch(erro => {
@@ -13,16 +14,16 @@ database(`CREATE TABLE IF NOT EXISTS CARRO (
 
 
 // database(`INSERT INTO CARRO VALUES
-// (null, 'Up', 'BRA2E19', 'Volkswagem', '170 tsi', 70000),
-// (null, 'Tcross', 'BRA2E20', 'Volkswagem', '200 tsi', 180000),
-// (null, 'Jetta', 'BRA2E21', 'Volkswagem', '350 tsi', 220000),
-// (null, 'R8', 'BRA2E22', 'AUDI', 'R8', 750000),
-// (null, 'X1', 'BRA2E23', 'BMW', 'X1', 250000),
-// (null, 'Equinox', 'BRA2E24', 'Chevrolet', 'Premier', 220000),
-// (null, 'Mustang', 'BRA2E25', 'Ford', 'Shelby GT500', 1600000),
-// (null, 'Civic', 'BRA2E26', 'Honda', 'Touring', 180000),
-// (null, 'Compass', 'BRA2E27', 'JEEP', 'Limited', 200000),
-// (null, 'GTR Skyline', 'BRA2E28', 'Nissan', 'R35', 800000)`)
+// (null, 'Up', 'BRA2E19', 'Volkswagem', '170 tsi', 70000, 'upImg'),
+// (null, 'Tcross', 'BRA2E20', 'Volkswagem', '200 tsi', 180000 , 'tcrossImg'),
+// (null, 'Jetta', 'BRA2E21', 'Volkswagem', '350 tsi', 220000, 'jettaImg'),
+// (null, 'R8', 'BRA2E22', 'AUDI', 'R8', 750000, 'r8Img'),
+// (null, 'X1', 'BRA2E23', 'BMW', 'X1', 250000, 'x1Img'),
+// (null, 'Equinox', 'BRA2E24', 'Chevrolet', 'Premier', 220000, 'equinoxImg'),
+// (null, 'Mustang', 'BRA2E25', 'Ford', 'Shelby GT500', 1600000, 'mustangImg'),
+// (null, 'Civic', 'BRA2E26', 'Honda', 'Touring', 180000, 'civicImg'),
+// (null, 'Compass', 'BRA2E27', 'JEEP', 'Limited', 200000, 'compassImg'),
+// (null, 'GTR Skyline', 'BRA2E28', 'Nissan', 'R35', 800000, 'r35Img')`)
 //     .then(result => {
 //         console.log('Dados cadastrados');
 //     }).catch(erro => {
@@ -60,6 +61,18 @@ database(`CREATE TABLE IF NOT EXISTS PRODUTO (
 //     });
 
 
+database(`CREATE TABLE IF NOT EXISTS ENDERECO(
+    CODIGO INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,  
+    PAIS VARCHAR(45) NOT NULL,
+    ESTADO VARCHAR(45) NOT NULL,
+    CIDADE VARCHAR (45) NOT NULL,
+    CEP VARCHAR(45) NOT NULL)`).then(result => {
+console.log('Tabela ENDERECO criada com sucesso');
+}).catch(erro => {
+console.log('Tabela ENDERECO com erro de criação');
+});
+
+
 database(`CREATE TABLE IF NOT EXISTS PESSOA (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
     NOME varchar(30) not null UNIQUE,
@@ -67,7 +80,7 @@ database(`CREATE TABLE IF NOT EXISTS PESSOA (
     SOBRENOME varchar(30) not null, 
     NASCIMENTO date,
     EMAIL varchar(50),
-    ENDERECO _CODIGO INTERGER NOT NULL,
+    ENDERECO_CODIGO INTERGER NOT NULL,
     FOREIGN KEY (ENDERECO_CODIGO)
     REFERENCES ENDERECO(CODIGO)
     )`).then(result => {
@@ -141,16 +154,7 @@ database(`CREATE TABLE IF NOT EXISTS CLIENTE (
 // });
 
 
-database(`CREATE TABLE IF NOT EXISTS ENDERECO(
-        CODIGO INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,  
-        PAIS VARCHAR(45) NOT NULL,
-        ESTADO VARCHAR(45) NOT NULL,
-        CIDADE VARCHAR (45) NOT NULL,
-        CEP VARCHAR(45) NOT NULL)`).then(result => {
-    console.log('Tabela ENDERECO criada com sucesso');
-}).catch(erro => {
-    console.log('Tabela ENDERECO com erro de criação');
-});
+
 
 database(`CREATE TABLE IF NOT EXISTS FORNECEDOR(
     CODIGO INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, 
@@ -173,8 +177,8 @@ database(`CREATE TABLE IF NOT EXISTS ESTOQUE(
             PRODUTO_CARRO_ID INTEGER NOT NULL,
             FOREIGN KEY(PRODUTO_NUMERO)
             REFERENCES PRODUTO(NUMERO),
-            FOREIGN KEY(PRODUTO_CARRO)
-            REFERENCES PRODUTO_CARRO_ID(ID))`).then(result => {
+            FOREIGN KEY(PRODUTO_CARRO_ID)
+            REFERENCES PRODUTO(ID_CARRO))`).then(result => {
     console.log('Tabela ESTOQUE criada com sucesso');
 }).catch(erro => {
     console.log('Tabela ESTOQUE com erro de criação');
