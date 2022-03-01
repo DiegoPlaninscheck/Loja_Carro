@@ -80,6 +80,10 @@ export class GerenciarLojaComponent implements OnInit {
   //   })
   // }
 
+  home(){
+    this.router.navigate([''])
+  }
+
   logar() {
     this.router.navigate(['/login'])
   }

@@ -25,12 +25,7 @@ import { FornecedorComponent } from './fornecedor/fornecedor.component';
 
 const routes: Routes = [
   {path: '', component: GerenciarLojaComponent,  canActivate: [] },
-  {
-    path: 'produto',
-    children: [
-      {path: 'produto', component: ProdutoComponent, canActivate: []}
-    ]
-  },
+  {path: 'produto', component: ProdutoComponent, canActivate: []},
   {path: 'login', component: LoginComponent, canActivate: []},
   {path: 'carrinho', component: VerCarrinhoComponent, canActivate: [CheckLogged]},
   {path: 'suporte', component: SuporteComponent, canActivate: []},
