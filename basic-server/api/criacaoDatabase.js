@@ -66,11 +66,29 @@ database(`CREATE TABLE IF NOT EXISTS ENDERECO(
     PAIS VARCHAR(45) NOT NULL,
     ESTADO VARCHAR(45) NOT NULL,
     CIDADE VARCHAR (45) NOT NULL,
-    CEP VARCHAR(45) NOT NULL)`).then(result => {
+    CEP CHAR(8) NOT NULL)`).then(result => {
 console.log('Tabela ENDERECO criada com sucesso');
 }).catch(erro => {
 console.log('Tabela ENDERECO com erro de criação');
 });
+
+
+// database(`INSERT INTO PESSOA VALUES 
+// (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '12345678'),
+// (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '87654321'),
+// (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '18273645'),
+// (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '81726354'),
+// (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '1287465'),
+// (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '87126345'),
+// (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '12387654'),
+// (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '87652134'),
+// (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '76832145'),
+// (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '72635418')`)
+//     .then(result => {
+//         console.log('Dados cadastrados');
+//     }).catch(erro => {
+//         console.log('Dados não cadastrados');
+//     });
 
 
 database(`CREATE TABLE IF NOT EXISTS PESSOA (
@@ -90,16 +108,16 @@ database(`CREATE TABLE IF NOT EXISTS PESSOA (
 });
 
 // database(`INSERT INTO PESSOA VALUES 
-// (null, 'Diego', '123', 'Planinscheck', null, 'dieguinhodobarulho@hotmail.com'),
-// (null, 'João', '321', 'Meireles', null, 'joaozinhogameplays@gmail.com.br'),
-// (null, 'Camilly', 'camis', 'Pessotti', null, 'camillyzada@gmail.com'),
-// (null, 'Bruna', 'brunas', 'Mafra', null, 'bruninha@gmail.com'),
-// (null, 'Henrique', 'henri', 'Cole', null, 'henricole@gmail.com'),
-// (null, 'Vinicius', 'vini12', 'Bonatti', null, 'vinibonatti@gmail.com'),
-// (null, 'Leonardo', 'leo', 'Rafaelli', null, 'leorafaelli@gmail.com'),
-// (null, 'Thiago', 'thiagao12', 'Braga', null, 'thiagobraga@gmail.com'),
-// (null, 'Romário', 'romas', 'Hornburg', null, 'romasdeus@gmail.com'),
-// (null, 'Gustavo', 'gusta', 'Rebelatto', null, 'gustarebelatto@gmail.com')`)
+// (null, 'Diego', '123', 'Planinscheck', null, 'dieguinhodobarulho@hotmail.com', 1),
+// (null, 'João', '321', 'Meireles', null, 'joaozinhogameplays@gmail.com.br', 2),
+// (null, 'Camilly', 'camis', 'Pessotti', null, 'camillyzada@gmail.com', 3),
+// (null, 'Bruna', 'brunas', 'Mafra', null, 'bruninha@gmail.com', 4),
+// (null, 'Henrique', 'henri', 'Cole', null, 'henricole@gmail.com', 5),
+// (null, 'Vinicius', 'vini12', 'Bonatti', null, 'vinibonatti@gmail.com', 6),
+// (null, 'Leonardo', 'leo', 'Rafaelli', null, 'leorafaelli@gmail.com', 7),
+// (null, 'Thiago', 'thiagao12', 'Braga', null, 'thiagobraga@gmail.com', 8),
+// (null, 'Romário', 'romas', 'Hornburg', null, 'romasdeus@gmail.com', 9),
+// (null, 'Gustavo', 'gusta', 'Rebelatto', null, 'gustarebelatto@gmail.com', 10)`)
 //     .then(result => {
 //         console.log('Dados cadastrados');
 //     }).catch(erro => {
