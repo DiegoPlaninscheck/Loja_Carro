@@ -32,7 +32,7 @@ export class SuporteComponent implements OnInit {
   }
 
   parceria(){
-    this.router.navigate([''])
+    this.router.navigate(['/fornecedor'])
   }
 
 }
