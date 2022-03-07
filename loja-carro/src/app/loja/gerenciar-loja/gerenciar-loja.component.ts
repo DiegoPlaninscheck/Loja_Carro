@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { a } from '@angular/core/src/render3';
 import { ActivatedRoute, Router } from '@angular/router';
 import { url } from 'inspector';
 import { UsuarioService } from '../../services/usuario.service';
@@ -15,6 +16,7 @@ export class GerenciarLojaComponent implements OnInit {
   marca = '';
   modelo = '';
   valor = undefined;
+  imagem;
 
   user: any;
 
@@ -35,19 +37,17 @@ export class GerenciarLojaComponent implements OnInit {
 
         for (let i = 0; i < resultado.length; i++) {
           if (resultado[i].nome && resultado[i].marca &&
-            resultado[i].modelo && resultado[i].valor) {
+            resultado[i].modelo && resultado[i].valor && resultado[i].imagem) {
             this.nome = resultado[i].nome;
           }
           let a = {
             nome: resultado[i].nome,
             marca: resultado[i].marca,
             modelo: resultado[i].modelo,
-            valor: resultado[i].valor
+            valor: resultado[i].valor,
+            imagem: resultado[i].imagem
           }
-          this.list.push(a)
-
-          console.log(i)
-
+          this.list.push(a);
         }
 
 
@@ -57,6 +57,14 @@ export class GerenciarLojaComponent implements OnInit {
 
 
   }
+
+  // imagens() {
+  //   for(let i = 0; i < this.list.length; i++){
+  //     if(this.list[i].imagem === this.list[i].nome){
+        
+  //     }
+  //   }
+  // }
 
 
   display() {

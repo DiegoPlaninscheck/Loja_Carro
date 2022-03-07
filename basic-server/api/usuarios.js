@@ -132,12 +132,14 @@ inserirRota('/checar_carro', function(dados, resposta) {
                 let marca = result[i].MARCA;
                 let modelo = result[i].MODELO;
                 let valor = result[i].VALOR;
+                let imagem = result[i].IMAGEM;
 
                 newList = {
                     nome: nome,
                     marca: marca,
                     modelo: modelo,
-                    valor: valor
+                    valor: valor,
+                    imagem: imagem
                 }
                 list.push(newList);
             }

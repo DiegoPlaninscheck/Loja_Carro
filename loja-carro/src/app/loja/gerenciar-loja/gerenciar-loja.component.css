@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25vw;
+    width: 40vw;
     border-radius: 10px;
     background-color: #dcdcdc;
 }
@@ -63,32 +63,50 @@
 }
 
 main {
-    width: 100vw;
-    height: 75vh;
+    width: 99.6%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 15px;
 }
 
 .containercarro {
-    width: 100vw;
-    height: 75vh;
-    padding: 5px;
+    width: 100%;
+    height: 100%;
     display: grid;
 }
 
 .carro {
     width: 100%;
     height: 100%;
-    display: grid;
-    justify-content: center;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
     border: solid black 1px;
-    background-color: burlywood;
+    background-color: #a56d6d;
 }
 
 .info {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.marca{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.modelo{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.valor {
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }

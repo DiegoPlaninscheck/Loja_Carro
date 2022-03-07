@@ -1,19 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .marcas{
-    display: grid;
-    justify-content: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     color: red;
-    border-bottom: red solid 1px;
+    border-bottom: red solid 2px;
 }
 
 .botao{
+    width: 10%;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;   
+    justify-content: end;
+    align-items: center;
 }
 
 .button {
-    width: 5%;
+    width: 50%;
     height: 100%;
     font-family: 'Nunito', sans-serif;
     color: #313133;
@@ -26,6 +34,9 @@
     cursor: pointer;
     outline: none;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main{
@@ -38,28 +49,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15px 0px 15px 0px;
+    margin: 15px 0px 25px 0px;
+    
 }
 
-.whos{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+.linha{
+    border-bottom: red solid 2px;
+    margin-bottom: 15px;
 }
 
-.somos{
+.empresa{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: red;
+    margin-bottom: 15px;
 }
 
 .text{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
-
 
 .footer{
     width: 100%;
@@ -67,7 +78,7 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    background-color: lightblue;
+    background-color: #d7d7d7;
 }
 
 .redes{
@@ -84,51 +95,3 @@
     justify-content: center;
     align-items: center;
 }
-
-.facebook{
-    margin-right: 15px;
-}
-
-.facebook img{
-    width: 50px;
-    background: steelblue;
-    border-radius: 25px;
-}
-
-.twitter{
-    margin-right: 15px;
-}
-
-.twitter img{
-    width: 50px;
-    background: cyan;
-    border-radius: 25px;
-}
-
-.youtube{
-    margin-right: 15px;
-}
-
-.youtube img{
-    width: 50px;
-    background: brown;
-    border-radius: 25px;
-}
-
-.instagram{
-    margin-right: 15px;
-}
-
-.instagram img{
-    width: 50px;
-    background: darkgoldenrod;
-    border-radius: 25px;
-}
-
-.tiktok img{
-    width: 50px;
-    background: indigo;
-    border-radius: 25px;
-}
-
-

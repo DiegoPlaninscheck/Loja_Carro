@@ -18,8 +18,7 @@ export class LoginComponent implements OnInit {
 
   user = '';
   password = '';
-  Swal = undefined;
-  
+  Swal = undefined;  
   
   constructor(
     private router: Router,

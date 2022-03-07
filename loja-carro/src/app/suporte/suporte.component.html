@@ -10,43 +10,42 @@
       <input type="text" placeholder="Pesquisar" />
     </div>
 
-    <div>
+    <div class="apertar">
       <button class="button" (click)="voltar()">Voltar</button>
     </div>
   </div>
 </header>
 
 
-<main class="main">
   <div class="container">
-    <div class="cadastro">
-      <button (click)="cadastrar()">
+    <div class="teste1">
+      <button class="button1" (click)="cadastrar()">
         <div class="icone">
           <i class="fi fi-rr-user"></i>
         </div>
       </button>
-      <div>
-        <button (click)="comprar()">
-          <div class="icone">
-            <i class="fi fi-rr-home"></i>
-          </div>
-        </button>
-      </div>
+      <button class="button2" (click)="comprar()">
+        <div class="icone">
+          <i class="fi fi-rr-home"></i>
+        </div>
+      </button>
     </div>
 
-    <div class="pagamento">
-      <button (click)="pagamento()">
+    <div class="chat">
+        <input class="input" type="text" placeholder="Precisa de ajuda?">
+    </div>
+
+    <div class="teste2">
+      <button class="button3" (click)="pagamento()">
         <div class="icone">
           <i class="fi fi-rr-shopping-cart"></i>
         </div>
       </button>
-      <div>
-        <button (click)="parceria()">
-          <div class="icone">
-            <i class="fi fi-rr-phone-call"></i>
-          </div>
-        </button>
-      </div>
+      <button class="button4" (click)="parceria()">
+        <div class="icone">
+          <i class="fi fi-rr-phone-call"></i>
+        </div>
+      </button>
     </div>
+
   </div>
-</main>

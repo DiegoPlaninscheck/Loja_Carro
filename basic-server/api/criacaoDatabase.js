@@ -14,16 +14,16 @@ database(`CREATE TABLE IF NOT EXISTS CARRO (
 
 
 // database(`INSERT INTO CARRO VALUES
-// (null, 'Up', 'BRA2E19', 'Volkswagem', '170 tsi', 70000, 'upImg'),
-// (null, 'Tcross', 'BRA2E20', 'Volkswagem', '200 tsi', 180000 , 'tcrossImg'),
-// (null, 'Jetta', 'BRA2E21', 'Volkswagem', '350 tsi', 220000, 'jettaImg'),
-// (null, 'R8', 'BRA2E22', 'AUDI', 'R8', 750000, 'r8Img'),
-// (null, 'X1', 'BRA2E23', 'BMW', 'X1', 250000, 'x1Img'),
-// (null, 'Equinox', 'BRA2E24', 'Chevrolet', 'Premier', 220000, 'equinoxImg'),
-// (null, 'Mustang', 'BRA2E25', 'Ford', 'Shelby GT500', 1600000, 'mustangImg'),
-// (null, 'Civic', 'BRA2E26', 'Honda', 'Touring', 180000, 'civicImg'),
-// (null, 'Compass', 'BRA2E27', 'JEEP', 'Limited', 200000, 'compassImg'),
-// (null, 'GTR Skyline', 'BRA2E28', 'Nissan', 'R35', 800000, 'r35Img')`)
+// (null, 'Up', 'BRA2E19', 'Volkswagem', '170 tsi', 70000, 'Up'),
+// (null, 'Tcross', 'BRA2E20', 'Volkswagem', '200 tsi', 180000 , 'Tcross'),
+// (null, 'Jetta', 'BRA2E21', 'Volkswagem', '350 tsi', 220000, 'Jetta'),
+// (null, 'R8', 'BRA2E22', 'AUDI', 'R8', 750000, 'R8'),
+// (null, 'X1', 'BRA2E23', 'BMW', 'X1', 250000, 'X1'),
+// (null, 'Equinox', 'BRA2E24', 'Chevrolet', 'Premier', 220000, 'Equinox'),
+// (null, 'Mustang', 'BRA2E25', 'Ford', 'Shelby GT500', 1600000, 'Mustang'),
+// (null, 'Civic', 'BRA2E26', 'Honda', 'Touring', 180000, 'Civic'),
+// (null, 'Compass', 'BRA2E27', 'JEEP', 'Limited', 200000, 'Compass'),
+// (null, 'GTR Skyline', 'BRA2E28', 'Nissan', 'R35', 800000, 'R35')`)
 //     .then(result => {
 //         console.log('Dados cadastrados');
 //     }).catch(erro => {
@@ -73,7 +73,7 @@ console.log('Tabela ENDERECO com erro de criação');
 });
 
 
-// database(`INSERT INTO PESSOA VALUES 
+// database(`INSERT INTO ENDERECO VALUES 
 // (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '12345678'),
 // (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '87654321'),
 // (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '18273645'),
@@ -143,16 +143,16 @@ database(`CREATE TABLE IF NOT EXISTS CLIENTE (
 });
 
 // database(`INSERT INTO CLIENTE VALUES
-// (null, 1),
-// (null, 2),
-// (null, 3),
-// (null, 4),
-// (null, 5),
-// (null, 6),
-// (null, 7),
-// (null, 8),
-// (null, 9),
-// (null, 10)`)
+// (null, 1, 1, 1),
+// (null, 2, 2, 2),
+// (null, 3, 3, 3),
+// (null, 4, 4, 4),
+// (null, 5, 5, 5),
+// (null, 6, 6, 6),
+// (null, 7, 7, 7),
+// (null, 8, 8, 8),
+// (null, 9, 9, 9),
+// (null, 10, 10, 10)`)
 //     .then(result => {
 //         console.log('Dados cadastrados');
 //     }).catch(erro => {
