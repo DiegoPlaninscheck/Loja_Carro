@@ -30,7 +30,7 @@ export class GerenciarLojaComponent implements OnInit {
     this.display();
 
     this.usuarioService.checarCarro()
-      .then((resultado: (Object: (String)) => []) => {
+      .then((resultado: any) => {
         console.log("RESULTADO:", resultado)
 
         for (let i = 0; i < resultado.length; i++) {

@@ -43,10 +43,11 @@ export class LoginComponent implements OnInit {
     );
   }
 
+
   ngOnInit() {
     this.tirar();
     this.usuarioService.checarPessoa()
-      .then((resultado: (Object: (String)) => []) => {
+      .then((resultado: any) => {
         console.log("RESULTADO:", resultado)
         // this.user = resultado.user;
         // this.password = resultado.password;
