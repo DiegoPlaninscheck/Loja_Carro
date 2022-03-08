@@ -6,9 +6,6 @@ import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
-
-import { SidebarModule } from "ng-sidebar";
-
 import CheckLogged from "./checkLogged.canActivate";
 
 import {
@@ -64,7 +61,6 @@ export function getAuthServiceConfigs() {
     ReactiveFormsModule,
     SocialLoginModule,
     CarrinhoModule,
-    SidebarModule.forRoot(),
   ],
   providers: [
     {
