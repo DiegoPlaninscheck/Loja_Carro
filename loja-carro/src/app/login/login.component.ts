@@ -1,8 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from '../services/usuario.service';
-
-import Swal from 'sweetalert2';
 
 import {
   AuthService,
@@ -18,7 +16,8 @@ export class LoginComponent implements OnInit {
 
   user = '';
   password = '';
-  Swal = undefined;  
+  
+
   
   constructor(
     private router: Router,
@@ -62,35 +61,9 @@ export class LoginComponent implements OnInit {
         for (let i = 0; i < resultado.length; i++) {
           if (this.user === resultado[i].nome && this.password === resultado[i].senha) {
             localStorage.setItem('USER', this.user)
-            this.router.navigate([''])
-            let timerInterval
-            Swal.fire({
-              title: 'Logando...',
-              html: 'Redirecionado em <b></b> milissegundos.',
-              timer: 500,
-              timerProgressBar: true,
-              didOpen: () => {
-                Swal.showLoading()
-                const b = Swal.getHtmlContainer().querySelector('b')
-                timerInterval = setInterval(() => {
-                  b.textContent = Swal.getTimerLeft()
-                }, 100)
-              },
-              willClose: () => {
-                clearInterval(timerInterval)
-              }
-            }).then((result) => {
-
-              if (result.dismiss === Swal.DismissReason.timer) {
-                console.log('I was closed by the timer')
-              }
-            })
-            return true;
+            this.router.navigate([''])  
           } else {
-            Swal.fire({
-              icon: 'error',
-              title: 'Login Inválido'
-            })
+
           }
         }
         // this.user = resultado.user;
@@ -112,7 +85,6 @@ export class LoginComponent implements OnInit {
 }
 
 interface User {
-
   nome: string;
   senha: string;
 

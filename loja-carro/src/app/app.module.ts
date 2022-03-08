@@ -1,47 +1,50 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { Routes } from "@angular/router";
+import { AppComponent } from "./app.component";
+import { LoginComponent } from "./login/login.component";
+import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 
-import {SidebarModule} from 'ng-sidebar';
+import { SidebarModule } from "ng-sidebar";
 
-import CheckLogged from './checkLogged.canActivate';
+import CheckLogged from "./checkLogged.canActivate";
 
 import {
   SocialLoginModule,
   AuthServiceConfig,
   GoogleLoginProvider,
 } from "angular-6-social-login";
-import { ProdutoComponent } from './loja/produto/produto.component';
-import { GerenciarLojaComponent } from './loja/gerenciar-loja/gerenciar-loja.component';
-import { VerCarrinhoComponent } from './carrinho/ver-carrinho/ver-carrinho.component';
-import { CarrinhoModule } from './carrinho/carrinho.module';
-import { SuporteComponent } from './suporte/suporte.component';
-import { FornecedorComponent } from './fornecedor/fornecedor.component';
+import { ProdutoComponent } from "./loja/produto/produto.component";
+import { GerenciarLojaComponent } from "./loja/gerenciar-loja/gerenciar-loja.component";
+import { VerCarrinhoComponent } from "./carrinho/ver-carrinho/ver-carrinho.component";
+import { CarrinhoModule } from "./carrinho/carrinho.module";
+import { SuporteComponent } from "./suporte/suporte.component";
+import { FornecedorComponent } from "./fornecedor/fornecedor.component";
 
 const routes: Routes = [
-  {path: '', component: GerenciarLojaComponent,  canActivate: [] },
-  {path: 'produto', component: ProdutoComponent, canActivate: []},
-  {path: 'login', component: LoginComponent, canActivate: []},
-  {path: 'carrinho', component: VerCarrinhoComponent, canActivate: [CheckLogged]},
-  {path: 'suporte', component: SuporteComponent, canActivate: []},
-  {path: 'fornecedor', component: FornecedorComponent, canActivate: []}
+  { path: "", component: GerenciarLojaComponent, canActivate: [] },
+  { path: "produto", component: ProdutoComponent, canActivate: [] },
+  { path: "login", component: LoginComponent, canActivate: [] },
+  {
+    path: "carrinho",
+    component: VerCarrinhoComponent,
+    canActivate: [CheckLogged],
+  },
+  { path: "suporte", component: SuporteComponent, canActivate: [] },
+  { path: "fornecedor", component: FornecedorComponent, canActivate: [] },
 ];
 
-
 export function getAuthServiceConfigs() {
-  let config = new AuthServiceConfig(
-      [
-        {
-          id: GoogleLoginProvider.PROVIDER_ID,
-          provider: new GoogleLoginProvider("402231336047-9jsgeagvcoa8fqb6eled83fj2hnodt5d.apps.googleusercontent.com")
-        },
-      ]
-  );
+  let config = new AuthServiceConfig([
+    {
+      id: GoogleLoginProvider.PROVIDER_ID,
+      provider: new GoogleLoginProvider(
+        "402231336047-9jsgeagvcoa8fqb6eled83fj2hnodt5d.apps.googleusercontent.com"
+      ),
+    },
+  ]);
   return config;
 }
 
@@ -52,7 +55,7 @@ export function getAuthServiceConfigs() {
     ProdutoComponent,
     GerenciarLojaComponent,
     SuporteComponent,
-    FornecedorComponent
+    FornecedorComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -61,15 +64,15 @@ export function getAuthServiceConfigs() {
     ReactiveFormsModule,
     SocialLoginModule,
     CarrinhoModule,
-    SidebarModule.forRoot()
+    SidebarModule.forRoot(),
   ],
   providers: [
     {
       provide: AuthServiceConfig,
-      useFactory: getAuthServiceConfigs
+      useFactory: getAuthServiceConfigs,
     },
-    CheckLogged
+    CheckLogged,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

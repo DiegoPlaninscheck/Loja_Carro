@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { a } from '@angular/core/src/render3';
 import { ActivatedRoute, Router } from '@angular/router';
-import { url } from 'inspector';
 import { UsuarioService } from '../../services/usuario.service';
 
 
@@ -88,8 +86,9 @@ export class GerenciarLojaComponent implements OnInit {
   //   })
   // }
 
+
   home(){
-    this.router.navigate([''])
+    document.location.reload();
   }
 
   logar() {
