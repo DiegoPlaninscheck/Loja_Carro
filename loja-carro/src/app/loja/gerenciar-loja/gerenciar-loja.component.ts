@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from '../../services/usuario.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -15,7 +16,6 @@ export class GerenciarLojaComponent implements OnInit {
   modelo = '';
   valor = undefined;
   imagem;
-
   user: any;
 
   list = [];
@@ -23,7 +23,8 @@ export class GerenciarLojaComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit() {

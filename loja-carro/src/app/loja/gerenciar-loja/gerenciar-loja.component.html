@@ -42,8 +42,8 @@
 <main>
     <div class="containercarro">
         <div *ngFor="let a of list, let i = index" class="carro" (click)="detalhes()">
-            <div *ngIf = 'this.list[i].imagem == this.list[i].nome'>
-                <img src="../../../assets/upImg.jpg">
+            <div>
+                <img src={{a.imagem}} width="100px">
             </div>
             <div class="info">Nome: {{ a.nome }} 
                 <div class="marca">Marca: {{ a.marca }}</div>
