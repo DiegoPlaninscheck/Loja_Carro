@@ -21,10 +21,7 @@ body{
 }
 
 .botao{
-    width: 10%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
+    width: 15%;
 }
 
 .button {
