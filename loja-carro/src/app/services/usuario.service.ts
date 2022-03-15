@@ -8,16 +8,18 @@ export class UsuarioService {
 
   constructor() { }
 
-  checarPessoa(){
-    return new Promise((resolve, rejeitado) => {
-      fetch('/api/checar_pessoa', {
+  checarPessoa(NOME, SENHA){
+    return new Promise((resolve, reject) => {
+      fetch('/api/checar_pessoa', 
+      {
         method: 'POST',
+        body: JSON.stringify({NOME, SENHA}),
         headers: {
           'Content-Type': 'application/json'
         }
-      }).then(resultado => resultado.json())
+      }).then(resolve => resolve.json())
       .then(resolvido => resolve(resolvido))
-      .catch(rejeitado);
+      .catch(reject);
     })
   }
 

@@ -100,26 +100,36 @@ inserirRota('/login',
 
     })
 
-inserirRota('/checar_pessoa', function(dados, resposta) {
-    database(`SELECT * FROM PESSOA`)
-        .then(result => {
-            let list = [];
-            for (i = 0; i < result.length; i++) {
-                let nome = result[i].NOME;
-                let senha = result[i].SENHA;
+// inserirRota('/checar_pessoa', function(dados, resposta) {
+//     database(`SELECT * FROM PESSOA`)
+//         .then(result => {
+//             let list = [];
+//             for (i = 0; i < result.length; i++) {
+//                 let nome = result[i].NOME;
+//                 let senha = result[i].SENHA;
 
-                newList = {
-                    nome: nome,
-                    senha: senha
-                }
-                list.push(newList);
-            }
-            console.log(list)
-            resposta(list)
-        }).catch(erro => {
-            console.log('DEU RUIM', erro)
-            resposta({ erro })
-        })
+//                 newList = {
+//                     nome: nome,
+//                     senha: senha
+//                 }
+//                 list.push(newList);
+//             }
+//             console.log(list)
+//             resposta(list)
+//         }).catch(erro => {
+//             console.log('DEU RUIM', erro)
+//             resposta({ erro })
+//         })
+// })
+
+inserirRota('/checar_pessoa', function(dados, resposta) {
+database(`SELECT * FROM PESSOA WHERE NOME = "${dados.NOME}" AND SENHA = "${dados.SENHA}"`)
+    .then(result => {
+        resposta(result)
+    }).catch(erro => {
+        console.log('DEU RUIM')
+        resposta({erro})
+    })
 })
 
 

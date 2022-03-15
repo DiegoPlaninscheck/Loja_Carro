@@ -32,8 +32,6 @@ export class GerenciarLojaComponent implements OnInit {
 
     this.usuarioService.checarCarro()
       .then((resultado: any) => {
-        console.log("RESULTADO:", resultado)
-
         for (let i = 0; i < resultado.length; i++) {
           if (resultado[i].nome && resultado[i].marca &&
             resultado[i].modelo && resultado[i].valor && resultado[i].imagem) {
@@ -67,7 +65,7 @@ export class GerenciarLojaComponent implements OnInit {
 
 
   display() {
-    this.user = localStorage.getItem('USER')
+    this.user = localStorage.getItem('NOME')
   }
 
   // informacoesCarro(){
@@ -110,6 +108,12 @@ export class GerenciarLojaComponent implements OnInit {
 
   fornecedor() {
     this.router.navigate(['/fornecedor'])
+  }
+
+  sair() {
+    localStorage.removeItem("NOME")
+    localStorage.removeItem("SENHA")
+    document.location.reload();
   }
 
 }

@@ -25,9 +25,9 @@ inserirRota('/teste_busca_produto', (dados, resposta) => {
     });
 });
 
-inserirRota('/teste_busca_cliente', (dados, resposta) => {
+inserirRota('/teste', (dados, resposta) => {
     console.log(dados);
-    database('SELECT * FROM CLIENTE').then(result => {
+    database('SELECT * FROM PESSOA').then(result => {
         resposta({ resposta: result });
     }).catch(erro => {
         resposta({ resposta: erro });
