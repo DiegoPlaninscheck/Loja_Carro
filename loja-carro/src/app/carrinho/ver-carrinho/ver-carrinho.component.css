@@ -5,7 +5,7 @@
 
 .container{
     width: 100vw;
-    height: 100vh;
+    height: 20vh;
 }
 
 .navbar{
@@ -14,4 +14,85 @@
     background-color: #B1B2B5;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+}
+.entrar{
+    width: 15%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao{
+    width: 100%;
+    height: 60%;
+    background-color: white;
+    border: none;
+}
+
+
+.main{
+    width: 100vw;
+    height: 30vh;
+}
+
+.add{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.botao-add{
+    width: 15%;
+    height: 25%;
+    background-color: #ff0000;
+    border: none;
+}
+
+.container-produto{
+    width: 100%;
+    height: 100%;
+    background-color:#6c1616;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nome{
+    width: 20%;
+    height: 50%;
+}
+
+.botao-continuar{
+    width: 50%;
+    height: 50%;
+    margin-top: 25px;
+}
+
+.continuar{
+    width: 100%;
+    height: 100%;
+    background-color: #B1B2B5;
+    border: none;
+}
+
+.quantidade{
+    width: 20%;
+    height: 50%;
+}
+
+.botao-finalizar{
+    width: 50%;
+    height: 50%;
+    margin-top: 25px; 
+}
+
+.finalizar{
+    width: 100%;
+    height: 100%;
+    background-color: #B1B2B5;
+    border: none;
 }

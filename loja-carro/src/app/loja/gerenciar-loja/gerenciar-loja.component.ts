@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from '../../services/usuario.service';
-import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -23,8 +22,7 @@ export class GerenciarLojaComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private usuarioService: UsuarioService,
-    private sanitizer: DomSanitizer
+    private usuarioService: UsuarioService
   ) { }
 
   ngOnInit() {
@@ -85,6 +83,19 @@ export class GerenciarLojaComponent implements OnInit {
   //   })
   // }
 
+  imageURL;
+  teste;
+  mostrarImagem(event){
+    const file = new FileReader
+    file.onload = (e) => {
+      this.imageURL = e.target.result;
+      console.log(this.imageURL)
+    }
+    this.teste = 1
+    file.readAsDataURL(event.target.files[0])
+    console.log(file)
+  }
+
 
   home(){
     document.location.reload();
@@ -116,11 +127,4 @@ export class GerenciarLojaComponent implements OnInit {
     document.location.reload();
   }
 
-}
-
-interface Car {
-  nome: string,
-  marca: string,
-  modelo: string,
-  valor: string
 }

@@ -15,10 +15,7 @@
             <div class="icone">
                 <i class="fi fi-rr-home" (click)="home()"></i>
             </div>
-
-            <div><p>Olá, {{ user }}</p></div>
-
-            <div class="icone">
+            <div *ngIf="!user" class="icone">
                 <i class="fi fi-rr-user" (click)="logar()"></i>
             </div>
 
@@ -36,6 +33,9 @@
             <div class="icone">
                 <i class='fi fi-rr-menu-burger' (click)="sair()"></i>
             </div>
+
+            <div class="user"><p>{{ user }}</p></div>
+
         </div>
     </div>
 </header>
@@ -43,12 +43,11 @@
 <main>
     <div class="containercarro">
         <div *ngFor="let a of list, let i = index" class="carro" (click)="detalhes()">
-            <div>
-                <!-- <img src={{a.imagem}} width="100px"> -->
-            </div>
+            <div><!-- <img src={{a.imagem}} width="100px"> --> </div>
+            <img *ngIf="teste == 1" [src]="imageURL" width="100px">
             <div class="info">Nome: {{ a.nome }}</div>
             <div class="marca">Marca: {{ a.marca }}</div>
-            <div class="modelo"> Modelo: {{ a.modelo }}<div>
+            <div class="modelo"> Modelo: {{ a.modelo }}</div>
             <div class="valor">Valor: R${{ a.valor }}</div>            
         </div>
     </div>

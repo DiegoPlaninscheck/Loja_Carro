@@ -25,10 +25,7 @@ class CheckLogged implements CanActivate {
     this.user = localStorage.getItem("NOME");
     this.password = localStorage.getItem("SENHA");
 
-    if (!this.user && !this.password) {
-      this.router.navigate(["/login"]);
-      return true;
-    } 
+    return true;
   }
 }
 
