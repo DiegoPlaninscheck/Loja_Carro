@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #b1b2b5;
+}
+
+.container{
+    width: 100vw;
+    height: 10vh; 
+}
+
+.voltar{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: right;
+    align-items:center;
+}
+
+.botao{
+    width: 10%;
+    height: 35%;
+    border: 0;
+    background-color: rgb(168, 12, 12);
+}
+
+.botao:hover{
+    width: 10%;
+    height: 35%;
+    border: 0;
+    background-color: rgb(168, 12, 12);
+    cursor: pointer;
+}
+
+.main{
+    width: 100vw;
+    height: 80vh;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.nome{
+    width: 50%;
+    height: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.valor{
+    width: 100%;
+    height: 50%;
+}
+
+.comprar{
+    width: 15%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao-comprar{
+    width: 90%;
+    height: 15%;
+    background-color:#731212;
+    border: none;
+}

@@ -121,7 +121,16 @@ main {
     align-content: center;
 }
 
+.img-user{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+}
+
 
 .user{
-    margin-left: 15px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }

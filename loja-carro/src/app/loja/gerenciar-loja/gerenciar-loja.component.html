@@ -1,57 +1,64 @@
 <body>
-<header>
+  <header>
     <div class="navbar">
-        <div class="logo">
-            <img src="./assets/logo.png" style="width: 100px" />
+      <div class="logo">
+        <img src="./assets/logo.png" style="width: 100px" />
+      </div>
+
+      <div class="campo-pesquisa">
+        <i class="fi fi-rr-search"></i>
+
+        <input type="text" placeholder="Pesquisar" />
+      </div>
+
+      <div class="div-icones">
+        <div class="icone">
+          <i class="fi fi-rr-home" (click)="home()"></i>
+        </div>
+        <div *ngIf="!user" class="icone">
+          <i class="fi fi-rr-user" (click)="logar()"></i>
         </div>
 
-        <div class="campo-pesquisa">
-            <i class="fi fi-rr-search"></i>
-
-            <input type="text" placeholder="Pesquisar" />
+        <div class="icone">
+          <i class="fi fi-rr-shopping-cart" (click)="carrinho()"></i>
         </div>
 
-        <div class="div-icones">
-            <div class="icone">
-                <i class="fi fi-rr-home" (click)="home()"></i>
-            </div>
-            <div *ngIf="!user" class="icone">
-                <i class="fi fi-rr-user" (click)="logar()"></i>
-            </div>
-
-            <div class="icone">
-                <i class="fi fi-rr-shopping-cart" (click)="carrinho()"></i>
-            </div>
-
-            <div class="icone">
-                <i class="fi fi-rr-headset" (click)="suporte()"></i>
-            </div>
-
-            <div class="icone">
-                <i class="fi fi-rr-car" (click)="fornecedor()"></i>
-            </div>
-            <div class="icone">
-                <i class='fi fi-rr-menu-burger' (click)="sair()"></i>
-            </div>
-
-            <div class="user"><p>{{ user }}</p></div>
-
+        <div class="icone">
+          <i class="fi fi-rr-headset" (click)="suporte()"></i>
         </div>
+
+        <div class="icone">
+          <i class="fi fi-rr-car" (click)="fornecedor()"></i>
+        </div>
+        <div class="icone">
+          <i class="fi fi-rr-menu-burger" (click)="sair()"></i>
+        </div>
+        <div>
+            <img class="img-user" src="../../../assets/user.png" width="20px" />
+            <span class="user">
+              {{ user }}
+            </span>
+        </div>
+      </div>
     </div>
-</header>
+  </header>
 
-<main>
+  <main>
     <div class="containercarro">
-        <div *ngFor="let a of list, let i = index" class="carro" (click)="detalhes()">
-            <div><!-- <img src={{a.imagem}} width="100px"> --> </div>
-            <img *ngIf="teste == 1" [src]="imageURL" width="100px">
-            <div class="info">Nome: {{ a.nome }}</div>
-            <div class="marca">Marca: {{ a.marca }}</div>
-            <div class="modelo"> Modelo: {{ a.modelo }}</div>
-            <div class="valor">Valor: R${{ a.valor }}</div>            
-        </div>
+      <div
+        *ngFor="let a of list; let i = index"
+        class="carro"
+        (click)="detalhes()"
+      >
+        <div><!-- <img src={{a.imagem}} width="100px"> --></div>
+        <img *ngIf="teste == 1" [src]="imageURL" width="100px" />
+        <div class="info">Nome: {{ a.nome }}</div>
+        <div class="marca">Marca: {{ a.marca }}</div>
+        <div class="modelo">Modelo: {{ a.modelo }}</div>
+        <div class="valor">Valor: R${{ a.valor }}</div>
+      </div>
     </div>
-</main>
+  </main>
 </body>
 <!-- <div *ngIf="list[i].nome == nome"><img src="../../../assets/2020-08-06-46b4943d-32fe-4f7f-b9a5-6f83fc04920c.jpeg" width="500px"></div>
                 <div *ngIf="list[i].nome == nome"><img src="../../../assets/fa6dfa19d6fbd4d461a52623479e5a4d-thumbjpg-volkswagen-jetta-8467707-900-675-70.jpg" width="500px"></div> -->

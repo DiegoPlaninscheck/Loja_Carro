@@ -1,3 +1,19 @@
-<p>
-  produto works!
-</p>
+<body>
+  <header class="container">
+    <div class="voltar">
+      <button class="botao" (click)="voltar()">Voltar</button>
+    </div>
+  </header>
+  <main class="main">
+    <div class="img">
+      <img src="../../../assets/carro-esporte.png" width="70px" />
+      <div class="nome">
+        Nome: {{ nome }}
+        <div class="valor">Valor: {{valor}}</div>
+      </div>
+      <div class="comprar">
+        <button class="botao-comprar">Comprar</button>
+      </div>
+    </div>
+  </main>
+</body>
