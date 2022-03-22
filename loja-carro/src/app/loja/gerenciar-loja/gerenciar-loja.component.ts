@@ -105,8 +105,9 @@ export class GerenciarLojaComponent implements OnInit {
     this.router.navigate(['/login'])
   }
 
-  detalhes() {
-    this.router.navigate(['/produto'])
+  detalhes(index) {
+
+    this.router.navigate(['/produto', index])
   }
 
   carrinho() {

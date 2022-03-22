@@ -22,7 +22,7 @@ import { FornecedorComponent } from "./fornecedor/fornecedor.component";
 
 const routes: Routes = [
   { path: "", component: GerenciarLojaComponent, canActivate: [] },
-  { path: "produto", component: ProdutoComponent, canActivate: [] },
+  { path: "produto/:id_produto", component: ProdutoComponent, canActivate: [] },
   { path: "login", component: LoginComponent, canActivate: [] },
   {
     path: "carrinho",

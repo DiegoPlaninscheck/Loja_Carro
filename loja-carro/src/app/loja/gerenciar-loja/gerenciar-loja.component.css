@@ -53,12 +53,10 @@ body{
     justify-content: center;
     align-items: center;
     width: 20px;
-    color: #C21010;
 }
 
 .icone i {
     padding: 5px;
-    color: #C21010;
     font-size: 20px;
 }
 
@@ -121,16 +119,21 @@ main {
     align-content: center;
 }
 
-.img-user{
+.sair{
+    cursor: pointer;
+}
+
+.user{
     display: grid;
     justify-content: center;
     align-items: center;
     margin-left: 15px;
 }
 
-
-.user{
-    display: grid;
+.img-user{
+    display: flex;
     justify-content: center;
     align-items: center;
 }
+
+

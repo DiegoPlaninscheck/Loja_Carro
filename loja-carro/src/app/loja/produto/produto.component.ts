@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-produto',
@@ -8,13 +9,31 @@ import { Router } from '@angular/router';
 })
 export class ProdutoComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,
+    private usuarioService: UsuarioService) {}
 
-
-  nome = 'Diego';
-  valor = 50;
+  id
+  nome;
+  marca;
+  modelo;
+  valor;
+  imagem;
 
   ngOnInit() {
+    this.id = this.router.url.substring(this.router.url.length - 1)
+    this.usuarioService.checarCarro()
+    .then((resultado: any) => {
+      resultado.find(valorCarro => {
+        console.log(valorCarro);
+        if(this.id == valorCarro.id) {
+          this.nome = valorCarro.nome
+          this.marca = valorCarro.marca
+          this.modelo = valorCarro.modelo
+          this.valor = valorCarro.valor
+          this.imagem = valorCarro.imagem
+        }
+      })
+    })
   }
 
   voltar() {

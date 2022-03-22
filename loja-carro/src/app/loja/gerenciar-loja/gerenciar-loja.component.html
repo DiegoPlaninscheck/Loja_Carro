@@ -31,14 +31,21 @@
           <i class="fi fi-rr-car" (click)="fornecedor()"></i>
         </div>
         <div class="icone">
-          <i class="fi fi-rr-menu-burger" (click)="sair()"></i>
+          <img
+            class="sair"
+            src="../../../assets/logout.png"
+            width="25px"
+            (click)="sair()"
+          />
         </div>
-        <div>
-            <img class="img-user" src="../../../assets/user.png" width="20px" />
-            <span class="user">
-              {{ user }}
-            </span>
+      </div>
+      <div *ngIf="user" class="user">
+        <div class="img-user">
+          <img src="../../../assets/user.png" width="20px" />
         </div>
+        <span>
+          {{ user }}
+        </span>
       </div>
     </div>
   </header>
@@ -48,7 +55,7 @@
       <div
         *ngFor="let a of list; let i = index"
         class="carro"
-        (click)="detalhes()"
+        (click)="detalhes(i + 1)"
       >
         <div><!-- <img src={{a.imagem}} width="100px"> --></div>
         <img *ngIf="teste == 1" [src]="imageURL" width="100px" />
