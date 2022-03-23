@@ -64,7 +64,7 @@ body{
 }
 
 .comprar{
-    width: 15%;
+    width: 18%;
     height: 50%;
     display: flex;
     justify-content: center;
@@ -76,4 +76,12 @@ body{
     height: 15%;
     background-color:#731212;
     border: none;
+}
+
+.botao-comprar:hover{
+    width: 90%;
+    height: 15%;
+    background-color:#731212;
+    border: none;
+    cursor: pointer;
 }

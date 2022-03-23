@@ -8,11 +8,14 @@
     <div class="img">
       <img src="../../../assets/carro-esporte.png" width="70px" />
       <div class="nome">
-        Nome: {{ nome }} Marca: {{marca}} Modelo: {{modelo}} 
+        Nome: {{ nome }}
         <div class="valor">Valor: {{valor}}</div>
       </div>
+      <div class="nome">Marca: {{marca}}
+        <div class="valor">Modelo: {{modelo}} </div>
+      </div>
       <div class="comprar">
-        <button class="botao-comprar">Comprar</button>
+        <button class="botao-comprar" (click)="comprar()">Comprar</button>
       </div>
     </div>
   </main>

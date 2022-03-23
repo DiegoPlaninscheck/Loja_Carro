@@ -36,6 +36,10 @@ export class ProdutoComponent implements OnInit {
     })
   }
 
+  comprar() {
+    this.router.navigate(['/carrinho'])
+  }
+
   voltar() {
     this.router.navigate([''])
   }
