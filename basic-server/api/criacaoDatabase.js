@@ -23,7 +23,7 @@ database(`CREATE TABLE IF NOT EXISTS CARRO (
 // (null, 'Mustang', 'BRA2E25', 'Ford', 'Shelby GT500', 1600000, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.1zoom.me%2Fpt%2Fwallpaper%2F566439%2Fz10040.5%2F1920x1080&psig=AOvVaw1tqI4JyJsVRqnGgfLxcKE6&ust=1647202786515000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKisydqywfYCFQAAAAAdAAAAABAT.png'),
 // (null, 'Civic', 'BRA2E26', 'Honda', 'Touring', 180000, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.1zoom.me%2Fpt%2Fwallpaper%2F530152%2Fz1948.1%2F1920x1080&psig=AOvVaw04d19UkTdFQvvyqMbut1fa&ust=1647202820759000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLDp5eqywfYCFQAAAAAdAAAAABAJ.png'),
 // (null, 'Compass', 'BRA2E27', 'JEEP', 'Limited', 200000, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fmotor1.uol.com.br%2Fnews%2F464728%2Fjeep-compass-2022-oficial-india%2F&psig=AOvVaw1g4IPBTltF6iBxKgZWbU0r&ust=1647202850691000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMC7t5WzwfYCFQAAAAAdAAAAABAQ.png'),
-// (null, 'GTR Skyline', 'BRA2E28', 'Nissan', 'R35', 800000, 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fpt.best-wallpaper.net%2FNissan-GT-R-R35-white-car-front-view_wallpapers.html&psig=AOvVaw2HsmxT3D8cZapRgR3z8NYI&ust=1647202974156000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNC8vrezwfYCFQAAAAAdAAAAABAO.png')`)
+// (null, 'GTR Skyline', 'BRA2E28', 'Nissan', 'R35', 800000, 'https://s1.best-wallpaper.net/wallpaper/m/1408/Nissan-GT-R-R35-white-car-front-view_m.webp')`)
 //     .then(result => {
 //         console.log('Dados cadastrados');
 //     }).catch(erro => {
