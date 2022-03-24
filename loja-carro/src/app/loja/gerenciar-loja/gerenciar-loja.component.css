@@ -7,12 +7,21 @@ body{
     background-color: #a39a9a;
 }
 
+header{
+    width: 100%;
+}
+
 .navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-bottom: solid 1px #C21010;
     box-sizing: border-box;
+    width: 100%;
+}
+
+.logo{
+    width: 20%;
 }
 
 .campo-pesquisa {
@@ -20,7 +29,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40vw;
+    width: 50%;
     border-radius: 10px;
     background-color: #dcdcdc;
 }
@@ -41,6 +50,7 @@ body{
 }
 
 .div-icones {
+    width: 40%;
     padding: 10px 0px;
     display: flex;
     justify-content: center;
@@ -61,6 +71,11 @@ body{
 }
 
 .icone i:hover {
+    color: blueviolet;
+    cursor: pointer;
+}
+
+.material-icons:hover{
     color: blueviolet;
     cursor: pointer;
 }
@@ -127,7 +142,7 @@ main {
     display: grid;
     justify-content: center;
     align-items: center;
-    margin-left: 15px;
+    width: 20%;
 }
 
 .img-user{

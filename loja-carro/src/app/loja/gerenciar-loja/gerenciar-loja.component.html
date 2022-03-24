@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 <body>
   <header>
     <div class="navbar">
@@ -31,17 +32,16 @@
           <i class="fi fi-rr-car" (click)="fornecedor()"></i>
         </div>
         <div class="icone">
-          <img
-            class="sair"
-            src="../../../assets/logout.png"
-            width="25px"
-            (click)="sair()"
-          />
+          <span class="material-icons" (click)="sair()">
+            logout
+            </span>
         </div>
       </div>
       <div *ngIf="user" class="user">
         <div class="img-user">
-          <img src="../../../assets/user.png" width="20px" />
+          <span class="material-icons">
+            account_circle
+            </span>
         </div>
         <span>
           {{ user }}
