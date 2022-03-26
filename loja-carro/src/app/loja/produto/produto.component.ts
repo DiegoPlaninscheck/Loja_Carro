@@ -10,30 +10,35 @@ import { UsuarioService } from '../../services/usuario.service';
 export class ProdutoComponent implements OnInit {
 
   constructor(private router: Router,
-    private usuarioService: UsuarioService) {}
+    private usuarioService: UsuarioService) { }
 
-  id = '';
-  nome = '';
-  marca = '';
-  modelo = '';
-  valor = '';
-  imagem = '';
+  id;
+  nome;
+  marca;
+  modelo;
+  valor;
+  imagem;
 
   ngOnInit() {
     this.id = this.router.url.substring(this.router.url.length - 1)
     this.usuarioService.checarCarro()
-    .then((resultado: any) => {
-      resultado.find(valorCarro => {
-        console.log(valorCarro);
-        if(this.id == valorCarro.id) {
-          this.nome = valorCarro.nome
-          this.marca = valorCarro.marca
-          this.modelo = valorCarro.modelo
-          this.valor = valorCarro.valor
-          this.imagem = valorCarro.imagem
-        }
+      .then((resultado: any) => {
+        resultado.find(valorCarro => {
+          if(valorCarro.id >= 10){
+            this.id = this.router.url.substring(this.router.url.length - 2)
+          }
+          if (this.id == valorCarro.id) {
+            console.log(this.id)
+            this.nome = valorCarro.nome
+            this.marca = valorCarro.marca
+            this.modelo = valorCarro.modelo
+            this.valor = valorCarro.valor
+            this.imagem = valorCarro.imagem
+          }
+        })
       })
-    })
+
+    // console.log(this.imagem)
   }
 
   comprar() {
