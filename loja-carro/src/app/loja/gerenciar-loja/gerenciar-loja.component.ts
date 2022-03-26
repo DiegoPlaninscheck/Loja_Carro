@@ -96,7 +96,6 @@ export class GerenciarLojaComponent implements OnInit {
     console.log(file)
   }
 
-
   home(){
     document.location.reload();
   }
@@ -127,5 +126,4 @@ export class GerenciarLojaComponent implements OnInit {
     localStorage.removeItem("SENHA")
     document.location.reload();
   }
-
 }

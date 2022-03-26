@@ -12,12 +12,12 @@ export class ProdutoComponent implements OnInit {
   constructor(private router: Router,
     private usuarioService: UsuarioService) {}
 
-  id
-  nome;
-  marca;
-  modelo;
-  valor;
-  imagem;
+  id = '';
+  nome = '';
+  marca = '';
+  modelo = '';
+  valor = '';
+  imagem = '';
 
   ngOnInit() {
     this.id = this.router.url.substring(this.router.url.length - 1)
