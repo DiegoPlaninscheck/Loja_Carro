@@ -6,6 +6,7 @@
 header{
     width: 100%;
     height: 20vh;
+    background-color: black;
 }
 
 .navbar {
@@ -19,7 +20,7 @@ header{
 }
 
 .logo{
-    width: 25%;
+    width: 45%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +31,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 45%;
     border-radius: 10px;
     background-color: #dcdcdc;
 }
@@ -64,6 +65,7 @@ header{
     justify-content: center;
     align-items: center;
     width: 20px;
+    color: white;
 }
 
 .icone i {
@@ -76,6 +78,11 @@ header{
     cursor: pointer;
 }
 
+.material-icons{
+    color: white;
+    cursor: pointer;
+}
+
 .material-icons:hover{
     color: blueviolet;
     cursor: pointer;
@@ -85,6 +92,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 main {

@@ -1,22 +1,20 @@
-<body>
-  <header class="container">
-    <div class="voltar">
-      <button class="botao" (click)="voltar()">Voltar</button>
-    </div>
-  </header>
-  <main class="main">
-    <div class="img">
-      <img src="{{ imagem }}" width="70px" height="70px"/>
-      <div class="nome">
-        Nome: {{ nome }}
-        <div class="valor">Valor: {{valor}}</div>
-      </div>
-      <div class="nome">Marca: {{marca}}
-        <div class="valor">Modelo: {{modelo}} </div>
-      </div>
-      <div class="comprar">
-        <button class="botao-comprar" (click)="comprar()">Comprar</button>
-      </div>
-    </div>
-  </main>
-</body>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<header class="container">
+  <span (click)="voltar()" class="material-icons">
+    reply
+  </span>
+</header>
+<main class="main">
+  <div class="img">
+    <img src="{{ imagem }}" width="100%" height="100%" />
+  </div>
+  <div class="info">
+    Marca: {{marca}}
+    <div>Nome: {{nome}}</div>
+    <div>Modelo: {{modelo}}</div>
+    <div>Preco: R${{valor}}</div>
+  </div>
+  <div class="comprar">
+    <button class="botao-comprar" (click)="comprar()">Comprar</button>
+  </div>
+</main>

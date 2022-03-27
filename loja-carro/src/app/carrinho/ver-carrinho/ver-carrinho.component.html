@@ -1,33 +1,18 @@
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 <header class="container">
   <div class="navbar">
-    <div class="img">
-    <img src="../../../assets/vista-lateral-vazia-do-carrinho-de-compras.png" width="25px">
-  </div>
-    <span>CARRINHO</span>
-    <div class="entrar">
-      <button (click)="entrar()" class="botao">ENTRAR</button>
-    </div>
+    <span class="material-icons">
+      local_grocery_store
+    </span>
+    <span class="carrinho">CARRINHO</span>
   </div>
 </header>
 
 <main class="main">
-  <div class="add">
-    <button class="botao-add" (click)="add()">Adicionar produto</button>
-  </div>
+  <div class="add"><button class="botao-add" (click)="add()">Adicionar produto</button></div>
   <div class="container-produto">
-    <div class="imagem">
-      <img src="../../../assets/carro-esporte.png" width="50px">
-    </div>
-    <div class="nome">Nome
-      <div class="botao-continuar">
-        <button class="continuar" (click)="voltar()">Continuar comprando</button>
-      </div>
-    </div>
-    <div class="quantidade">Quantidade:
-      <div class="botao-finalizar">
-        <button class="finalizar" (click)="finalizar()">Finalizar compra</button>
-      </div>
-    </div>
+    <div class="nome">Nome<button class="continuar" (click)="voltar()">Continuar comprando</button> </div>
+    <div class="quantidade">Quantidade:<button class="finalizar" (click)="finalizar()">Finalizar compra</button></div>
     <div class="valor">Valor: {{valor}}</div>
   </div>
 </main>

@@ -9,10 +9,12 @@ import { Router } from "@angular/router";
 export class VerCarrinhoComponent implements OnInit {
   constructor(private router: Router) {}
 
-
+  user;
   valor = 'Teste';
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.user = localStorage.getItem('user');
+  }
 
   entrar(){
      this.router.navigate(['/login']); 
