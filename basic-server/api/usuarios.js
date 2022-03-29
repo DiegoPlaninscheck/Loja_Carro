@@ -132,6 +132,52 @@ database(`SELECT * FROM PESSOA WHERE NOME = "${dados.NOME}" AND SENHA = "${dados
     })
 })
 
+inserirRota('/cadastrar', function(dados, resposta) {
+    database(`INSERT INTO PESSOA VALUES(null, "${dados.NOME}, "${dados.SENHA}", "${dados.SOBRENOME}", "${dados.NASCIMENTO}, "${dados.EMAIL}", "${dados.ENDERECO_CODIGO}")`)
+    .then(result => {
+        resposta(result);
+    }).catch(erro => {
+        console.log('Deu ruim')
+        resposta({erro})
+    })
+})
+
+inserirRota('/endereco', function(dados, resposta) {
+    database(`INSERT INTO ENDERECO VALUES(null, "${dados.PAIS}", "${dados.ESTADO}", "${dados.CIDADE}", "${dados.CEP}")`)
+    .then(result => {
+        resposta(result);
+    }).catch(erro => {
+        console.log('Deu ruim')
+        resposta({erro})
+    })
+})
+
+inserirRota('/endereco_listar',
+    function(dados, resposta) {
+        console.log(dados);
+        database(`SELECT * FROM ENDERECO`)
+            .then(result => {
+                console.log('Listado');
+                resposta(result)
+            }).catch(erro => {
+                resposta({erro})
+            });
+
+    })
+
+    inserirRota('/pessoa_listar',
+    function(dados, resposta) {
+        console.log(dados);
+        database(`SELECT * FROM PESSOA`)
+            .then(result => {
+                console.log('Listado');
+                resposta(result)
+            }).catch(erro => {
+                resposta({erro})
+            });
+
+    })
+
 
 inserirRota('/checar_carro', function(dados, resposta) {
     database(`SELECT * FROM CARRO`)

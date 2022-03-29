@@ -19,16 +19,14 @@ import { VerCarrinhoComponent } from "./carrinho/ver-carrinho/ver-carrinho.compo
 import { CarrinhoModule } from "./carrinho/carrinho.module";
 import { SuporteComponent } from "./suporte/suporte.component";
 import { FornecedorComponent } from "./fornecedor/fornecedor.component";
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 const routes: Routes = [
   { path: "", component: GerenciarLojaComponent, canActivate: [] },
   { path: "produto/:id_produto", component: ProdutoComponent, canActivate: [] },
   { path: "login", component: LoginComponent, canActivate: [] },
-  {
-    path: "carrinho",
-    component: VerCarrinhoComponent,
-    canActivate: [CheckLogged],
-  },
+  {path: "cadastro", component: CadastroComponent, canActivate: []},
+  {path: "carrinho", component: VerCarrinhoComponent, canActivate: [CheckLogged]},
   { path: "suporte", component: SuporteComponent, canActivate: [] },
   { path: "fornecedor", component: FornecedorComponent, canActivate: [] },
 ];
@@ -53,6 +51,7 @@ export function getAuthServiceConfigs() {
     GerenciarLojaComponent,
     SuporteComponent,
     FornecedorComponent,
+    CadastroComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

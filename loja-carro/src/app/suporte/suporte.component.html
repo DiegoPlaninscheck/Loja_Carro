@@ -1,47 +1,32 @@
-<header>
-  <div class="navbar">
-    <div class="logo">
-      <img src="./assets/logo.png" style="width: 100px" />
-    </div>
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Icons"
+  rel="stylesheet"
+/>
 
-    <div class="campo-pesquisa">
-      <i class="fi fi-rr-search"></i>
-      <input type="text" placeholder="Pesquisar" />
-    </div>
-    <button class="button" (click)="voltar()">Voltar</button>
+<span (click)="voltar()" class="material-icons">reply</span>
+
+<main class="main">
+  <div class="duvida">
+    <span>Sobre o que é a sua dúvida?</span>
   </div>
-</header>
-
-
   <div class="container">
-    <div class="teste1">
-      <button class="button1" (click)="cadastrar()">
-        <div class="icone">
-          <i class="fi fi-rr-user"></i>
-        </div>
-      </button>
-      <button class="button2" (click)="comprar()">
-        <div class="icone">
-          <i class="fi fi-rr-home"></i>
-        </div>
-      </button>
+    <div class="home" (click)="voltar()">
+      <span class="fi fi-rr-home"></span>
     </div>
-
-    <div class="chat">
-        <input class="input" type="text" placeholder="Precisa de ajuda?">
+    <div class="user" (click)="login()">
+      <span class="fi fi-rr-user"></span>
     </div>
-
-    <div class="teste2">
-      <button class="button3" (click)="pagamento()">
-        <div class="icone">
-          <i class="fi fi-rr-shopping-cart"></i>
-        </div>
-      </button>
-      <button class="button4" (click)="parceria()">
-        <div class="icone">
-          <i class="fi fi-rr-phone-call"></i>
-        </div>
-      </button>
+    <div class="carrinho">
+      <span class="fi fi-rr-shopping-cart"> </span>
     </div>
-
+   <div class="car">
+    <span class="fi fi-rr-car"></span>
+   </div>
+    <div class="logout">
+      <span class="material-icons">logout</span>
+    </div>
+    <div class="conta">
+      <span class="material-icons">account_circle</span>
+    </div>
   </div>
+</main>

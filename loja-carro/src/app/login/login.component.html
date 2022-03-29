@@ -4,6 +4,7 @@
             <input [(ngModel)]='nome' placeholder="Username">
             <input [(ngModel)]='senha' placeholder="Password" type='password'>
             <button class="button" (click)='logar()'>Login</button>
+            <button class="button" (click)="cadastrar()">Cadastrar-se</button>
             <button class="button" (click)="socialSignIn('google')">Logar com o Google</button>
             <button class="button" (click)='voltar()'>Voltar</button>
         </div>

@@ -36,18 +36,31 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   logar() {
-    this.usuarioService
+    if(this.nome && this.senha){
+      this.usuarioService
       .checarPessoa(this.nome, this.senha)
       .then((resultado: any) => {
-        console.log(resultado);
-        localStorage.setItem("NOME", resultado[0].NOME);
-        localStorage.setItem("SENHA", resultado[0].SENHA);
-        this.router.navigate([""]);
+        if(resultado != ""){
+          localStorage.setItem("NOME", resultado[0].NOME);
+          localStorage.setItem("SENHA", resultado[0].SENHA);
+          this.router.navigate([""]);
+        } else{
+            alert("Usuário ou senha não encontrado!");
+        }
       })
       .catch((erro) => {
         console.log("ERRO AO BUSCAR USUÁRIO:", erro);
       });
+    } else {
+      alert("Preencha todos os campos!")
+    }
+    
   }
+
+  cadastrar(){
+    this.router.navigate(["/cadastro"]);
+  }
+
   voltar() {
     this.router.navigate([""]);
   }
