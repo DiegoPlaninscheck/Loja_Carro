@@ -52,7 +52,7 @@ export class UsuarioService {
 
   endereco(PAIS, ESTADO, CIDADE, CEP){
     return new Promise((resolve, rejeitado) => {
-      fetch('/api/cadastrar', {
+      fetch('/api/endereco', {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
