@@ -7,6 +7,7 @@ import { LoginComponent } from "./login/login.component";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import CheckLogged from "./checkLogged.canActivate";
+import CheckLogged_Carro from "./checkLoggged_Carro.canActivated";
 
 import {
   SocialLoginModule,
@@ -20,12 +21,14 @@ import { CarrinhoModule } from "./carrinho/carrinho.module";
 import { SuporteComponent } from "./suporte/suporte.component";
 import { FornecedorComponent } from "./fornecedor/fornecedor.component";
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { CadastroCarroComponent } from './cadastro-carro/cadastro-carro.component';
 
 const routes: Routes = [
   { path: "", component: GerenciarLojaComponent, canActivate: [] },
   { path: "produto/:id_produto", component: ProdutoComponent, canActivate: [] },
   { path: "login", component: LoginComponent, canActivate: [] },
   {path: "cadastro", component: CadastroComponent, canActivate: []},
+  {path: "cadastrarCarro", component: CadastroCarroComponent, canActivate: [CheckLogged_Carro]},
   {path: "carrinho", component: VerCarrinhoComponent, canActivate: [CheckLogged]},
   { path: "suporte", component: SuporteComponent, canActivate: [] },
   { path: "fornecedor", component: FornecedorComponent, canActivate: [] },
@@ -52,6 +55,7 @@ export function getAuthServiceConfigs() {
     SuporteComponent,
     FornecedorComponent,
     CadastroComponent,
+    CadastroCarroComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -67,6 +71,7 @@ export function getAuthServiceConfigs() {
       useFactory: getAuthServiceConfigs,
     },
     CheckLogged,
+    CheckLogged_Carro
   ],
   bootstrap: [AppComponent],
 })

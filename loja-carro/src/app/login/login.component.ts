@@ -40,6 +40,11 @@ export class LoginComponent implements OnInit {
       this.usuarioService
       .checarPessoa(this.nome, this.senha)
       .then((resultado: any) => {
+        if(resultado[0].FUNCIONARIO == true){
+          localStorage.setItem("FUNCIONARIO", "1")
+          this.router.navigate(["/cadastrar"]);
+        }
+
         if(resultado != ""){
           localStorage.setItem("NOME", resultado[0].NOME);
           localStorage.setItem("SENHA", resultado[0].SENHA);

@@ -6,15 +6,17 @@ import {
   RouterStateSnapshot,
 } from "@angular/router";
 import { Observable } from "rxjs";
+import { Alert } from "selenium-webdriver";
 import { UsuarioService } from "./services/usuario.service";
 
 @Injectable()
-class CheckLogged implements CanActivate {
+class CheckLogged_Carro implements CanActivate {
   constructor(private router: Router, private usuarioService: UsuarioService) {}
 
   user = "";
   password = "";
   retorno = false;
+  funcionario;
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -24,18 +26,19 @@ class CheckLogged implements CanActivate {
 
     this.user = localStorage.getItem("NOME");
     this.password = localStorage.getItem("SENHA");
+    this.funcionario = localStorage.getItem("FUNCIONARIO")
     
 
     console.log(this.router.url)
 
-    if(this.user && this.password) {
+    if(this.user && this.password && this.funcionario == true) {
       return true;
     } else {
-      this.router.navigate(['/login'])
+      alert("FUNCAO NAO DISPOnivel");
       return false;
     }
     
   }
 }
 
-export default CheckLogged;
+export default CheckLogged_Carro;

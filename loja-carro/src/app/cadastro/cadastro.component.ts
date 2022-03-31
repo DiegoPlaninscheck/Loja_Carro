@@ -28,16 +28,7 @@ export class CadastroComponent implements OnInit {
       console.log(result.length);
       id_endereco = result.length;
     })
-    if (
-      this.nome &&
-      this.sobrenome &&
-      this.senha &&
-      this.email &&
-      this.pais &&
-      this.estado &&
-      this.cidade &&
-      this.cep
-    ) {
+    if (this.nome && this.sobrenome && this.senha && this.email && this.pais && this.estado && this.cidade && this.cep) {
       this.usuarioService.endereco(this.pais, this.estado, this.cidade, this.cep);
       this.usuarioService.cadastrar( this.nome,this.senha,  this.sobrenome, this.nascimento,  this.email, id_endereco);
       this.router.navigate(["/login"]);

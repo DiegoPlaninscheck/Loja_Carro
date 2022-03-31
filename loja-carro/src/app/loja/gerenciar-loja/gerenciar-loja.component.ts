@@ -16,7 +16,8 @@ export class GerenciarLojaComponent implements OnInit {
   valor = undefined;
   imagem;
   user: any;
-
+  funcionario = localStorage.getItem('FUNCIONARIO')
+  
   list = [];
 
   constructor(
@@ -27,7 +28,7 @@ export class GerenciarLojaComponent implements OnInit {
 
   ngOnInit() {
     this.display();
-
+    console.log(this.funcionario);
     this.usuarioService.checarCarro()
       .then((resultado: any) => {
         for (let i = 0; i < resultado.length; i++) {
@@ -61,6 +62,9 @@ export class GerenciarLojaComponent implements OnInit {
   //   }
   // }
 
+  cadastrarCarro(){
+    this.router.navigate(['/cadastrarCarro'])
+  }
 
   display() {
     this.user = localStorage.getItem('NOME')
@@ -105,7 +109,6 @@ export class GerenciarLojaComponent implements OnInit {
   }
 
   detalhes(index) {
-
     this.router.navigate(['/produto', index])
   }
 
@@ -124,6 +127,7 @@ export class GerenciarLojaComponent implements OnInit {
   sair() {
     localStorage.removeItem("NOME")
     localStorage.removeItem("SENHA")
+    localStorage.removeItem("FUNCIONARIO")
     document.location.reload();
   }
 }

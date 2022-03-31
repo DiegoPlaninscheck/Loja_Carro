@@ -35,6 +35,11 @@
           logout
         </span>
       </div>
+      <div class="icone" *ngIf="funcionario">
+        <span (click)="cadastrarCarro()" class="material-icons">
+          add
+        </span>
+      </div>
       <div *ngIf="user" class="user">
         <div class="material-icons">
           account_circle

@@ -98,6 +98,7 @@ database(`CREATE TABLE IF NOT EXISTS PESSOA (
     SOBRENOME varchar(30) not null, 
     NASCIMENTO date,
     EMAIL varchar(50),
+    FUNCIONARIO BOOLEAN NOT NULL,
     ENDERECO_CODIGO INTERGER NOT NULL,
     FOREIGN KEY (ENDERECO_CODIGO)
     REFERENCES ENDERECO(CODIGO)
@@ -108,16 +109,16 @@ database(`CREATE TABLE IF NOT EXISTS PESSOA (
 });
 
 // database(`INSERT INTO PESSOA VALUES 
-// (null, 'Diego', '123', 'Planinscheck', null, 'dieguinhodobarulho@hotmail.com', 1),
-// (null, 'João', '321', 'Meireles', null, 'joaozinhogameplays@gmail.com.br', 2),
-// (null, 'Camilly', 'camis', 'Pessotti', null, 'camillyzada@gmail.com', 3),
-// (null, 'Bruna', 'brunas', 'Mafra', null, 'bruninha@gmail.com', 4),
-// (null, 'Henrique', 'henri', 'Cole', null, 'henricole@gmail.com', 5),
-// (null, 'Vinicius', 'vini12', 'Bonatti', null, 'vinibonatti@gmail.com', 6),
-// (null, 'Leonardo', 'leo', 'Rafaelli', null, 'leorafaelli@gmail.com', 7),
-// (null, 'Thiago', 'thiagao12', 'Braga', null, 'thiagobraga@gmail.com', 8),
-// (null, 'Romário', 'romas', 'Hornburg', null, 'romasdeus@gmail.com', 9),
-// (null, 'Gustavo', 'gusta', 'Rebelatto', null, 'gustarebelatto@gmail.com', 10)`)
+// (null, 'Diego', '123', 'Planinscheck', null, 'dieguinhodobarulho@hotmail.com', true, 1),
+// (null, 'João', '321', 'Meireles', null, 'joaozinhogameplays@gmail.com.br', false, 2),
+// (null, 'Camilly', 'camis', 'Pessotti', null, 'camillyzada@gmail.com', false, 3),
+// (null, 'Bruna', 'brunas', 'Mafra', null, 'bruninha@gmail.com', false, 4),
+// (null, 'Henrique', 'henri', 'Cole', null, 'henricole@gmail.com', false, 5),
+// (null, 'Vinicius', 'vini12', 'Bonatti', null, 'vinibonatti@gmail.com', false, 6),
+// (null, 'Leonardo', 'leo', 'Rafaelli', null, 'leorafaelli@gmail.com', false, 7),
+// (null, 'Thiago', 'thiagao12', 'Braga', null, 'thiagobraga@gmail.com', false, 8),
+// (null, 'Romário', 'romas', 'Hornburg', null, 'romasdeus@gmail.com', false, 9),
+// (null, 'Gustavo', 'gusta', 'Rebelatto', null, 'gustarebelatto@gmail.com', false, 10)`)
 //     .then(result => {
 //         console.log('Dados cadastrados');
 //     }).catch(erro => {
