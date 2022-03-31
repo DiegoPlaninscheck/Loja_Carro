@@ -1,0 +1,160 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+}
+
+.nome{  
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    outline: none;
+    border: none;
+}
+
+.nome input{  
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    outline: none;
+    border: none;
+    background-color: red;
+}
+
+.placa{
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    outline: none;
+    border: none;
+}
+
+.placa input{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    outline: none;
+    border: none;
+    background-color: red;
+}
+
+.marca{
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    outline: none;
+    border: none;
+}
+
+.marca input{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    outline: none;
+    border: none;
+    background-color: red;
+}
+
+.modelo{
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    outline: none;
+    border: none;
+}
+
+.modelo input{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    outline: none;
+    border: none;
+    background-color: red;
+}
+
+.valor{
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    outline: none;
+    border: none;
+}
+
+.valor input{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    outline: none;
+    border: none;
+    background-color: red;
+}
+
+.imagem{
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    outline: none;
+    border: none;
+}
+
+.imagem input{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    outline: none;
+    border: none;
+    background-color: red;
+}
+
+.botao{
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    outline: none;
+    border: none;
+}
+
+.botao input{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    outline: none;
+    border: none;
+    background-color: red;
+}

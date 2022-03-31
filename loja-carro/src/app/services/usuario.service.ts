@@ -63,6 +63,20 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
+
+  carro(NOME, PLACA, MARCA, MODELO, VALOR, IMAGEM){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/carro', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({NOME, PLACA, MARCA, MODELO, VALOR, IMAGEM})
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
   
   checarEndereco(){
     return new Promise((resolve, rejeitado) => {

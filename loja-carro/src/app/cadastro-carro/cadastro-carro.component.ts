@@ -9,7 +9,19 @@ export class CadastroCarroComponent implements OnInit {
 
   constructor() { }
 
+
+  nome;
+  placa;
+  marca;
+  modelo;
+  valor;
+  imagem;
+
   ngOnInit() {
+  }
+
+  cadastrar(){
+    
   }
 
 }

@@ -142,6 +142,16 @@ inserirRota('/cadastrar', function(dados, resposta) {
     })
 })
 
+inserirRota('/carro', function(dados, resposta) {
+    database(`INSERT INTO CARRO VALUES(null, "${dados.NOME}", "${dados.PLACA}", "${dados.MARCA}", "${dados.MODELO}", "${dados.VALOR}", "${dados.IMAGEM}")`)
+    .then(result => {
+        resposta(result);
+    }).catch(erro => {
+        console.log('Deu ruim')
+        resposta({erro})
+    })
+})
+
 inserirRota('/endereco', function(dados, resposta) {
     database(`INSERT INTO ENDERECO VALUES(null, "${dados.PAIS}", "${dados.ESTADO}", "${dados.CIDADE}", "${dados.CEP}")`)
     .then(result => {
