@@ -1,23 +1,30 @@
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<header>
+  <span (click)="voltar()" class="material-icons">
+    reply
+  </span>
+</header>
+
 <main class="main">  
   <div class="nome">
-      <input type="text" placeholder="Nome">
+      <input [(ngModel)]="nome" type="text" placeholder="Nome">
   </div>
   <div class="placa">
-    <input type="text" placeholder="Placa">
+    <input [(ngModel)]="placa" type="text" placeholder="Placa">
   </div>
   <div class="marca">
-    <input type="text" placeholder='Marca'>
+    <input [(ngModel)]="marca" type="text" placeholder='Marca'>
   </div>
   <div class="modelo">
-    <input type="text" placeholder='Modelo'>
+    <input [(ngModel)]="modelo" type="text" placeholder='Modelo'>
   </div>
   <div class="valor">
-    <input type="number" placeholder='Valor'>
+    <input [(ngModel)]="valor" type="number" placeholder='Valor'>
   </div>
   <div class="imagem">
-    <input type="file" placeholder='Imagem'>
+    <input [(ngModel)]="imagem" type="file" placeholder='Imagem'>
   </div>
-  <div class="botao">
-    <button (click)="cadastrar()">Cadastrar</button>
+  <div>
+    <button (click)="cadastrar()" class="botao">Cadastrar</button>
   </div>
 </main>

@@ -30,7 +30,7 @@
       <div class="icone">
         <i class="fi fi-rr-car" (click)="fornecedor()"></i>
       </div>
-      <div class="icone">
+      <div class="icone" *ngIf="user">
         <span class="material-icons" (click)="sair()">
           logout
         </span>

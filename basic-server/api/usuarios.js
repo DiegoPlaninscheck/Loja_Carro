@@ -133,7 +133,7 @@ database(`SELECT * FROM PESSOA WHERE NOME = "${dados.NOME}" AND SENHA = "${dados
 })
 
 inserirRota('/cadastrar', function(dados, resposta) {
-    database(`INSERT INTO PESSOA VALUES(null, "${dados.NOME}", "${dados.SENHA}", "${dados.SOBRENOME}", "${dados.NASCIMENTO}", "${dados.EMAIL}", "${dados.ENDERECO_CODIGO}")`)
+    database(`INSERT INTO PESSOA VALUES(null, "${dados.NOME}", "${dados.SENHA}", "${dados.SOBRENOME}", "${dados.NASCIMENTO}", "${dados.EMAIL}", null, "${dados.ENDERECO_CODIGO}")`)
     .then(result => {
         resposta(result);
     }).catch(erro => {

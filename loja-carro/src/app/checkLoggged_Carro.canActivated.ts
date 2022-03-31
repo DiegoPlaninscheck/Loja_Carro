@@ -22,14 +22,10 @@ class CheckLogged_Carro implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    console.log("Dentro");
 
     this.user = localStorage.getItem("NOME");
     this.password = localStorage.getItem("SENHA");
     this.funcionario = localStorage.getItem("FUNCIONARIO")
-    
-
-    console.log(this.router.url)
 
     if(this.user && this.password && this.funcionario == true) {
       return true;
