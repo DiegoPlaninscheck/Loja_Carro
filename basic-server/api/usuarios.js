@@ -153,7 +153,8 @@ inserirRota('/carro', function(dados, resposta) {
 })
 
 inserirRota('/editar_carro', function(dados, resposta) {
-    database(`UPDATE CARRO SET NOME = "${dados.NOME}", PLACA = "${dados.PLACA}", MARCA = "${dados.MARCA}", MODELO = "${dados.MODELO}", VALOR = "${dados.VALOR}", IMAGEM = "${dados.IMAGEM}"`)
+    database(`UPDATE CARRO SET NOME = "${dados.NOME}", PLACA = "${dados.PLACA}", MARCA = "${dados.MARCA}", MODELO = "${dados.MODELO}", VALOR = "${dados.VALOR}", IMAGEM = "${dados.IMAGEM}"
+    where ID = "${dados.ID}"`)
     .then(result => {
         resposta(result);
     }).catch(erro => {

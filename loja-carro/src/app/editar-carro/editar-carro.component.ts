@@ -46,18 +46,8 @@ export class EditarCarroComponent implements OnInit {
     this.id = this.router.url.substring(this.router.url.length - 1)
     this.usuarioService.editarCarro(this.nome, this.placa, this.marca, this.modelo, this.valor, this.imagem)
     .then((resultado: any) => {
-      resultado.find(valorCarro => {
-          if(valorCarro.id === this.id){
-          valorCarro.nome = this.nome;
-          valorCarro.placa = this.placa;
-          valorCarro.marca = this.marca;
-          valorCarro.modelo = this.modelo;
-          valorCarro.valor = this.valor;
-          valorCarro.imagem = this.imagem;
-          // this.router.navigate([''])
-          console.log("DEU")
-      }
-      })
+        this.router.navigate([''])
+      
     }).catch(erro => {
       console.log("ERRO AO EDITAR CARRO:", erro)
     })

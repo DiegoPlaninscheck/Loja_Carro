@@ -1,9 +1,9 @@
 database(`CREATE TABLE IF NOT EXISTS CARRO (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
-    NOME varchar(30) not null UNIQUE,
-    PLACA char(7) not null UNIQUE,
+    NOME varchar(30) not null,
+    PLACA varchar(7) not null UNIQUE,
     MARCA varchar(30) not null,
-    MODELO varchar(30) not null UNIQUE,
+    MODELO varchar(30) not null,
     VALOR float not null,
     IMAGEM varchar(30) not null 
     )`).then(result => {
