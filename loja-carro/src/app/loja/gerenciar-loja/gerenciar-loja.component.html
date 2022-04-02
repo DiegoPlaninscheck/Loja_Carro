@@ -60,7 +60,7 @@
       <div class="info">Nome: {{ a.nome }}</div>
       <div class="modelo">Modelo: {{ a.modelo }}</div>
       <div class="valor">Valor: R${{ a.valor }}</div>
-      <button (click)="editarCarro(i + 1)" class="editar">Editar</button>
+      <button *ngIf="funcionario" (click)="editarCarro(i + 1)" class="editar">Editar</button>
     </div>
   </div>
 </main>
