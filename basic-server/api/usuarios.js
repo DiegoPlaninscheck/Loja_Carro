@@ -206,6 +206,7 @@ inserirRota('/checar_carro', function(dados, resposta) {
             for (i = 0; i < result.length; i++) {
                 let id = result[i].ID;
                 let nome = result[i].NOME;
+                let placa = result[i].PLACA;
                 let marca = result[i].MARCA;
                 let modelo = result[i].MODELO;
                 let valor = result[i].VALOR;
@@ -214,6 +215,7 @@ inserirRota('/checar_carro', function(dados, resposta) {
                 newList = {
                     id: id,
                     nome: nome,
+                    placa: placa,
                     marca: marca,
                     modelo: modelo,
                     valor: valor,
