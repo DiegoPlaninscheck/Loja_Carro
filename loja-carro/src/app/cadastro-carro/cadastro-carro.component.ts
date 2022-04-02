@@ -30,7 +30,7 @@ export class CadastroCarroComponent implements OnInit {
       .then((resultado: any) => {
         this.Router.navigate([''])
       }).catch(erro => {
-        console.log("ERRO AO BUSCAR CARRO:", erro)
+        console.log("ERRO AO CADASTRAR CARRO:", erro)
       })
 
   }

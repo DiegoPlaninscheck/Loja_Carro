@@ -66,6 +66,10 @@ export class GerenciarLojaComponent implements OnInit {
     this.router.navigate(['/cadastrarCarro'])
   }
 
+  editarCarro(index){
+    this.router.navigate(['/editarCarro', index])
+  }
+
   display() {
     this.user = localStorage.getItem('NOME')
   }

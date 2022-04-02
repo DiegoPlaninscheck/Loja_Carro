@@ -15,7 +15,6 @@ class CheckLogged_Carro implements CanActivate {
 
   user = "";
   password = "";
-  retorno = false;
   funcionario;
 
   canActivate(
@@ -30,7 +29,7 @@ class CheckLogged_Carro implements CanActivate {
     if(this.user && this.password && this.funcionario == true) {
       return true;
     } else {
-      alert("FUNCAO NAO DISPOnivel");
+      alert("FUNÇÃO NÃO DISPONÍVEL");
       return false;
     }
     

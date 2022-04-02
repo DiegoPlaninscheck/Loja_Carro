@@ -1,0 +1,31 @@
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<header>
+  <span (click)="voltar()" class="material-icons">
+    reply
+  </span>
+</header>
+
+
+<main class="main">  
+  <div class="nome">
+      <input [(ngModel)]="nome" type="text" placeholder="Nome">
+  </div>
+  <div class="placa">
+    <input [(ngModel)]="placa" type="text" placeholder="Placa">
+  </div>
+  <div class="marca">
+    <input [(ngModel)]="marca" type="text" placeholder='Marca'>
+  </div>
+  <div class="modelo">
+    <input [(ngModel)]="modelo" type="text" placeholder='Modelo'>
+  </div>
+  <div class="valor">
+    <input [(ngModel)]="valor" type="number" placeholder='Valor'>
+  </div>
+  <div class="imagem">
+    <input [(ngModel)]="imagem" type="file" placeholder='Imagem'>
+  </div>
+  <div>
+    <button (click)="editarCarro()" class="botao">Editar</button>
+  </div>
+</main>

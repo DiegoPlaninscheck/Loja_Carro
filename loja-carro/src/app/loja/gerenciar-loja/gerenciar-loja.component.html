@@ -56,15 +56,11 @@
       <div>
         <img src={{a.imagem}} width="100%" height="100%">
       </div>
-      <img *ngIf="teste == 1" [src]="imageURL" width="100px" />
       <div class="marca">Marca: {{ a.marca }}</div>
       <div class="info">Nome: {{ a.nome }}</div>
       <div class="modelo">Modelo: {{ a.modelo }}</div>
       <div class="valor">Valor: R${{ a.valor }}</div>
+      <button (click)="editarCarro(i + 1)" class="editar">Editar</button>
     </div>
   </div>
 </main>
-<!-- <div *ngIf="list[i].nome == nome"><img src="../../../assets/2020-08-06-46b4943d-32fe-4f7f-b9a5-6f83fc04920c.jpeg" width="500px"></div>
-                <div *ngIf="list[i].nome == nome"><img src="../../../assets/fa6dfa19d6fbd4d461a52623479e5a4d-thumbjpg-volkswagen-jetta-8467707-900-675-70.jpg" width="500px"></div> -->
-
-<!-- <footer><img width="80px" src="../../../assets/1792082_49-jr2_7338-696x464-1.jpg"></footer> -->

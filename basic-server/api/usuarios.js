@@ -152,6 +152,16 @@ inserirRota('/carro', function(dados, resposta) {
     })
 })
 
+inserirRota('/editar_carro', function(dados, resposta) {
+    database(`UPDATE CARRO SET NOME = "${dados.NOME}", PLACA = "${dados.PLACA}", MARCA = "${dados.MARCA}", MODELO = "${dados.MODELO}", VALOR = "${dados.VALOR}", IMAGEM = "${dados.IMAGEM}"`)
+    .then(result => {
+        resposta(result);
+    }).catch(erro => {
+        console.log('Deu ruim')
+        resposta({erro})
+    })
+})
+
 inserirRota('/endereco', function(dados, resposta) {
     database(`INSERT INTO ENDERECO VALUES(null, "${dados.PAIS}", "${dados.ESTADO}", "${dados.CIDADE}", "${dados.CEP}")`)
     .then(result => {
