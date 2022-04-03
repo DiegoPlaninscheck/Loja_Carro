@@ -11,14 +11,19 @@ import { UsuarioService } from '../../services/usuario.service';
 export class GerenciarLojaComponent implements OnInit {
 
   nome = '';
+  placa = '';
   marca = '';
   modelo = '';
   valor = undefined;
   imagem;
   user: any;
   funcionario = localStorage.getItem('FUNCIONARIO')
-  
+
   list = [];
+
+
+  imageURL;
+  teste;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,7 +33,6 @@ export class GerenciarLojaComponent implements OnInit {
 
   ngOnInit() {
     this.display();
-    console.log(this.funcionario);
     this.usuarioService.checarCarro()
       .then((resultado: any) => {
         for (let i = 0; i < resultado.length; i++) {
@@ -38,6 +42,7 @@ export class GerenciarLojaComponent implements OnInit {
           }
           let a = {
             nome: resultado[i].nome,
+            placa: resultado[i].placa,
             marca: resultado[i].marca,
             modelo: resultado[i].modelo,
             valor: resultado[i].valor,
@@ -45,28 +50,16 @@ export class GerenciarLojaComponent implements OnInit {
           }
           this.list.push(a);
         }
-
-
       }).catch(erro => {
         console.log("ERRO AO BUSCAR CARRO:", erro)
       })
-
-
   }
 
-  // imagens() {
-  //   for(let i = 0; i < this.list.length; i++){
-  //     if(this.list[i].imagem === this.list[i].nome){
-        
-  //     }
-  //   }
-  // }
-
-  cadastrarCarro(){
+  cadastrarCarro() {
     this.router.navigate(['/cadastrarCarro'])
   }
 
-  editarCarro(index){
+  editarCarro(index) {
     this.router.navigate(['/editarCarro', index])
   }
 
@@ -74,37 +67,7 @@ export class GerenciarLojaComponent implements OnInit {
     this.user = localStorage.getItem('NOME')
   }
 
-  // informacoesCarro(){
-  //   this.usuarioService.checarCarro()
-  //   .then((resultado: Car[]) => {
-  //     for(let i = 0; i < resultado.length; i++){
-  //       if(resultado[i].nome && resultado[i].marca &&
-  //         resultado[i].modelo && resultado[i].valor){
-  //           this.nome = resultado[i].nome;
-  //           this.marca = resultado[i].marca;
-  //           this.modelo = resultado[i].modelo;
-  //           this.valor = resultado[i].valor;
-  //       }
-  //     }
-  //   }).catch(erro => {
-  //     console.log("ERRO AO BUSCAR CARRO:", erro)
-  //   })
-  // }
-
-  imageURL;
-  teste;
-  mostrarImagem(event){
-    const file = new FileReader
-    file.onload = (e) => {
-      this.imageURL = e.target.result;
-      console.log(this.imageURL)
-    }
-    this.teste = 1
-    file.readAsDataURL(event.target.files[0])
-    console.log(file)
-  }
-
-  home(){
+  home() {
     document.location.reload();
   }
 

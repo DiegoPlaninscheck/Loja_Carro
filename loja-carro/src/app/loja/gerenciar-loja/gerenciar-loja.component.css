@@ -136,6 +136,12 @@ main {
     align-items: center;
 }
 
+.placa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .modelo{
     display: grid;
     justify-content: center;

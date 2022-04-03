@@ -5,7 +5,7 @@ database(`CREATE TABLE IF NOT EXISTS CARRO (
     MARCA varchar(30) not null,
     MODELO varchar(30) not null,
     VALOR float not null,
-    IMAGEM varchar(30) not null 
+    IMAGEM varchar(9999) not null 
     )`).then(result => {
     console.log('Tabela CARRO criada com sucesso');
 }).catch(erro => {

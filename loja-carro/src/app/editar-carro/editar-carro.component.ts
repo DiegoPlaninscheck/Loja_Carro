@@ -15,6 +15,7 @@ export class EditarCarroComponent implements OnInit {
   modelo;
   valor;
   imagem;
+  teste;
 
   constructor(
     private router: Router,
@@ -43,14 +44,21 @@ export class EditarCarroComponent implements OnInit {
   }
 
   editarCarro(){
-    this.id = this.router.url.substring(this.router.url.length - 1)
-    this.usuarioService.editarCarro(this.nome, this.placa, this.marca, this.modelo, this.valor, this.imagem)
+    this.usuarioService.editarCarro(this.nome, this.placa, this.marca, this.modelo, this.valor, this.imagem, this.id)
     .then((resultado: any) => {
         this.router.navigate([''])
-      
-    }).catch(erro => {
-      console.log("ERRO AO EDITAR CARRO:", erro)
     })
+  }
+
+  mostrarImagem(event){
+    const file = new FileReader
+    file.onload = (e) => {
+      this.imagem = e.target.result;
+      console.log(this.imagem)
+    }
+    this.teste = 1
+    file.readAsDataURL(event.target.files[0])
+    console.log(file)
   }
 
   voltar() {

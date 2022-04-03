@@ -78,14 +78,14 @@ export class UsuarioService {
     })
   }
 
-  editarCarro(NOME, PLACA, MARCA, MODELO, VALOR, IMAGEM){
+  editarCarro(NOME, PLACA, MARCA, MODELO, VALOR, IMAGEM, ID){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/editar_carro', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({NOME, PLACA, MARCA, MODELO, VALOR, IMAGEM})
+        body: JSON.stringify({NOME, PLACA, MARCA, MODELO, VALOR, IMAGEM, ID})
       }).then(resultado => resultado.json())
       .then(resolvido => resolve(resolvido))
       .catch(rejeitado);

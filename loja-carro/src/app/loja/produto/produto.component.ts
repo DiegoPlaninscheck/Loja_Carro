@@ -14,6 +14,7 @@ export class ProdutoComponent implements OnInit {
 
   id;
   nome;
+  placa;
   marca;
   modelo;
   valor;
@@ -28,8 +29,8 @@ export class ProdutoComponent implements OnInit {
             this.id = this.router.url.substring(this.router.url.length - 2)
           }
           if (this.id == valorCarro.id) {
-            console.log(this.id)
             this.nome = valorCarro.nome
+            this.placa = valorCarro.placa
             this.marca = valorCarro.marca
             this.modelo = valorCarro.modelo
             this.valor = valorCarro.valor
