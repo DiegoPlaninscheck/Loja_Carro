@@ -20,13 +20,9 @@ class CheckLogged implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    console.log("Dentro");
 
     this.user = localStorage.getItem("NOME");
     this.password = localStorage.getItem("SENHA");
-    
-
-    console.log(this.router.url)
 
     if(this.user && this.password) {
       return true;

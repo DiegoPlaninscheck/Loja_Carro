@@ -45,9 +45,7 @@ export class EditarCarroComponent implements OnInit {
 
   editarCarro(){
     this.usuarioService.editarCarro(this.nome, this.placa, this.marca, this.modelo, this.valor, this.imagem, this.id)
-    .then((resultado: any) => {
-        this.router.navigate([''])
-    })
+    this.router.navigate([''])
   }
 
   mostrarImagem(event){

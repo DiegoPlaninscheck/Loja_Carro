@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { UsuarioService } from "src/app/services/usuario.service";
 
 @Component({
   selector: "app-ver-carrinho",
@@ -7,21 +8,38 @@ import { Router } from "@angular/router";
   styleUrls: ["./ver-carrinho.component.css"],
 })
 export class VerCarrinhoComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router,  private usuarioService: UsuarioService) {}
 
   user;
-  valor = 'Teste';
+  listCar = [];  
 
   ngOnInit() {
-    this.user = localStorage.getItem('user');
+    this.usuarioService.carrinho()
+    .then((resultado: any) => {
+      console.log(resultado)
+      this.usuarioService.checarCarro()
+
+      .then((resultado2: any) => {
+        resultado2.find(valorCarro => {
+          if(valorCarro.id == resultado[0].ID_CARRO){
+            let carro = {
+              nome: valorCarro.nome, 
+              valor: valorCarro.valor
+            }
+            this.listCar.push(carro)
+          }
+        })
+        console.log(this.listCar)
+      })
+    }).catch(erro => {
+      console.log(erro);
+    })
+
+    
   }
 
   entrar(){
      this.router.navigate(['/login']); 
-  }
-
-  add() {
-    this.router.navigate([''])
   }
 
   voltar() {

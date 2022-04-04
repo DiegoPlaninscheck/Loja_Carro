@@ -33,6 +33,7 @@ database(`CREATE TABLE IF NOT EXISTS CARRO (
 
 database(`CREATE TABLE IF NOT EXISTS PRODUTO (
     NUMERO INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
+    CARRINHO BOOLEAN NOT NULL,
     ID_CARRO INTEGER NOT NULL, 
     FOREIGN KEY(ID_CARRO)
     REFERENCES CARRO(ID)
@@ -44,16 +45,16 @@ database(`CREATE TABLE IF NOT EXISTS PRODUTO (
 
 
 // database(`INSERT INTO PRODUTO VALUES
-// (null, 1),
-// (null, 2),
-// (null, 3),
-// (null, 4),
-// (null, 5),
-// (null, 6),
-// (null, 7),
-// (null, 8),
-// (null, 9),
-// (null, 10)`)
+// (null, false, 1),
+// (null, false, 2),
+// (null, false, 3),
+// (null, false, 4),
+// (null, false, 5),
+// (null, false, 6),
+// (null, false, 7),
+// (null, false, 8),
+// (null, false, 9),
+// (null, false, 10)`)
 //     .then(result => {
 //         console.log('Dados cadastrados');
 //     }).catch(erro => {

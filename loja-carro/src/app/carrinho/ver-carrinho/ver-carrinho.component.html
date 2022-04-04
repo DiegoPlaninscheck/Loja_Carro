@@ -9,9 +9,9 @@
 </header>
 
 <main class="main">
-  <div class="container-produto">
-    <div class="nome">Nome<button class="continuar" (click)="voltar()">Continuar comprando</button> </div>
-    <div class="quantidade">Quantidade:<button class="finalizar" (click)="finalizar()">Finalizar compra</button></div>
-    <div class="valor">Valor: {{valor}}</div>
+  <div class="container-produto" *ngFor="let car of listCar">
+    <div class="nome">Nome: {{car.nome}}<div class="valor">Valor: {{car.valor}}</div></div>
+    <button class="continuar" (click)="voltar()">Continuar comprando</button>
+    <button class="finalizar" (click)="finalizar()">Finalizar</button>
   </div>
 </main>

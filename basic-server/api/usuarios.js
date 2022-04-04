@@ -145,10 +145,9 @@ inserirRota('/cadastrar', function(dados, resposta) {
 inserirRota('/carro', function(dados, resposta) {
     database(`INSERT INTO CARRO VALUES(null, "${dados.NOME}", "${dados.PLACA}", "${dados.MARCA}", "${dados.MODELO}", "${dados.VALOR}", "${dados.IMAGEM}")`)
     .then(result => {
-        resposta(result);
+        resposta({message: "Cadastrado com sucesso"});
     }).catch(erro => {
-        console.log('Deu ruim')
-        resposta({erro})
+        resposta({erro: "Erro ao cadastrar"})
     })
 })
 
@@ -156,10 +155,9 @@ inserirRota('/editar_carro', function(dados, resposta) {
     database(`UPDATE CARRO SET NOME = "${dados.NOME}", PLACA = "${dados.PLACA}", MARCA = "${dados.MARCA}", MODELO = "${dados.MODELO}", VALOR = "${dados.VALOR}", IMAGEM = "${dados.IMAGEM}"
     where ID = "${dados.ID}"`)
     .then(result => {
-        resposta(result);
+        resposta({message: "Editado com sucesso"});
     }).catch(erro => {
-        console.log('Deu ruim')
-        resposta({erro})
+        resposta({erro: "Erro ao editar"})
     })
 })
 
@@ -197,6 +195,27 @@ inserirRota('/endereco_listar',
                 resposta({erro})
             });
 
+    })
+
+    inserirRota('/produto_listar',
+    function(dados, resposta) {
+        console.log(dados);
+        database(`SELECT * FROM PRODUTO WHERE CARRINHO = 1`)    
+            .then(result => {
+                console.log('Listado');
+                resposta(result)
+            }).catch(erro => {
+                resposta({erro})
+            });
+    })
+
+    inserirRota('/colocar_carrinho', function(dados, resposta) {
+        database(`UPDATE PRODUTO SET CARRINHO = '${dados.CARRINHO}' where NUMERO = ${dados.ID_CARRO}`)
+        .then(result => {
+            resposta({message: "Editado com sucesso"});
+        }).catch(erro => {
+            resposta({erro: "Erro ao editar"})
+        })
     })
 
 

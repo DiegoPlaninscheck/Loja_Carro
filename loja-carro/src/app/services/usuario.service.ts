@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ENGINE_METHOD_DIGESTS } from 'constants';
 import { resolve } from 'url';
 
 @Injectable({
@@ -86,6 +87,33 @@ export class UsuarioService {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({NOME, PLACA, MARCA, MODELO, VALOR, IMAGEM, ID})
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+  
+  carrinho(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/produto_listar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+
+  colocar_carrinho(CARRINHO, ID_CARRO){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/colocar_carrinho', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({CARRINHO, ID_CARRO})
       }).then(resultado => resultado.json())
       .then(resolvido => resolve(resolvido))
       .catch(rejeitado);
