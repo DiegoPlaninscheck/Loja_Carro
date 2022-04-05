@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
         if(resultado != ""){
           localStorage.setItem("NOME", resultado[0].NOME);
           localStorage.setItem("SENHA", resultado[0].SENHA);
+          localStorage.setItem("ID", resultado[0].ID)
           this.router.navigate([""]);
         } else{
             alert("Usuário ou senha não encontrado!");

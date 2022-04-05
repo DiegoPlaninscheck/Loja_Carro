@@ -132,6 +132,16 @@ database(`SELECT * FROM PESSOA WHERE NOME = "${dados.NOME}" AND SENHA = "${dados
     })
 })
 
+inserirRota('/pessoa', function(dados, resposta) {
+    database(`SELECT * FROM PESSOA`)
+        .then(result => {
+            resposta(result)
+        }).catch(erro => {
+            console.log('DEU RUIM')
+            resposta({erro})
+        })
+    })
+
 inserirRota('/cadastrar', function(dados, resposta) {
     database(`INSERT INTO PESSOA VALUES(null, "${dados.NOME}", "${dados.SENHA}", "${dados.SOBRENOME}", "${dados.NASCIMENTO}", "${dados.EMAIL}", null, "${dados.ENDERECO_CODIGO}")`)
     .then(result => {
@@ -195,6 +205,27 @@ inserirRota('/endereco_listar',
                 resposta({erro})
             });
 
+    })
+
+    inserirRota('/comprador_listar',
+    function(dados, resposta) {
+        console.log(dados);
+        database(`SELECT * FROM CLIENTE WHERE COMPRADOR = 1`)    
+            .then(result => {
+                console.log('Listado');
+                resposta(result)
+            }).catch(erro => {
+                resposta({erro})
+            });
+    })
+
+    inserirRota('/colocar_comprador', function(dados, resposta) {
+        database(`UPDATE CLIENTE SET COMPRADOR = '${dados.COMPRADOR}' where NUMERO = ${dados.ID_PESSOA}`)
+        .then(result => {
+            resposta({message: "Editado com sucesso"});
+        }).catch(erro => {
+            resposta({erro: "Erro ao editar"})
+        })
     })
 
     inserirRota('/produto_listar',

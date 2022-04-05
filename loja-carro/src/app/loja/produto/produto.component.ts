@@ -19,6 +19,7 @@ export class ProdutoComponent implements OnInit {
   modelo;
   valor;
   imagem;
+  id_cliente = localStorage.getItem('ID');
   
 
   ngOnInit() {
@@ -39,14 +40,12 @@ export class ProdutoComponent implements OnInit {
           }
         })
       })
-
-    // console.log(this.imagem)
   }
 
   comprar() {
     this.id = this.router.url.substring(this.router.url.length - 1)
-    console.log(this.id)
     this.usuarioService.colocar_carrinho(1, this.id);
+    this.usuarioService.colocar_comprador(1, this.id_cliente)
     this.router.navigate(['/carrinho'])
 
   }

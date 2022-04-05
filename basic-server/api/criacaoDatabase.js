@@ -129,15 +129,10 @@ database(`CREATE TABLE IF NOT EXISTS PESSOA (
 
 database(`CREATE TABLE IF NOT EXISTS CLIENTE (
     NUMERO INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
+    COMPRADOR BOOLEAN not null,
     ID_PESSOA INTEGER NOT NULL,
-    PRODUTO_NUMERO INTEGER NOT NULL,
-    PRODUTO_CARRO_ID INTEGER NOT NULL,
     FOREIGN KEY(ID_PESSOA)
-    REFERENCES PESSOA(ID),
-    FOREIGN KEY(PRODUTO_NUMERO)
-    REFERENCES PRODUTO(NUMERO),
-    FOREIGN KEY(PRODUTO_CARRO_ID) 
-    REFERENCES PRODUTO_ID_CARRO(ID)
+    REFERENCES PESSOA(ID)
     )`).then(result => {
     console.log('Tabela CLIENTE criada com sucesso');
 }).catch(erro => {
@@ -145,16 +140,16 @@ database(`CREATE TABLE IF NOT EXISTS CLIENTE (
 });
 
 // database(`INSERT INTO CLIENTE VALUES
-// (null, 1, 1, 1),
-// (null, 2, 2, 2),
-// (null, 3, 3, 3),
-// (null, 4, 4, 4),
-// (null, 5, 5, 5),
-// (null, 6, 6, 6),
-// (null, 7, 7, 7),
-// (null, 8, 8, 8),
-// (null, 9, 9, 9),
-// (null, 10, 10, 10)`)
+// (null, false, 1,
+// (null, false, 2),
+// (null, false, 3),
+// (null, false, 4,
+// (null, false, 5),
+// (null, false, 6),
+// (null, false, 7),
+// (null, false, 8,),
+// (null, false, 9),
+// (null, false, 10)`)
 //     .then(result => {
 //         console.log('Dados cadastrados');
 //     }).catch(erro => {

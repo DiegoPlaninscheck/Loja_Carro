@@ -24,6 +24,19 @@ export class UsuarioService {
     })
   }
 
+  pessoa(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/pessoa', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+
   checarCarro(){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/checar_carro', {
@@ -114,6 +127,33 @@ export class UsuarioService {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({CARRINHO, ID_CARRO})
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+
+  cliente(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/comprador_listar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+
+  colocar_comprador(COMPRADOR, ID_PESSOA){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/colocar_comprador', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({COMPRADOR, ID_PESSOA})
       }).then(resultado => resultado.json())
       .then(resolvido => resolve(resolvido))
       .catch(rejeitado);

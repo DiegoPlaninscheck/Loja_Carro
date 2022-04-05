@@ -38,7 +38,7 @@
 }
 
 .nome{
-    width: 20%;
+    width: 25%;
     height: 50%;
     display: flex;
     flex-direction: row;
@@ -47,7 +47,7 @@
 }
 
 .valor {
-    width: 20%;
+    width: 55%;
     height: 50%;
     display: flex;
     justify-content: center;

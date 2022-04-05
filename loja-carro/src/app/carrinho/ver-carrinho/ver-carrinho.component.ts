@@ -12,14 +12,15 @@ export class VerCarrinhoComponent implements OnInit {
 
   user;
   listCar = [];  
+  listClient = [];
 
   ngOnInit() {
     this.usuarioService.carrinho()
     .then((resultado: any) => {
       console.log(resultado)
       this.usuarioService.checarCarro()
-
       .then((resultado2: any) => {
+        console.log(resultado2)
         resultado2.find(valorCarro => {
           if(valorCarro.id == resultado[0].ID_CARRO){
             let carro = {
@@ -29,8 +30,23 @@ export class VerCarrinhoComponent implements OnInit {
             this.listCar.push(carro)
           }
         })
-        console.log(this.listCar)
       })
+      this.usuarioService.cliente()
+      .then((resultado3: any) => {
+        console.log(resultado3)
+      })
+      // this.usuarioService.checarCliente()
+      // .then((resultado3: any) =>{
+      //   resultado3.find(valorCliente => {
+      //     if(valorCliente.id == resultado3[0].ID){
+      //       let cliente = {
+      //         nome: valorCliente.nome, 
+      //         sobrenome: valorCliente.sobrenome
+      //       }
+      //       this.listClient.push(cliente);
+      //     }
+      //   })
+      // })
     }).catch(erro => {
       console.log(erro);
     })

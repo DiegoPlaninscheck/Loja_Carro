@@ -95,6 +95,7 @@ export class GerenciarLojaComponent implements OnInit {
     localStorage.removeItem("NOME")
     localStorage.removeItem("SENHA")
     localStorage.removeItem("FUNCIONARIO")
+    localStorage.removeItem("ID")
     document.location.reload();
   }
 }
