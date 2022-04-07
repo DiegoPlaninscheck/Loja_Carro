@@ -20,13 +20,12 @@ export class CadastroCarroComponent implements OnInit {
   marca;
   modelo;
   valor;
-  imagem;
 
   ngOnInit() {
   }
 
   cadastrar(){
-    this.usuarioService.carro(this.nome, this.placa, this.marca, this.modelo, this.valor, this.imagem)
+    this.usuarioService.carro(this.nome, this.placa, this.marca, this.modelo, this.valor, this.imageUrl)
       .then((resultado: any) => {
         this.Router.navigate([''])
       }).catch(erro => {
@@ -34,6 +33,44 @@ export class CadastroCarroComponent implements OnInit {
       })
 
   }
+
+  imgURL;
+  srcResult
+
+  onFileSelected(event) {
+    const file = new FileReader();
+    file.onload = (e) => {
+      this.imgURL = e.target.result;
+    };
+    file.readAsDataURL(event.target.files[0]);
+  }
+
+
+  input;
+
+  limparImagem() {
+    console.log('limpar');
+    this.imageUrl = '';
+
+    this.input.value = '';
+
+
+  }
+
+  imageUrl = '';
+
+  imagemMudou(event) {
+    this.input = event.target
+
+    const reader = new FileReader()
+
+    reader.onload = (result) => {
+      this.imageUrl = result.target.result as string;
+    }
+
+    reader.readAsDataURL(event.target.files[0]);
+  }
+
 
   voltar(){
     this.Router.navigate([''])

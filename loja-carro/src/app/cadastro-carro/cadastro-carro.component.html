@@ -21,10 +21,23 @@
   <div class="valor">
     <input [(ngModel)]="valor" type="number" placeholder='Valor'>
   </div>
-  <div class="imagem">
-    <input [(ngModel)]="imagem" type="file" placeholder='Imagem'>
-  </div>
+  <div class="InputImagem">
+    <div class="ImagemClasse">
+        <button class="ButtonImage" *ngIf="!imageUrl" type="button" mat-raised-button (click)="fileInput.click()" (change)="mudanca($event.target.files[0])">Foto do Produto</button>
+        <input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file" (change)="imagemMudou($event)" [(ngModel)]="image ">
+
+        <img *ngIf=" imageUrl " [src]="imageUrl " id="file " width="150px " height="150px " />
+    </div>
+    <div class="BotaoLimparImagem ">
+        <button *ngIf="imageUrl " (click)="limparImagem() ">LIMPAR IMAGEM</button>
+    </div>
+</div>
   <div>
     <button (click)="cadastrar()" class="botao">Cadastrar</button>
   </div>
 </main>
+
+
+<!-- <div class="imagem">
+  <input [(ngModel)]="imagem" type="file" placeholder='Imagem'>
+</div> -->
