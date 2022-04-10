@@ -26,10 +26,9 @@ export class LoginComponent implements OnInit {
       socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
     }
     this.socialAuthService.signIn(socialPlatformProvider).then((userData) => {
-      localStorage.setItem("USER", this.nome);
       console.log(socialPlatform + " sign in data : ", userData);
-      // Now sign-in with userData
-      // ...
+      this.nome = userData.name
+      localStorage.setItem("USER", this.nome);
       this.router.navigate([""]);
     });
   }
