@@ -44,19 +44,45 @@ export class EditarCarroComponent implements OnInit {
   }
 
   editarCarro(){
-    this.usuarioService.editarCarro(this.nome, this.placa, this.marca, this.modelo, this.valor, this.imagem, this.id)
+    this.usuarioService.editarCarro(this.nome, this.placa, this.marca, this.modelo, this.valor, this.imgURL, this.id)
     this.router.navigate([''])
   }
 
-  mostrarImagem(event){
-    const file = new FileReader
+  imgURL;
+  srcResult
+
+  onFileSelected(event) {
+    const file = new FileReader();
     file.onload = (e) => {
-      this.imagem = e.target.result;
-      console.log(this.imagem)
+      this.imgURL = e.target.result;
+    };
+    file.readAsDataURL(event.target.files[0]);
+  }
+
+
+  input;
+
+  limparImagem() {
+    console.log('limpar');
+    this.imageUrl = '';
+
+    this.input.value = '';
+
+
+  }
+
+  imageUrl = '';
+
+  imagemMudou(event) {
+    this.input = event.target
+
+    const reader = new FileReader()
+
+    reader.onload = (result) => {
+      this.imageUrl = result.target.result as string;
     }
-    this.teste = 1
-    file.readAsDataURL(event.target.files[0])
-    console.log(file)
+
+    reader.readAsDataURL(event.target.files[0]);
   }
 
   voltar() {

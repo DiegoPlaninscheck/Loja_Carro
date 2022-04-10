@@ -23,6 +23,7 @@ import { FornecedorComponent } from "./fornecedor/fornecedor.component";
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { CadastroCarroComponent } from './cadastro-carro/cadastro-carro.component';
 import { EditarCarroComponent } from './editar-carro/editar-carro.component';
+import { PagamentoComponent } from './pagamento/pagamento.component';
 
 const routes: Routes = [
   { path: "", component: GerenciarLojaComponent, canActivate: [] },
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: "carrinho", component: VerCarrinhoComponent, canActivate: [CheckLogged]},
   { path: "suporte", component: SuporteComponent, canActivate: [] },
   { path: "fornecedor", component: FornecedorComponent, canActivate: [] },
+  { path: "pagamento", component: PagamentoComponent, canActivate: [CheckLogged] }
 ];
 
 export function getAuthServiceConfigs() {
@@ -59,6 +61,7 @@ export function getAuthServiceConfigs() {
     CadastroComponent,
     CadastroCarroComponent,
     EditarCarroComponent,
+    PagamentoComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

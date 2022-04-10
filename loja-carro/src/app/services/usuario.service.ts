@@ -103,6 +103,20 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
+
+  editarEndereco(CODIGO, PAIS, ESTADO, CIDADE, CEP){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/editar_endereco', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({CODIGO, PAIS, ESTADO, CIDADE, CEP})
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
   
   carrinho(){
     return new Promise((resolve, rejeitado) => {
@@ -117,14 +131,28 @@ export class UsuarioService {
     })
   }
 
-  colocar_carrinho(CARRINHO, ID_CARRO){
+  comprar(ID_PESSOA , ID_CARRO){
     return new Promise((resolve, rejeitado) => {
-      fetch('/api/colocar_carrinho', {
+      fetch('/api/comprar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({CARRINHO, ID_CARRO})
+        body: JSON.stringify({ID_PESSOA ,ID_CARRO})
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+
+  
+  listarCarrinho(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/carrinho_listar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
       }).then(resultado => resultado.json())
       .then(resolvido => resolve(resolvido))
       .catch(rejeitado);
@@ -143,20 +171,6 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
-
-  colocar_comprador(COMPRADOR, ID_PESSOA){
-    return new Promise((resolve, rejeitado) => {
-      fetch('/api/colocar_comprador', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({COMPRADOR, ID_PESSOA})
-      }).then(resultado => resultado.json())
-      .then(resolvido => resolve(resolvido))
-      .catch(rejeitado);
-    })
-  }
   
   checarEndereco(){
     return new Promise((resolve, rejeitado) => {
@@ -170,4 +184,33 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
+
+  listarPessoas(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/pessoa_listar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+  deletarCarrinho(ID_PESSOA){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/deletar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ID_PESSOA})
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
 }
+
+
+

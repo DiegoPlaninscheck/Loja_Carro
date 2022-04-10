@@ -6,12 +6,13 @@ database(`CREATE TABLE IF NOT EXISTS CARRO (
     MODELO varchar(30) not null,
     VALOR float not null,
     IMAGEM varchar(9999) not null 
-    )`).then(result => {
-    console.log('Tabela CARRO criada com sucesso');
-}).catch(erro => {
-    console.log('Tabela CARRO com erro de criação');
-});
-
+    )`)
+  .then((result) => {
+    console.log("Tabela CARRO criada com sucesso");
+  })
+  .catch((erro) => {
+    console.log("Tabela CARRO com erro de criação");
+  });
 
 // database(`INSERT INTO CARRO VALUES
 // (null, 'Up', 'BRA2E19', 'Volkswagem', '170 tsi', 70000, 'https://w.wallha.com/ws/13/xgSPmvMJ.jpg'),
@@ -30,51 +31,37 @@ database(`CREATE TABLE IF NOT EXISTS CARRO (
 //         console.log('Dados não cadastrados');
 //     });
 
-
-database(`CREATE TABLE IF NOT EXISTS PRODUTO (
+database(`CREATE TABLE IF NOT EXISTS CARRINHO (
     NUMERO INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-    CARRINHO BOOLEAN NOT NULL,
+    ID_PESSOA INTEGER NOT NULL,
     ID_CARRO INTEGER NOT NULL, 
     FOREIGN KEY(ID_CARRO)
-    REFERENCES CARRO(ID)
-    )`).then(result => {
-    console.log('Tabela PRODUTO criada com sucesso');
-}).catch(erro => {
-    console.log('Tabela PRODUTO com erro de criação');
-});
-
-
-// database(`INSERT INTO PRODUTO VALUES
-// (null, false, 1),
-// (null, false, 2),
-// (null, false, 3),
-// (null, false, 4),
-// (null, false, 5),
-// (null, false, 6),
-// (null, false, 7),
-// (null, false, 8),
-// (null, false, 9),
-// (null, false, 10)`)
-//     .then(result => {
-//         console.log('Dados cadastrados');
-//     }).catch(erro => {
-//         console.log('Dados não cadastrados');
-//     });
-
+    REFERENCES CARRO(ID),
+    FOREIGN KEY(ID_PESSOA) 
+    REFERENCES PESSOA(ID)
+    )`)
+  .then((result) => {
+    console.log("Tabela PRODUTO criada com sucesso");
+  })
+  .catch((erro) => {
+    console.log("Tabela PRODUTO com erro de criação");
+  });
 
 database(`CREATE TABLE IF NOT EXISTS ENDERECO(
     CODIGO INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,  
     PAIS VARCHAR(45) NOT NULL,
     ESTADO VARCHAR(45) NOT NULL,
     CIDADE VARCHAR (45) NOT NULL,
-    CEP CHAR(8) NOT NULL)`).then(result => {
-console.log('Tabela ENDERECO criada com sucesso');
-}).catch(erro => {
-console.log('Tabela ENDERECO com erro de criação');
-});
+    CEP CHAR(8) NOT NULL
+    )`)
+  .then((result) => {
+    console.log("Tabela ENDERECO criada com sucesso");
+  })
+  .catch((erro) => {
+    console.log("Tabela ENDERECO com erro de criação");
+  });
 
-
-// database(`INSERT INTO ENDERECO VALUES 
+// database(`INSERT INTO ENDERECO VALUES
 // (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '12345678'),
 // (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '87654321'),
 // (null, 'Brasil', 'Santa Catarina', 'Jaraguá do Sul', '18273645'),
@@ -91,7 +78,6 @@ console.log('Tabela ENDERECO com erro de criação');
 //         console.log('Dados não cadastrados');
 //     });
 
-
 database(`CREATE TABLE IF NOT EXISTS PESSOA (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
     NOME varchar(30) not null UNIQUE,
@@ -103,13 +89,15 @@ database(`CREATE TABLE IF NOT EXISTS PESSOA (
     ENDERECO_CODIGO INTERGER,
     FOREIGN KEY (ENDERECO_CODIGO)
     REFERENCES ENDERECO(CODIGO)
-    )`).then(result => {
-    console.log('Tabela PESSOA criada com sucesso');
-}).catch(erro => {
-    console.log('Tabela PESSOA com erro de criação');
-});
+    )`)
+  .then((result) => {
+    console.log("Tabela PESSOA criada com sucesso");
+  })
+  .catch((erro) => {
+    console.log("Tabela PESSOA com erro de criação");
+  });
 
-// database(`INSERT INTO PESSOA VALUES 
+// database(`INSERT INTO PESSOA VALUES
 // (null, 'Diego', '123', 'Planinscheck', null, 'dieguinhodobarulho@hotmail.com', true, 1),
 // (null, 'João', '321', 'Meireles', null, 'joaozinhogameplays@gmail.com.br', false, 2),
 // (null, 'Camilly', 'camis', 'Pessotti', null, 'camillyzada@gmail.com', false, 3),
@@ -126,51 +114,6 @@ database(`CREATE TABLE IF NOT EXISTS PESSOA (
 //         console.log('Dados não cadastrados');
 //     });
 
-
-database(`CREATE TABLE IF NOT EXISTS CLIENTE (
-    NUMERO INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-    COMPRADOR BOOLEAN not null,
-    ID_PESSOA INTEGER NOT NULL,
-    FOREIGN KEY(ID_PESSOA)
-    REFERENCES PESSOA(ID)
-    )`).then(result => {
-    console.log('Tabela CLIENTE criada com sucesso');
-}).catch(erro => {
-    console.log('Tabela CLIENTE com erro de criação');
-});
-
-// database(`INSERT INTO CLIENTE VALUES
-// (null, false, 1,
-// (null, false, 2),
-// (null, false, 3),
-// (null, false, 4,
-// (null, false, 5),
-// (null, false, 6),
-// (null, false, 7),
-// (null, false, 8,),
-// (null, false, 9),
-// (null, false, 10)`)
-//     .then(result => {
-//         console.log('Dados cadastrados');
-//     }).catch(erro => {
-//         console.log('Dados não cadastrados');
-//     });
-
-// database(`
-//         CREATE TABLE IF NOT EXISTS USER(
-//             NOME varchar(30),
-//             NICKNAME varchar(30),
-//             PASSWORD varchar(30)
-//         )
-//         `).then(result => {
-//     console.log('Tabela USER criada com sucesso');
-// }).catch(erro => {
-//     console.log('Tabela USER com erro de criação');
-// });
-
-
-
-
 database(`CREATE TABLE IF NOT EXISTS FORNECEDOR(
     CODIGO INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, 
             NOME varchar(45) NOT NULL,
@@ -180,21 +123,10 @@ database(`CREATE TABLE IF NOT EXISTS FORNECEDOR(
             PRODUTO_CARRO_ID INTEGER NOT NULL,
             FOREIGN KEY(ENDERECO_CODIGO) REFERENCES CODIGO(ENDERECO),
             FOREIGN KEY(PRODUTO_NUMERO) REFERENCES PRODUTO(CODIGO),
-            FOREIGN KEY(PRODUTO_CARRO_ID) REFERENCES PRODUTO_CARRO_ID(ID))`).then(result => {
-    console.log('Tabela FORNECEDOR criada com sucesso');
-}).catch(erro => {
-    console.log('Tabela FORNECEDOR com erro de criação');
-});
-
-database(`CREATE TABLE IF NOT EXISTS ESTOQUE(
-            ID INTEGER NOT NULL PRIMARY KEY,
-            PRODUTO_NUMERO INTEGER NOT NULL,
-            PRODUTO_CARRO_ID INTEGER NOT NULL,
-            FOREIGN KEY(PRODUTO_NUMERO)
-            REFERENCES PRODUTO(NUMERO),
-            FOREIGN KEY(PRODUTO_CARRO_ID)
-            REFERENCES PRODUTO(ID_CARRO))`).then(result => {
-    console.log('Tabela ESTOQUE criada com sucesso');
-}).catch(erro => {
-    console.log('Tabela ESTOQUE com erro de criação');
-});
+            FOREIGN KEY(PRODUTO_CARRO_ID) REFERENCES PRODUTO_CARRO_ID(ID))`)
+  .then((result) => {
+    console.log("Tabela FORNECEDOR criada com sucesso");
+  })
+  .catch((erro) => {
+    console.log("Tabela FORNECEDOR com erro de criação");
+  });
