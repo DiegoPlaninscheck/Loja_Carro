@@ -34,11 +34,21 @@ export class VerCarrinhoComponent implements OnInit {
     });
   }
 
+  deletar(){
+    this.usuarioService.deletarCarrinho(localStorage.getItem("ID"))
+    alert("Exclusão concluida!")
+    document.location.reload();
+  }
+
   voltar() {
     this.router.navigate([""]);
   }
 
   finalizar() {
-    this.router.navigate(["/pagamento"]);
+    if(this.listCar.length != 0) {
+      this.router.navigate(["/pagamento"]);
+    } else {
+      alert("Não há nada para finalizar a compra")
+    }
   }
 }

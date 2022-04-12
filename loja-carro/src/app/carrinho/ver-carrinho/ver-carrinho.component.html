@@ -1,19 +1,24 @@
-<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Icons"
+  rel="stylesheet"
+/>
 <header class="container">
   <div class="navbar">
-    <span class="material-icons">
-      local_grocery_store
-    </span>
+    <span class="material-icons"> local_grocery_store </span>
     <span class="carrinho">CARRINHO</span>
   </div>
 </header>
 
 <main class="main">
   <div class="container-produto" *ngFor="let car of listCar">
-    <div class="nome">Nome: {{car.nome}}<div class="valor">Valor: {{car.valor}}</div>
+    <div class="info-container">
+      <img src="{{ car.imagem }}" width="250px" />
+      <div class="nome"> Nome: {{ car.nome }}</div>
+      <div class="valor">Valor: {{ car.valor }}</div>
+      <span class="material-icons" (click)="deletar()"> delete </span>
     </div>
   </div>
-  <div class="main-footer"> 
+  <div class="main-footer">
     <button class="continuar" (click)="voltar()">Continuar comprando</button>
     <button class="finalizar" (click)="finalizar()">Finalizar</button>
   </div>

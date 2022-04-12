@@ -197,6 +197,7 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
+  
   deletarCarrinho(ID_PESSOA){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/deletar', {
