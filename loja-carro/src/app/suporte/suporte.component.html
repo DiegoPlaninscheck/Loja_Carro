@@ -1,32 +1,32 @@
-<link
-  href="https://fonts.googleapis.com/css2?family=Material+Icons"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
 
 <span (click)="voltar()" class="material-icons">reply</span>
 
 <main class="main">
-  <div class="duvida">
-    <span>Sobre o que é a sua dúvida?</span>
-  </div>
-  <div class="container">
-    <div class="home" (click)="voltar()">
-      <span class="fi fi-rr-home"></span>
+    <div class="duvida">
+        <span>Sobre o que é a sua dúvida?</span>
     </div>
-    <div class="user" (click)="login()">
-      <span class="fi fi-rr-user"></span>
+    <div class="container">
+        <div class="nav1">
+            <div class="home" (click)="voltar()">
+                <span class="fi fi-rr-home"></span>
+            </div>
+            <div class="user" (click)="login()">
+                <span class="fi fi-rr-user"></span>
+            </div>
+        </div>
+        <div class="nav2">
+            <div class="carrinho" (click)="carrinho()">
+                <span class="fi fi-rr-shopping-cart"> </span>
+            </div>
+            <div class="car" (click)="fornecedor()">
+                <span class="fi fi-rr-car"></span>
+            </div>
+        </div>
+        <div class="nav3">
+            <div class="logout" (click)="sair()">
+                <span class="material-icons" (click)="sair()"> logout</span>
+            </div>
+        </div>
     </div>
-    <div class="carrinho">
-      <span class="fi fi-rr-shopping-cart"> </span>
-    </div>
-   <div class="car">
-    <span class="fi fi-rr-car"></span>
-   </div>
-    <div class="logout">
-      <span class="material-icons">logout</span>
-    </div>
-    <div class="conta">
-      <span class="material-icons">account_circle</span>
-    </div>
-  </div>
 </main>

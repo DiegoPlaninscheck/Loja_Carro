@@ -1,78 +1,97 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.material-icons{
+.material-icons {
     cursor: pointer;
 }
 
-
-.main{
+.main {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
 }
 
-.duvida{
-    display:flex;
+.duvida {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container{
+.container {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     display: flex;
-    justify-content:center;
+    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-direction: column-reverse;
 }
 
-.home{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding: 20px;
-    border: solid 1px black;
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: rgb(220, 220, 220);
+    cursor: pointer;
+    margin-right: 100px;
 }
 
-.user{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding: 20px;
-    border: solid 1px black;
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: rgb(220, 220, 220);
+    cursor: pointer;
 }
 
-.carrinho{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding: 20px;
-    border: solid 1px black;
+.carrinho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: rgb(220, 220, 220);
+    cursor: pointer;
+    margin-right: 100px;
 }
 
-.car{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding: 20px;
-    border: solid 1px black;
+.car {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: rgb(220, 220, 220);
+    cursor: pointer;
 }
 
-.logout{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding: 20px;
-    border: solid 1px black;
+.logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 36px;
+    background-color: rgb(220, 220, 220);
+    cursor: pointer;
 }
 
-.conta{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding: 20px;
-    border: solid 1px black;
+.nav1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.nav2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.nav3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
 }

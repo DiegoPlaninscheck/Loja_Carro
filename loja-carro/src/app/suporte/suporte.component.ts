@@ -19,20 +19,24 @@ export class SuporteComponent implements OnInit {
     this.router.navigate([''])
   }
 
-  cadastrar(){
+  login(){
     this.router.navigate(['/login'])
   }
 
-  comprar(){
-    this.router.navigate([''])
-  }
-
-  pagamento(){
+  carrinho(){
     this.router.navigate(['/carrinho'])
   }
 
-  parceria(){
+  fornecedor(){
     this.router.navigate(['/fornecedor'])
+  }
+
+  sair(){
+    this.router.navigate([''])
+    localStorage.removeItem('ID')
+    localStorage.removeItem('NOME')
+    localStorage.removeItem('SENHA')
+    localStorage.removeItem('FUNCIONARIO')
   }
 
 }
