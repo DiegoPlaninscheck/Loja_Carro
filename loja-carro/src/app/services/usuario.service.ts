@@ -211,6 +211,19 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
+
+  fornecedor(){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/fornecedor', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
 }
 
 

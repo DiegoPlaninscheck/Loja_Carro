@@ -115,18 +115,31 @@ database(`CREATE TABLE IF NOT EXISTS PESSOA (
 //     });
 
 database(`CREATE TABLE IF NOT EXISTS FORNECEDOR(
-    CODIGO INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, 
+            CODIGO INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE, 
             NOME varchar(45) NOT NULL,
             EMAIL varchar(100) NOT NULL,
-            ENDERECO_CODIGO INTEGER NOT NULL,
-            PRODUTO_NUMERO INTEGER NOT NULL,
-            PRODUTO_CARRO_ID INTEGER NOT NULL,
-            FOREIGN KEY(ENDERECO_CODIGO) REFERENCES CODIGO(ENDERECO),
-            FOREIGN KEY(PRODUTO_NUMERO) REFERENCES PRODUTO(CODIGO),
-            FOREIGN KEY(PRODUTO_CARRO_ID) REFERENCES PRODUTO_CARRO_ID(ID))`)
+            TELEFONE CHAR(15) NOT NULL,
+            IMAGEM VARCHAR(9999) NOT NULL)`)
   .then((result) => {
     console.log("Tabela FORNECEDOR criada com sucesso");
   })
   .catch((erro) => {
     console.log("Tabela FORNECEDOR com erro de criação");
   });
+
+// database(`INSERT INTO FORNECEDOR VALUES 
+// (null, 'Volkswagen', 'volkswagen@gmail.com', '(47) 91234-5678', 'https://logodownload.org/wp-content/uploads/2014/02/volkswagen-vw-logo.png'),
+// (null, 'Audi', 'audi@gmail.com', '(47) 95678-1234', 'https://w7.pngwing.com/pngs/656/902/png-transparent-audi-car-honda-logo-gt4-european-series-text-trademark-logo.png'),
+// (null, 'BMW', 'bmw@gmail.com', '(47) 94321-8765', 'https://logospng.org/download/bmw/logo-bmw-2048.png'),
+// (null, 'Chevrolet', 'chevrolet@gmail.com', '(47) 98765-4321', 'https://www.pikpng.com/pngl/m/98-981343_chevrolet-logo-vector-logo-chevrolet-vector-png-clipart.png'),
+// (null, 'Ford', 'ford@gmail.com', '(47) 95555-5555', 'https://logodownload.org/wp-content/uploads/2014/02/ford-logo-2.png'),
+// (null, 'Honda', 'honda@gmail.com', '(47) 96666-6666', 'https://www.carpointnews.com.br/wp-content/uploads/2016/02/Honda-logo.png'),
+// (null, 'Jeep', 'jeep@gmail.com', '(47) 97777-7777', 'https://cdn.worldvectorlogo.com/logos/jeep-3.svg'),
+// (null, 'Nissan', 'nissan@gmail.com', '(47) 98888-8888', 'https://logodownload.org/wp-content/uploads/2014/09/nissan-logo-1.png'),
+// (null, 'Lamborghini', 'lamborghini@gmail.com', '(47) 99999-9999', 'https://a-static.besthdwallpaper.com/lamborghini-logo-papel-de-parede-2048x1536-85717_26.jpg')`)
+//   .then((result) => {
+//     console.log("Dados cadastrados");
+//   })
+//   .catch((erro) => {
+//     console.log("Dados não cadastrados");
+//   });
