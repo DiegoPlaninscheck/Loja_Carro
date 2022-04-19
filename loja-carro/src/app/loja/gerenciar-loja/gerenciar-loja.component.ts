@@ -30,7 +30,6 @@ export class GerenciarLojaComponent implements OnInit {
     private router: Router,
     private usuarioService: UsuarioService
   ) { }
-
   ngOnInit() {
     this.display();
     this.usuarioService.checarCarro()
@@ -53,6 +52,15 @@ export class GerenciarLojaComponent implements OnInit {
       }).catch(erro => {
         console.log("ERRO AO BUSCAR CARRO:", erro)
       })
+      this.lista2 = this.list
+  }
+
+  lista2 =[]
+  filtro1=""
+  
+  filtro(){
+    this.list = this.lista2
+    this.list = this.list.filter(element => element.nome.toString().startsWith(this.filtro1));
   }
 
   cadastrarCarro() {
