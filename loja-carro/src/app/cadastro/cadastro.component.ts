@@ -20,17 +20,18 @@ export class CadastroComponent implements OnInit {
   cidade = "";
   cep = "";
   i = "";
+  id_endereco;
+
   ngOnInit() {}
 
   cadastro() {
-    let id_endereco
     this.usuarioService.checarEndereco().then((result: any) => {
-      console.log(result.length);
-      id_endereco = result.length;
+      this.id_endereco = result.length;
+      console.log(this.id_endereco);
     })
     if (this.nome && this.sobrenome && this.senha && this.email && this.pais && this.estado && this.cidade && this.cep) {
       this.usuarioService.endereco(this.pais, this.estado, this.cidade, this.cep);
-      this.usuarioService.cadastrar( this.nome,this.senha,  this.sobrenome, this.nascimento,  this.email, id_endereco);
+      this.usuarioService.cadastrar( this.nome,this.senha,  this.sobrenome, this.nascimento,  this.email, parseInt(this.id_endereco));
       this.router.navigate(["/login"]);
     } else {
       alert("Preencha todos os dados!");

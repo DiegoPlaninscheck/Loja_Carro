@@ -42,7 +42,7 @@ export class ProdutoComponent implements OnInit {
 
   comprar() {
     if (localStorage.getItem("ID") == null) {
-      alert("Anta você não está logado!")
+      alert("Você não está logado!")
       this.router.navigate(["/login"]);
     } else {
       this.usuarioService.comprar(localStorage.getItem("ID"), this.id);

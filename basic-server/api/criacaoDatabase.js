@@ -80,8 +80,8 @@ database(`CREATE TABLE IF NOT EXISTS ENDERECO(
 
 database(`CREATE TABLE IF NOT EXISTS PESSOA (
     ID INTEGER PRIMARY KEY AUTOINCREMENT,
-    NOME varchar(30) not null UNIQUE,
-    SENHA varchar(10) not null UNIQUE,
+    NOME varchar(30) not null,
+    SENHA varchar(10) not null,
     SOBRENOME varchar(30) not null, 
     NASCIMENTO date,
     EMAIL varchar(50),
