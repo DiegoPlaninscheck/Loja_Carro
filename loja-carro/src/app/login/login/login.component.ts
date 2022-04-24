@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { UsuarioService } from "../services/usuario.service";
+import { UsuarioService } from "../../services/usuario.service";
 
 import { AuthService, GoogleLoginProvider } from "angular-6-social-login";
 

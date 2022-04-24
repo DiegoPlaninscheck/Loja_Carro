@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { Routes } from "@angular/router";
 import { AppComponent } from "./app.component";
-import { LoginComponent } from "./login/login.component";
+import { LoginComponent } from "./login/login/login.component";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import CheckLogged from "./checkLogged.canActivate";
@@ -18,12 +18,12 @@ import { ProdutoComponent } from "./loja/produto/produto.component";
 import { GerenciarLojaComponent } from "./loja/gerenciar-loja/gerenciar-loja.component";
 import { VerCarrinhoComponent } from "./carrinho/ver-carrinho/ver-carrinho.component";
 import { CarrinhoModule } from "./carrinho/carrinho.module";
-import { SuporteComponent } from "./suporte/suporte.component";
-import { FornecedorComponent } from "./fornecedor/fornecedor.component";
-import { CadastroComponent } from './cadastro/cadastro.component';
-import { CadastroCarroComponent } from './cadastro-carro/cadastro-carro.component';
-import { EditarCarroComponent } from './editar-carro/editar-carro.component';
-import { PagamentoComponent } from './pagamento/pagamento.component';
+import { SuporteComponent } from "./loja/suporte/suporte.component";
+import { FornecedorComponent } from "./loja/fornecedor/fornecedor.component";
+import { CadastroComponent } from './login/cadastro/cadastro.component';
+import { CadastroCarroComponent } from './adm/cadastro-carro/cadastro-carro.component';
+import { EditarCarroComponent } from './adm/editar-carro/editar-carro.component';
+import { PagamentoComponent } from './loja/pagamento/pagamento.component';
 
 const routes: Routes = [
   { path: "", component: GerenciarLojaComponent, canActivate: [] },
