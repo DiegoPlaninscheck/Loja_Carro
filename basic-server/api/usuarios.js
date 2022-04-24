@@ -215,6 +215,19 @@ inserirRota("/checar_carro", function (dados, resposta) {
     });
 });
 
+inserirRota("/entrar_google", function (dados, resposta) {
+  database(
+    `INSERT INTO PESSOA VALUES(null, "${dados.NOME}", "123", "Planinscheck", "08/03/2005", "${dados.EMAIL}", false, 1)`
+  )
+    .then((result) => {
+      resposta(result);
+    })
+    .catch((erro) => {
+      console.log("Deu ruim");
+      resposta({ erro });
+    });
+});
+
 inserirRota("/comprar", function (dados, resposta) {
   database(
     `INSERT INTO CARRINHO VALUES(null, "${dados.ID_PESSOA}", "${dados.ID_CARRO}")`

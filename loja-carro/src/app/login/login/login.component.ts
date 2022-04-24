@@ -12,6 +12,8 @@ import { AuthService, GoogleLoginProvider } from "angular-6-social-login";
 export class LoginComponent implements OnInit {
   nome = "";
   senha = "";
+  id = "11";
+  email = "";
 
   constructor(
     private router: Router,
@@ -28,10 +30,22 @@ export class LoginComponent implements OnInit {
     this.socialAuthService.signIn(socialPlatformProvider).then((userData) => {
       console.log(socialPlatform + " sign in data : ", userData);
       this.nome = userData.name
+      this.email = userData.email
+      this.usuarioService.entrarGoogle(this.nome, this.email);
+      this.usuarioService.pessoa().then((resultado: any) => {
+        resultado.find((pessoa) => {
+          if(this.id == pessoa.ID){
+            console.log("passo")
+            this.id = pessoa.id;
+          }
+        })
+      })
+      localStorage.setItem("ID", this.id);
       localStorage.setItem("USER", this.nome);
       this.router.navigate([""]);
     });
   }
+
   ngOnInit() {}
 
   logar() {

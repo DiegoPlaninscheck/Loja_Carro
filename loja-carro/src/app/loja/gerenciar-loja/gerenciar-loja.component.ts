@@ -21,7 +21,6 @@ export class GerenciarLojaComponent implements OnInit {
 
   list = [];
 
-
   imageURL;
   teste;
 
@@ -55,12 +54,12 @@ export class GerenciarLojaComponent implements OnInit {
       this.lista2 = this.list
   }
 
-  lista2 =[]
-  filtro1=""
+  lista2 = [];
+  filtro1 = "";
   
   filtro(){
     this.list = this.lista2
-    this.list = this.list.filter(element => element.nome.toString().startsWith(this.filtro1));
+    this.list = this.list.filter(element => element.nome.toLowerCase().toString().startsWith(this.filtro1));
   }
 
   cadastrarCarro() {
@@ -72,7 +71,11 @@ export class GerenciarLojaComponent implements OnInit {
   }
 
   display() {
-    this.user = localStorage.getItem('NOME')
+    if(localStorage.getItem('NOME') == null){
+      this.user = localStorage.getItem('USER')
+    } else {
+      this.user = localStorage.getItem('NOME')
+    }
   }
 
   home() {
@@ -104,6 +107,7 @@ export class GerenciarLojaComponent implements OnInit {
     localStorage.removeItem("SENHA")
     localStorage.removeItem("FUNCIONARIO")
     localStorage.removeItem("ID")
+    localStorage.removeItem("USER")
     document.location.reload();
   }
 }

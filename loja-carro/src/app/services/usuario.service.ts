@@ -131,6 +131,20 @@ export class UsuarioService {
     })
   }
 
+  entrarGoogle(NOME, EMAIL){
+    return new Promise((resolve, rejeitado) => {
+      fetch('/api/entrar_google', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({NOME, EMAIL})
+      }).then(resultado => resultado.json())
+      .then(resolvido => resolve(resolvido))
+      .catch(rejeitado);
+    })
+  }
+
   comprar(ID_PESSOA , ID_CARRO){
     return new Promise((resolve, rejeitado) => {
       fetch('/api/comprar', {

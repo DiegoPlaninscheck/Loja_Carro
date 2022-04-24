@@ -13,6 +13,7 @@ class CheckLogged implements CanActivate {
   constructor(private router: Router, private usuarioService: UsuarioService) {}
 
   user = "";
+  id;
   password = "";
   retorno = false;
 
@@ -21,12 +22,17 @@ class CheckLogged implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
 
-    this.user = localStorage.getItem("NOME");
+    if(localStorage.getItem("NOME") == null){
+      this.user = localStorage.getItem("USER");
+    } else{
+      this.user = localStorage.getItem("NOME");
+    }
     this.password = localStorage.getItem("SENHA");
 
-    if(this.user && this.password) {
+    if((this.user && this.password) || this.user) {
       return true;
     } else {
+      alert("É preciso estar logado!")
       this.router.navigate(['/login'])
       return false;
     }
